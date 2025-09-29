@@ -1,0 +1,283 @@
+[
+    {
+        "key": "group_68da45d33a2e1",
+        "title": "Exam Category",
+        "fields": [],
+        "location": [
+            [
+                {
+                    "param": "taxonomy",
+                    "operator": "==",
+                    "value": "exam_category"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 0
+    },
+    {
+        "key": "group_68da45f3cd7ac",
+        "title": "Exam Profile",
+        "fields": [
+            {
+                "key": "field_68da4bd6b328e",
+                "label": "Category",
+                "name": "category",
+                "aria-label": "",
+                "type": "taxonomy",
+                "instructions": "Category of the exam.",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "taxonomy": "exam_category",
+                "add_term": 0,
+                "save_terms": 0,
+                "load_terms": 0,
+                "return_format": "id",
+                "field_type": "radio",
+                "allow_null": 0,
+                "allow_in_bindings": 0,
+                "bidirectional": 0,
+                "multiple": 0,
+                "bidirectional_target": []
+            },
+            {
+                "key": "field_68da45f3d593d",
+                "label": "Title",
+                "name": "title",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "Title of the exam.",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 0,
+                "placeholder": "For example: آزمون آیلتس",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_68da490f2c351",
+                "label": "Year",
+                "name": "year",
+                "aria-label": "",
+                "type": "number",
+                "instructions": "Year of the exam.",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "min": 1390,
+                "max": 1500,
+                "allow_in_bindings": 0,
+                "placeholder": "For example: 1404",
+                "step": 1,
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_68da48a33123a",
+                "label": "Month",
+                "name": "month",
+                "aria-label": "",
+                "type": "number",
+                "instructions": "Month of the exam.",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "min": 1,
+                "max": 12,
+                "allow_in_bindings": 0,
+                "placeholder": "For example: 3 is خرداد",
+                "step": 1,
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_68da4949efa3e",
+                "label": "Description Title",
+                "name": "description_title",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "Description title of the exam.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 0,
+                "placeholder": "For example: شامل چهل آزمون تستی",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_68da4989efa3f",
+                "label": "Description Text",
+                "name": "description_text",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "Description text of the exam.",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_68da4949efa3e",
+                            "operator": "!=empty"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 0,
+                "rows": "",
+                "placeholder": "For example: این آزمون دارای مشخصات جالبی است",
+                "new_lines": ""
+            },
+            {
+                "key": "field_68da4f172e1bf",
+                "label": "Image",
+                "name": "",
+                "aria-label": "",
+                "type": "message",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "Add image using the \"set featured image\" section.",
+                "new_lines": "wpautop",
+                "esc_html": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "exam_profile"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": [
+            "the_content",
+            "page_attributes",
+            "categories"
+        ],
+        "active": true,
+        "description": "",
+        "show_in_rest": 0
+    },
+    {
+        "key": "group_68da5cdc0e54c",
+        "title": "Member Plan",
+        "fields": [
+            {
+                "key": "field_68da5cdc156e9",
+                "label": "Title",
+                "name": "title",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "Title of the plan.",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 0,
+                "placeholder": "For example: عضویت طلایی",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_68da5cdc1eeab",
+                "label": "Description Text",
+                "name": "description_text",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "Description text of the plan.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 0,
+                "rows": "",
+                "placeholder": "For example: بانک کامل سوالات و ...",
+                "new_lines": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "member_plan"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": [
+            "the_content",
+            "page_attributes",
+            "categories"
+        ],
+        "active": true,
+        "description": "",
+        "show_in_rest": 0
+    }
+]
