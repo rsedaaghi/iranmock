@@ -6,11 +6,11 @@
  * @since v1.0
  */
 $theme_customizer = __DIR__ . '/inc/customizer.php';
-if ( is_readable( $theme_customizer ) ) {
+if (is_readable($theme_customizer)) {
 	require_once $theme_customizer;
 }
 
-if ( ! function_exists( 'iranmock_bootstrap_setup_theme' ) ) {
+if (! function_exists('iranmock_bootstrap_setup_theme')) {
 	/**
 	 * General Theme Settings.
 	 *
@@ -18,9 +18,10 @@ if ( ! function_exists( 'iranmock_bootstrap_setup_theme' ) ) {
 	 *
 	 * @return void
 	 */
-	function iranmock_bootstrap_setup_theme() {
+	function iranmock_bootstrap_setup_theme()
+	{
 		// Make theme available for translation: Translations can be filed in the /languages/ directory.
-		load_theme_textdomain( 'iranmock-bootstrap', __DIR__ . '/languages' );
+		load_theme_textdomain('iranmock-bootstrap', __DIR__ . '/languages');
 
 		/**
 		 * Set the content width based on the theme's design and stylesheet.
@@ -28,14 +29,14 @@ if ( ! function_exists( 'iranmock_bootstrap_setup_theme' ) ) {
 		 * @since v1.0
 		 */
 		global $content_width;
-		if ( ! isset( $content_width ) ) {
+		if (! isset($content_width)) {
 			$content_width = 800;
 		}
 
 		// Theme Support.
-		add_theme_support( 'title-tag' );
-		add_theme_support( 'automatic-feed-links' );
-		add_theme_support( 'post-thumbnails' );
+		add_theme_support('title-tag');
+		add_theme_support('automatic-feed-links');
+		add_theme_support('post-thumbnails');
 		add_theme_support(
 			'html5',
 			array(
@@ -51,23 +52,23 @@ if ( ! function_exists( 'iranmock_bootstrap_setup_theme' ) ) {
 		);
 
 		// Add support for Block Styles.
-		add_theme_support( 'wp-block-styles' );
+		add_theme_support('wp-block-styles');
 		// Add support for full and wide alignment.
-		add_theme_support( 'align-wide' );
+		add_theme_support('align-wide');
 		// Add support for Editor Styles.
-		add_theme_support( 'editor-styles' );
+		add_theme_support('editor-styles');
 		// Enqueue Editor Styles.
-		add_editor_style( 'style-editor.css' );
+		add_editor_style('style-editor.css');
 
 		// Default attachment display settings.
-		update_option( 'image_default_align', 'none' );
-		update_option( 'image_default_link_type', 'none' );
-		update_option( 'image_default_size', 'large' );
+		update_option('image_default_align', 'none');
+		update_option('image_default_link_type', 'none');
+		update_option('image_default_size', 'large');
 
 		// Custom CSS styles of WorPress gallery.
-		add_filter( 'use_default_gallery_style', '__return_false' );
+		add_filter('use_default_gallery_style', '__return_false');
 	}
-	add_action( 'after_setup_theme', 'iranmock_bootstrap_setup_theme' );
+	add_action('after_setup_theme', 'iranmock_bootstrap_setup_theme');
 
 	/**
 	 * Enqueue editor stylesheet (for iframed Post Editor):
@@ -77,19 +78,20 @@ if ( ! function_exists( 'iranmock_bootstrap_setup_theme' ) ) {
 	 *
 	 * @return void
 	 */
-	function iranmock_bootstrap_load_editor_styles() {
-		if ( is_admin() ) {
-			wp_enqueue_style( 'editor-style', get_theme_file_uri( 'style-editor.css' ) );
+	function iranmock_bootstrap_load_editor_styles()
+	{
+		if (is_admin()) {
+			wp_enqueue_style('editor-style', get_theme_file_uri('style-editor.css'));
 		}
 	}
-	add_action( 'enqueue_block_assets', 'iranmock_bootstrap_load_editor_styles' );
+	add_action('enqueue_block_assets', 'iranmock_bootstrap_load_editor_styles');
 
 	// Disable Block Directory: https://github.com/WordPress/gutenberg/blob/trunk/docs/reference-guides/filters/editor-filters.md#block-directory
-	remove_action( 'enqueue_block_editor_assets', 'wp_enqueue_editor_block_directory_assets' );
-	remove_action( 'enqueue_block_editor_assets', 'gutenberg_enqueue_block_editor_assets_block_directory' );
+	remove_action('enqueue_block_editor_assets', 'wp_enqueue_editor_block_directory_assets');
+	remove_action('enqueue_block_editor_assets', 'gutenberg_enqueue_block_editor_assets_block_directory');
 }
 
-if ( ! function_exists( 'wp_body_open' ) ) {
+if (! function_exists('wp_body_open')) {
 	/**
 	 * Fire the wp_body_open action.
 	 *
@@ -99,12 +101,13 @@ if ( ! function_exists( 'wp_body_open' ) ) {
 	 *
 	 * @return void
 	 */
-	function wp_body_open() {
-		do_action( 'wp_body_open' );
+	function wp_body_open()
+	{
+		do_action('wp_body_open');
 	}
 }
 
-if ( ! function_exists( 'iranmock_bootstrap_add_user_fields' ) ) {
+if (! function_exists('iranmock_bootstrap_add_user_fields')) {
 	/**
 	 * Add new User fields to Userprofile:
 	 * get_user_meta( $user->ID, 'facebook_profile', true );
@@ -115,7 +118,8 @@ if ( ! function_exists( 'iranmock_bootstrap_add_user_fields' ) ) {
 	 *
 	 * @return array
 	 */
-	function iranmock_bootstrap_add_user_fields( $fields ) {
+	function iranmock_bootstrap_add_user_fields($fields)
+	{
 		// Add new fields.
 		$fields['facebook_profile'] = 'Facebook URL';
 		$fields['twitter_profile']  = 'Twitter URL';
@@ -125,7 +129,7 @@ if ( ! function_exists( 'iranmock_bootstrap_add_user_fields' ) ) {
 
 		return $fields;
 	}
-	add_filter( 'user_contactmethods', 'iranmock_bootstrap_add_user_fields' );
+	add_filter('user_contactmethods', 'iranmock_bootstrap_add_user_fields');
 }
 
 /**
@@ -138,11 +142,12 @@ if ( ! function_exists( 'iranmock_bootstrap_add_user_fields' ) ) {
  *
  * @return bool
  */
-function is_blog() {
+function is_blog()
+{
 	global $post;
-	$posttype = get_post_type( $post );
+	$posttype = get_post_type($post);
 
-	return ( ( is_archive() || is_author() || is_category() || is_home() || is_single() || ( is_tag() && ( 'post' === $posttype ) ) ) ? true : false );
+	return ((is_archive() || is_author() || is_category() || is_home() || is_single() || (is_tag() && ('post' === $posttype))) ? true : false);
 }
 
 /**
@@ -155,16 +160,17 @@ function is_blog() {
  *
  * @return bool
  */
-function iranmock_bootstrap_filter_media_comment_status( $open, $post_id = null ) {
-	$media_post = get_post( $post_id );
+function iranmock_bootstrap_filter_media_comment_status($open, $post_id = null)
+{
+	$media_post = get_post($post_id);
 
-	if ( 'attachment' === $media_post->post_type ) {
+	if ('attachment' === $media_post->post_type) {
 		return false;
 	}
 
 	return $open;
 }
-add_filter( 'comments_open', 'iranmock_bootstrap_filter_media_comment_status', 10, 2 );
+add_filter('comments_open', 'iranmock_bootstrap_filter_media_comment_status', 10, 2);
 
 /**
  * Style Edit buttons as badges: https://getbootstrap.com/docs/5.0/components/badge
@@ -175,10 +181,11 @@ add_filter( 'comments_open', 'iranmock_bootstrap_filter_media_comment_status', 1
  *
  * @return string
  */
-function iranmock_bootstrap_custom_edit_post_link( $link ) {
-	return str_replace( 'class="post-edit-link"', 'class="post-edit-link badge bg-secondary"', $link );
+function iranmock_bootstrap_custom_edit_post_link($link)
+{
+	return str_replace('class="post-edit-link"', 'class="post-edit-link badge bg-secondary"', $link);
 }
-add_filter( 'edit_post_link', 'iranmock_bootstrap_custom_edit_post_link' );
+add_filter('edit_post_link', 'iranmock_bootstrap_custom_edit_post_link');
 
 /**
  * Style Edit buttons as badges: https://getbootstrap.com/docs/5.0/components/badge
@@ -187,10 +194,11 @@ add_filter( 'edit_post_link', 'iranmock_bootstrap_custom_edit_post_link' );
  *
  * @param string $link Comment Edit Link.
  */
-function iranmock_bootstrap_custom_edit_comment_link( $link ) {
-	return str_replace( 'class="comment-edit-link"', 'class="comment-edit-link badge bg-secondary"', $link );
+function iranmock_bootstrap_custom_edit_comment_link($link)
+{
+	return str_replace('class="comment-edit-link"', 'class="comment-edit-link badge bg-secondary"', $link);
 }
-add_filter( 'edit_comment_link', 'iranmock_bootstrap_custom_edit_comment_link' );
+add_filter('edit_comment_link', 'iranmock_bootstrap_custom_edit_comment_link');
 
 /**
  * Responsive oEmbed filter: https://getbootstrap.com/docs/5.0/helpers/ratio
@@ -201,12 +209,13 @@ add_filter( 'edit_comment_link', 'iranmock_bootstrap_custom_edit_comment_link' )
  *
  * @return string
  */
-function iranmock_bootstrap_oembed_filter( $html ) {
+function iranmock_bootstrap_oembed_filter($html)
+{
 	return '<div class="ratio ratio-16x9">' . $html . '</div>';
 }
-add_filter( 'embed_oembed_html', 'iranmock_bootstrap_oembed_filter', 10 );
+add_filter('embed_oembed_html', 'iranmock_bootstrap_oembed_filter', 10);
 
-if ( ! function_exists( 'iranmock_bootstrap_content_nav' ) ) {
+if (! function_exists('iranmock_bootstrap_content_nav')) {
 	/**
 	 * Display a navigation to next/previous pages when applicable.
 	 *
@@ -214,14 +223,19 @@ if ( ! function_exists( 'iranmock_bootstrap_content_nav' ) ) {
 	 *
 	 * @param string $nav_id Navigation ID.
 	 */
-	function iranmock_bootstrap_content_nav( $nav_id ) {
+	function iranmock_bootstrap_content_nav($nav_id)
+	{
 		global $wp_query;
 
-		if ( $wp_query->max_num_pages > 1 ) {
-			?>
-			<div id="<?php echo esc_attr( $nav_id ); ?>" class="d-flex mb-4 justify-content-between">
-				<div><?php next_posts_link( '<span aria-hidden="true">&larr;</span> ' . esc_html__( 'Older posts', 'iranmock-bootstrap' ) ); ?></div>
-				<div><?php previous_posts_link( esc_html__( 'Newer posts', 'iranmock-bootstrap' ) . ' <span aria-hidden="true">&rarr;</span>' ); ?></div>
+		if ($wp_query->max_num_pages > 1) {
+?>
+			<div id="<?php echo esc_attr($nav_id); ?>" class="d-flex mb-4 justify-content-between">
+				<div>
+					<?php next_posts_link('<span aria-hidden="true">&larr;</span> ' . esc_html__('Older posts', 'iranmock-bootstrap')); ?>
+				</div>
+				<div>
+					<?php previous_posts_link(esc_html__('Newer posts', 'iranmock-bootstrap') . ' <span aria-hidden="true">&rarr;</span>'); ?>
+				</div>
 			</div><!-- /.d-flex -->
 			<?php
 		} else {
@@ -236,11 +250,12 @@ if ( ! function_exists( 'iranmock_bootstrap_content_nav' ) ) {
 	 *
 	 * @return string
 	 */
-	function posts_link_attributes() {
+	function posts_link_attributes()
+	{
 		return 'class="btn btn-secondary btn-lg"';
 	}
-	add_filter( 'next_posts_link_attributes', 'posts_link_attributes' );
-	add_filter( 'previous_posts_link_attributes', 'posts_link_attributes' );
+	add_filter('next_posts_link_attributes', 'posts_link_attributes');
+	add_filter('previous_posts_link_attributes', 'posts_link_attributes');
 }
 
 /**
@@ -250,7 +265,8 @@ if ( ! function_exists( 'iranmock_bootstrap_content_nav' ) ) {
  *
  * @return void
  */
-function iranmock_bootstrap_widgets_init() {
+function iranmock_bootstrap_widgets_init()
+{
 	// Area 1.
 	register_sidebar(
 		array(
@@ -287,23 +303,24 @@ function iranmock_bootstrap_widgets_init() {
 		)
 	);
 }
-add_action( 'widgets_init', 'iranmock_bootstrap_widgets_init' );
+add_action('widgets_init', 'iranmock_bootstrap_widgets_init');
 
-if ( ! function_exists( 'iranmock_bootstrap_article_posted_on' ) ) {
+if (! function_exists('iranmock_bootstrap_article_posted_on')) {
 	/**
 	 * "Theme posted on" pattern.
 	 *
 	 * @since v1.0
 	 */
-	function iranmock_bootstrap_article_posted_on() {
+	function iranmock_bootstrap_article_posted_on()
+	{
 		printf(
-			wp_kses_post( __( '<span class="sep">Posted on </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author-meta vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'iranmock-bootstrap' ) ),
-			esc_url( get_permalink() ),
-			esc_attr( get_the_date() . ' - ' . get_the_time() ),
-			esc_attr( get_the_date( 'c' ) ),
-			esc_html( get_the_date() . ' - ' . get_the_time() ),
-			esc_url( get_author_posts_url( (int) get_the_author_meta( 'ID' ) ) ),
-			sprintf( esc_attr__( 'View all posts by %s', 'iranmock-bootstrap' ), get_the_author() ),
+			wp_kses_post(__('<span class="sep">Posted on </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author-meta vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'iranmock-bootstrap')),
+			esc_url(get_permalink()),
+			esc_attr(get_the_date() . ' - ' . get_the_time()),
+			esc_attr(get_the_date('c')),
+			esc_html(get_the_date() . ' - ' . get_the_time()),
+			esc_url(get_author_posts_url((int) get_the_author_meta('ID'))),
+			sprintf(esc_attr__('View all posts by %s', 'iranmock-bootstrap'), get_the_author()),
 			get_the_author()
 		);
 	}
@@ -318,28 +335,29 @@ if ( ! function_exists( 'iranmock_bootstrap_article_posted_on' ) ) {
  *
  * @return string
  */
-function iranmock_bootstrap_password_form() {
+function iranmock_bootstrap_password_form()
+{
 	global $post;
-	$label = 'pwbox-' . ( empty( $post->ID ) ? wp_rand() : $post->ID );
+	$label = 'pwbox-' . (empty($post->ID) ? wp_rand() : $post->ID);
 
 	$output                  = '<div class="row">';
-		$output             .= '<form action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" method="post">';
-		$output             .= '<h4 class="col-md-12 alert alert-warning">' . esc_html__( 'This content is password protected. To view it please enter your password below.', 'iranmock-bootstrap' ) . '</h4>';
-			$output         .= '<div class="col-md-6">';
-				$output     .= '<div class="input-group">';
-					$output .= '<input type="password" name="post_password" id="' . esc_attr( $label ) . '" placeholder="' . esc_attr__( 'Password', 'iranmock-bootstrap' ) . '" class="form-control" />';
-					$output .= '<div class="input-group-append"><input type="submit" name="submit" class="btn btn-primary" value="' . esc_attr__( 'Submit', 'iranmock-bootstrap' ) . '" /></div>';
-				$output     .= '</div><!-- /.input-group -->';
-			$output         .= '</div><!-- /.col -->';
-		$output             .= '</form>';
+	$output             .= '<form action="' . esc_url(site_url('wp-login.php?action=postpass', 'login_post')) . '" method="post">';
+	$output             .= '<h4 class="col-md-12 alert alert-warning">' . esc_html__('This content is password protected. To view it please enter your password below.', 'iranmock-bootstrap') . '</h4>';
+	$output         .= '<div class="col-md-6">';
+	$output     .= '<div class="input-group">';
+	$output .= '<input type="password" name="post_password" id="' . esc_attr($label) . '" placeholder="' . esc_attr__('Password', 'iranmock-bootstrap') . '" class="form-control" />';
+	$output .= '<div class="input-group-append"><input type="submit" name="submit" class="btn btn-primary" value="' . esc_attr__('Submit', 'iranmock-bootstrap') . '" /></div>';
+	$output     .= '</div><!-- /.input-group -->';
+	$output         .= '</div><!-- /.col -->';
+	$output             .= '</form>';
 	$output                 .= '</div><!-- /.row -->';
 
 	return $output;
 }
-add_filter( 'the_password_form', 'iranmock_bootstrap_password_form' );
+add_filter('the_password_form', 'iranmock_bootstrap_password_form');
 
 
-if ( ! function_exists( 'iranmock_bootstrap_comment' ) ) {
+if (! function_exists('iranmock_bootstrap_comment')) {
 	/**
 	 * Style Reply link.
 	 *
@@ -349,10 +367,11 @@ if ( ! function_exists( 'iranmock_bootstrap_comment' ) ) {
 	 *
 	 * @return string
 	 */
-	function iranmock_bootstrap_replace_reply_link_class( $link ) {
-		return str_replace( "class='comment-reply-link", "class='comment-reply-link btn btn-outline-secondary", $link );
+	function iranmock_bootstrap_replace_reply_link_class($link)
+	{
+		return str_replace("class='comment-reply-link", "class='comment-reply-link btn btn-outline-secondary", $link);
 	}
-	add_filter( 'comment_reply_link', 'iranmock_bootstrap_replace_reply_link_class' );
+	add_filter('comment_reply_link', 'iranmock_bootstrap_replace_reply_link_class');
 
 	/**
 	 * Template for comments and pingbacks:
@@ -364,75 +383,76 @@ if ( ! function_exists( 'iranmock_bootstrap_comment' ) ) {
 	 * @param array  $args    Comment args.
 	 * @param int    $depth   Comment depth.
 	 */
-	function iranmock_bootstrap_comment( $comment, $args, $depth ) {
+	function iranmock_bootstrap_comment($comment, $args, $depth)
+	{
 		$GLOBALS['comment'] = $comment;
-		switch ( $comment->comment_type ) :
+		switch ($comment->comment_type):
 			case 'pingback':
 			case 'trackback':
-				?>
-		<li class="post pingback">
-			<p>
-				<?php
-					esc_html_e( 'Pingback:', 'iranmock-bootstrap' );
-					comment_author_link();
-					edit_comment_link( esc_html__( 'Edit', 'iranmock-bootstrap' ), '<span class="edit-link">', '</span>' );
-				?>
-			</p>
+			?>
+				<li class="post pingback">
+					<p>
+						<?php
+						esc_html_e('Pingback:', 'iranmock-bootstrap');
+						comment_author_link();
+						edit_comment_link(esc_html__('Edit', 'iranmock-bootstrap'), '<span class="edit-link">', '</span>');
+						?>
+					</p>
 				<?php
 				break;
 			default:
 				?>
-		<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-			<article id="comment-<?php comment_ID(); ?>" class="comment">
-				<footer class="comment-meta">
-					<div class="comment-author vcard">
-						<?php
-							$avatar_size = ( '0' !== $comment->comment_parent ? 68 : 136 );
-							echo get_avatar( $comment, $avatar_size );
+				<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
+					<article id="comment-<?php comment_ID(); ?>" class="comment">
+						<footer class="comment-meta">
+							<div class="comment-author vcard">
+								<?php
+								$avatar_size = ('0' !== $comment->comment_parent ? 68 : 136);
+								echo get_avatar($comment, $avatar_size);
 
-							/* Translators: 1: Comment author, 2: Date and time */
-							printf(
-								wp_kses_post( __( '%1$s, %2$s', 'iranmock-bootstrap' ) ),
-								sprintf( '<span class="fn">%s</span>', get_comment_author_link() ),
-								sprintf(
-									'<a href="%1$s"><time datetime="%2$s">%3$s</time></a>',
-									esc_url( get_comment_link( $comment->comment_ID ) ),
-									get_comment_time( 'c' ),
-									/* Translators: 1: Date, 2: Time */
-									sprintf( esc_html__( '%1$s ago', 'iranmock-bootstrap' ), human_time_diff( (int) get_comment_time( 'U' ), current_time( 'timestamp' ) ) )
+								/* Translators: 1: Comment author, 2: Date and time */
+								printf(
+									wp_kses_post(__('%1$s, %2$s', 'iranmock-bootstrap')),
+									sprintf('<span class="fn">%s</span>', get_comment_author_link()),
+									sprintf(
+										'<a href="%1$s"><time datetime="%2$s">%3$s</time></a>',
+										esc_url(get_comment_link($comment->comment_ID)),
+										get_comment_time('c'),
+										/* Translators: 1: Date, 2: Time */
+										sprintf(esc_html__('%1$s ago', 'iranmock-bootstrap'), human_time_diff((int) get_comment_time('U'), current_time('timestamp')))
+									)
+								);
+
+								edit_comment_link(esc_html__('Edit', 'iranmock-bootstrap'), '<span class="edit-link">', '</span>');
+								?>
+							</div><!-- .comment-author .vcard -->
+
+							<?php if ('0' === $comment->comment_approved) { ?>
+								<em class="comment-awaiting-moderation">
+									<?php esc_html_e('Your comment is awaiting moderation.', 'iranmock-bootstrap'); ?>
+								</em>
+								<br />
+							<?php } ?>
+						</footer>
+
+						<div class="comment-content"><?php comment_text(); ?></div>
+
+						<div class="reply">
+							<?php
+							comment_reply_link(
+								array_merge(
+									$args,
+									array(
+										'reply_text' => esc_html__('Reply', 'iranmock-bootstrap') . ' <span>&darr;</span>',
+										'depth'      => $depth,
+										'max_depth'  => $args['max_depth'],
+									)
 								)
 							);
-
-							edit_comment_link( esc_html__( 'Edit', 'iranmock-bootstrap' ), '<span class="edit-link">', '</span>' );
-						?>
-					</div><!-- .comment-author .vcard -->
-
-					<?php if ( '0' === $comment->comment_approved ) { ?>
-						<em class="comment-awaiting-moderation">
-							<?php esc_html_e( 'Your comment is awaiting moderation.', 'iranmock-bootstrap' ); ?>
-						</em>
-						<br />
-					<?php } ?>
-				</footer>
-
-				<div class="comment-content"><?php comment_text(); ?></div>
-
-				<div class="reply">
-					<?php
-						comment_reply_link(
-							array_merge(
-								$args,
-								array(
-									'reply_text' => esc_html__( 'Reply', 'iranmock-bootstrap' ) . ' <span>&darr;</span>',
-									'depth'      => $depth,
-									'max_depth'  => $args['max_depth'],
-								)
-							)
-						);
-					?>
-				</div><!-- /.reply -->
-			</article><!-- /#comment-## -->
-				<?php
+							?>
+						</div><!-- /.reply -->
+					</article><!-- /#comment-## -->
+	<?php
 				break;
 		endswitch;
 	}
@@ -449,8 +469,9 @@ if ( ! function_exists( 'iranmock_bootstrap_comment' ) ) {
 	 *
 	 * @return array
 	 */
-	function iranmock_bootstrap_custom_commentform( $args = array(), $post_id = null ) {
-		if ( null === $post_id ) {
+	function iranmock_bootstrap_custom_commentform($args = array(), $post_id = null)
+	{
+		if (null === $post_id) {
 			$post_id = get_the_ID();
 		}
 
@@ -458,47 +479,47 @@ if ( ! function_exists( 'iranmock_bootstrap_comment' ) ) {
 		$user          = wp_get_current_user();
 		$user_identity = $user->exists() ? $user->display_name : '';
 
-		$args = wp_parse_args( $args );
+		$args = wp_parse_args($args);
 
-		$req      = get_option( 'require_name_email' );
-		$aria_req = ( $req ? " aria-required='true' required" : '' );
-		$consent  = ( empty( $commenter['comment_author_email'] ) ? '' : ' checked="checked"' );
+		$req      = get_option('require_name_email');
+		$aria_req = ($req ? " aria-required='true' required" : '');
+		$consent  = (empty($commenter['comment_author_email']) ? '' : ' checked="checked"');
 		$fields   = array(
 			'author'  => '<div class="form-floating mb-3">
-							<input type="text" id="author" name="author" class="form-control" value="' . esc_attr( $commenter['comment_author'] ) . '" placeholder="' . esc_html__( 'Name', 'iranmock-bootstrap' ) . ( $req ? '*' : '' ) . '"' . $aria_req . ' />
-							<label for="author">' . esc_html__( 'Name', 'iranmock-bootstrap' ) . ( $req ? '*' : '' ) . '</label>
+							<input type="text" id="author" name="author" class="form-control" value="' . esc_attr($commenter['comment_author']) . '" placeholder="' . esc_html__('Name', 'iranmock-bootstrap') . ($req ? '*' : '') . '"' . $aria_req . ' />
+							<label for="author">' . esc_html__('Name', 'iranmock-bootstrap') . ($req ? '*' : '') . '</label>
 						</div>',
 			'email'   => '<div class="form-floating mb-3">
-							<input type="email" id="email" name="email" class="form-control" value="' . esc_attr( $commenter['comment_author_email'] ) . '" placeholder="' . esc_html__( 'Email', 'iranmock-bootstrap' ) . ( $req ? '*' : '' ) . '"' . $aria_req . ' />
-							<label for="email">' . esc_html__( 'Email', 'iranmock-bootstrap' ) . ( $req ? '*' : '' ) . '</label>
+							<input type="email" id="email" name="email" class="form-control" value="' . esc_attr($commenter['comment_author_email']) . '" placeholder="' . esc_html__('Email', 'iranmock-bootstrap') . ($req ? '*' : '') . '"' . $aria_req . ' />
+							<label for="email">' . esc_html__('Email', 'iranmock-bootstrap') . ($req ? '*' : '') . '</label>
 						</div>',
 			'url'     => '',
 			'cookies' => '<p class="form-check mb-3 comment-form-cookies-consent">
 							<input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" class="form-check-input" type="checkbox" value="yes"' . $consent . ' />
-							<label class="form-check-label" for="wp-comment-cookies-consent">' . esc_html__( 'Save my name, email, and website in this browser for the next time I comment.', 'iranmock-bootstrap' ) . '</label>
+							<label class="form-check-label" for="wp-comment-cookies-consent">' . esc_html__('Save my name, email, and website in this browser for the next time I comment.', 'iranmock-bootstrap') . '</label>
 						</p>',
 		);
 
 		$defaults = array(
-			'fields'               => apply_filters( 'comment_form_default_fields', $fields ),
+			'fields'               => apply_filters('comment_form_default_fields', $fields),
 			'comment_field'        => '<div class="form-floating mb-3">
-											<textarea id="comment" name="comment" class="form-control" aria-required="true" required placeholder="' . esc_attr__( 'Comment', 'iranmock-bootstrap' ) . ( $req ? '*' : '' ) . '"></textarea>
-											<label for="comment">' . esc_html__( 'Comment', 'iranmock-bootstrap' ) . '</label>
+											<textarea id="comment" name="comment" class="form-control" aria-required="true" required placeholder="' . esc_attr__('Comment', 'iranmock-bootstrap') . ($req ? '*' : '') . '"></textarea>
+											<label for="comment">' . esc_html__('Comment', 'iranmock-bootstrap') . '</label>
 										</div>',
 			/** This filter is documented in wp-includes/link-template.php */
-			'must_log_in'          => '<p class="must-log-in">' . sprintf( wp_kses_post( __( 'You must be <a href="%s">logged in</a> to post a comment.', 'iranmock-bootstrap' ) ), wp_login_url( esc_url( get_permalink( get_the_ID() ) ) ) ) . '</p>',
+			'must_log_in'          => '<p class="must-log-in">' . sprintf(wp_kses_post(__('You must be <a href="%s">logged in</a> to post a comment.', 'iranmock-bootstrap')), wp_login_url(esc_url(get_permalink(get_the_ID())))) . '</p>',
 			/** This filter is documented in wp-includes/link-template.php */
-			'logged_in_as'         => '<p class="logged-in-as">' . sprintf( wp_kses_post( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>', 'iranmock-bootstrap' ) ), get_edit_user_link(), $user->display_name, wp_logout_url( apply_filters( 'the_permalink', esc_url( get_permalink( get_the_ID() ) ) ) ) ) . '</p>',
-			'comment_notes_before' => '<p class="small comment-notes">' . esc_html__( 'Your Email address will not be published.', 'iranmock-bootstrap' ) . '</p>',
+			'logged_in_as'         => '<p class="logged-in-as">' . sprintf(wp_kses_post(__('Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>', 'iranmock-bootstrap')), get_edit_user_link(), $user->display_name, wp_logout_url(apply_filters('the_permalink', esc_url(get_permalink(get_the_ID()))))) . '</p>',
+			'comment_notes_before' => '<p class="small comment-notes">' . esc_html__('Your Email address will not be published.', 'iranmock-bootstrap') . '</p>',
 			'comment_notes_after'  => '',
 			'id_form'              => 'commentform',
 			'id_submit'            => 'submit',
 			'class_submit'         => 'btn btn-primary',
 			'name_submit'          => 'submit',
 			'title_reply'          => '',
-			'title_reply_to'       => esc_html__( 'Leave a Reply to %s', 'iranmock-bootstrap' ),
-			'cancel_reply_link'    => esc_html__( 'Cancel reply', 'iranmock-bootstrap' ),
-			'label_submit'         => esc_html__( 'Post Comment', 'iranmock-bootstrap' ),
+			'title_reply_to'       => esc_html__('Leave a Reply to %s', 'iranmock-bootstrap'),
+			'cancel_reply_link'    => esc_html__('Cancel reply', 'iranmock-bootstrap'),
+			'label_submit'         => esc_html__('Post Comment', 'iranmock-bootstrap'),
 			'submit_button'        => '<input type="submit" id="%2$s" name="%1$s" class="%3$s" value="%4$s" />',
 			'submit_field'         => '<div class="form-submit">%1$s %2$s</div>',
 			'format'               => 'html5',
@@ -506,10 +527,10 @@ if ( ! function_exists( 'iranmock_bootstrap_comment' ) ) {
 
 		return $defaults;
 	}
-	add_filter( 'comment_form_defaults', 'iranmock_bootstrap_custom_commentform' );
+	add_filter('comment_form_defaults', 'iranmock_bootstrap_custom_commentform');
 }
 
-if ( function_exists( 'register_nav_menus' ) ) {
+if (function_exists('register_nav_menus')) {
 	/**
 	 * Nav menus.
 	 *
@@ -527,12 +548,12 @@ if ( function_exists( 'register_nav_menus' ) ) {
 
 // Custom Nav Walker: wp_bootstrap_navwalker().
 $custom_walker = __DIR__ . '/inc/wp-bootstrap-navwalker.php';
-if ( is_readable( $custom_walker ) ) {
+if (is_readable($custom_walker)) {
 	require_once $custom_walker;
 }
 
 $custom_walker_footer = __DIR__ . '/inc/wp-bootstrap-navwalker-footer.php';
-if ( is_readable( $custom_walker_footer ) ) {
+if (is_readable($custom_walker_footer)) {
 	require_once $custom_walker_footer;
 }
 
@@ -543,22 +564,55 @@ if ( is_readable( $custom_walker_footer ) ) {
  *
  * @return void
  */
-function iranmock_bootstrap_scripts_loader() {
-	$theme_version = wp_get_theme()->get( 'Version' );
+function iranmock_bootstrap_scripts_loader()
+{
+	$theme_version = wp_get_theme()->get('Version');
 
 	// 1. Styles.
-	wp_enqueue_style( 'style', get_theme_file_uri( 'style.css' ), array(), $theme_version, 'all' );
-	wp_enqueue_style( 'main', get_theme_file_uri( 'build/main.css' ), array(), $theme_version, 'all' ); // main.scss: Compiled Framework source + custom styles.
+	wp_enqueue_style('bootstrap-5.3.8', get_theme_file_uri('assets/bootstrap/css/bootstrap.min.css'), array(), $theme_version, 'all');
 
-	if ( is_rtl() ) {
-		wp_enqueue_style( 'rtl', get_theme_file_uri( 'build/rtl.css' ), array(), $theme_version, 'all' );
+	// wp_enqueue_style('style', get_theme_file_uri('style.css'), array(), $theme_version, 'all');
+	// wp_enqueue_style('main', get_theme_file_uri('build/main.css'), array(), $theme_version, 'all'); // main.scss: Compiled Framework source + custom styles.
+
+	if (is_rtl()) {
+		wp_enqueue_style('rtl', get_theme_file_uri('build/rtl.css'), array(), $theme_version, 'all');
 	}
 
 	// 2. Scripts.
-	wp_enqueue_script( 'mainjs', get_theme_file_uri( 'build/main.js' ), array(), $theme_version, true );
+	wp_enqueue_script('bootstrap-5.3.8', get_theme_file_uri('assets/bootstrap/js/bootstrap.min.js'), array(), $theme_version, true);
+	// wp_enqueue_script('mainjs', get_theme_file_uri('build/main.js'), array(), $theme_version, true);
 
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
+	if (is_singular() && comments_open() && get_option('thread_comments')) {
+		wp_enqueue_script('comment-reply');
 	}
 }
-add_action( 'wp_enqueue_scripts', 'iranmock_bootstrap_scripts_loader' );
+add_action('wp_enqueue_scripts', 'iranmock_bootstrap_scripts_loader');
+
+// RSedaaghi
+
+function iranmock_load_textdomain()
+{
+	load_theme_textdomain('iranmock-bootstrap', get_template_directory() . '/languages');
+}
+add_action('after_setup_theme', 'iranmock_load_textdomain');
+
+function iranmock_get_dictionary()
+{
+	static $dictionary = null;
+	if ($dictionary === null) {
+		$dictionary = include get_template_directory() . '/settings/dictionary.php';
+	}
+	return $dictionary;
+}
+
+function iranmock_translate($key)
+{
+	// $locale = get_locale();
+	// $lang = substr($locale, 0, 2);
+	$lang = 'fa';
+	$dictionary = iranmock_get_dictionary();
+
+	return $dictionary[$lang][$key]
+		?? $dictionary['en'][$key]
+		?? $key;
+}

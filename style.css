@@ -4,7 +4,7 @@ Theme URI: https://them.es/starter
 Author: Reza Sedaaghi
 Author URI: https://rsedaaghi.github.io/
 Description: A great theme for Iran Mock project
-Version: 3.6.1
+Version: 0.0.1
 Requires at least: 5.0
 Tested up to: 6.8
 Requires PHP: 7.2
@@ -59,19 +59,24 @@ a img.aligncenter {
 }
 
 .wp-caption {
-	max-width: 96%; /* Image does not overflow the content area */
+	max-width: 96%;
+	/* Image does not overflow the content area */
 	padding: 5px 3px 10px;
 	text-align: center;
 }
+
 .wp-caption.alignnone {
 	margin: 5px 20px 20px 0;
 }
+
 .wp-caption.alignleft {
 	margin: 5px 20px 20px 0;
 }
+
 .wp-caption.alignright {
 	margin: 5px 0 20px 20px;
 }
+
 .wp-caption img {
 	border: 0 none;
 	height: auto;
@@ -80,6 +85,7 @@ a img.aligncenter {
 	padding: 0;
 	width: auto;
 }
+
 .wp-caption p.wp-caption-text {
 	font-size: 11px;
 	line-height: 17px;
@@ -200,5 +206,15 @@ a img.aligncenter {
 	text-decoration: none;
 	top: 5px;
 	width: auto;
-	z-index: 100000; /* Above WP toolbar. */
+	z-index: 100000;
+	/* Above WP toolbar. */
+}
+
+/* rsedaaghi */
+.test-provider-logo {
+	width: 80px;
+	height: 80px;
+	object-fit: cover;
+	border-radius: 0;
+	/* ensures square shape */
 }

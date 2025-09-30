@@ -1,25 +1,26 @@
 <?php
-echo "hey";
-
-// Dummy image data array
-$slider_images = [
-    ['src' => 'https://via.placeholder.com/1200x500?text=Slide+1', 'alt' => 'Slide 1'],
-    ['src' => 'https://via.placeholder.com/1200x500?text=Slide+2', 'alt' => 'Slide 2'],
-    ['src' => 'https://via.placeholder.com/1200x500?text=Slide+3', 'alt' => 'Slide 3'],
+$slides = [
+    ['label' => 'Slide 1'],
+    ['label' => 'Slide 2'],
+    ['label' => 'Slide 3'],
 ];
 ?>
 
-<!-- Bootstrap Carousel -->
-<div id="landingCarousel" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-        <?php foreach ($slider_images as $index => $image): ?>
-            <div class="carousel-item <?= $index === 0 ? 'active' : '' ?>">
-                <img src="<?= $image['src'] ?>" class="d-block w-100" alt="<?= $image['alt'] ?>">
+<div id="landingCarousel" class="carousel slide w-100 rounded-3 overflow-hidden" data-bs-ride="carousel"
+    style="height: 344px;">
+    <div class="carousel-inner h-100">
+        <?php foreach ($slides as $index => $slide): ?>
+            <div class="carousel-item <?= $index === 0 ? 'active' : '' ?> h-100">
+                <svg class="d-block w-100 h-100" xmlns="http://www.w3.org/2000/svg" role="img"
+                    aria-label="<?= esc_attr($slide['label']) ?>" preserveAspectRatio="xMidYMid slice" focusable="false">
+                    <rect width="100%" height="100%" fill="#777" />
+                    <text x="50%" y="50%" fill="#fff" dy=".3em" font-size="40"
+                        text-anchor="middle"><?= esc_html($slide['label']) ?></text>
+                </svg>
             </div>
         <?php endforeach; ?>
     </div>
 
-    <!-- Controls -->
     <button class="carousel-control-prev" type="button" data-bs-target="#landingCarousel" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>

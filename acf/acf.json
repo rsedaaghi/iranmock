@@ -279,5 +279,93 @@
         "active": true,
         "description": "",
         "show_in_rest": 0
+    },
+    {
+        "key": "group_68db83828b014",
+        "title": "Test Provider",
+        "fields": [
+            {
+                "key": "field_68db838293cf9",
+                "label": "Title",
+                "name": "title",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "Title of the test provider.",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 0,
+                "placeholder": "For example: آیلتس",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_68db838294126",
+                "label": "Description Text",
+                "name": "description_text",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "Description text of the test provider.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 0,
+                "rows": "",
+                "placeholder": "For example: آزمون آیلتس توسط سازمان ...",
+                "new_lines": ""
+            },
+            {
+                "key": "field_68db83ff50408",
+                "label": "Image",
+                "name": "",
+                "aria-label": "",
+                "type": "message",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "Add image using the \"set featured image\" section.",
+                "new_lines": "wpautop",
+                "esc_html": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "test_provider"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": [
+            "the_content",
+            "page_attributes",
+            "categories"
+        ],
+        "active": true,
+        "description": "",
+        "show_in_rest": 0
     }
 ]
