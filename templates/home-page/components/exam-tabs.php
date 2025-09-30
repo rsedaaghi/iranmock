@@ -30,8 +30,8 @@ if (!empty($exam_categories)) {
                     'date'        => get_the_date('F Y'),
                     'description' => get_the_excerpt(),
                     'image'       => get_the_post_thumbnail_url(get_the_ID(), 'medium'),
-                    'participants' => rand(50, 500), // Replace with real meta if available
-                    'likes'       => rand(10, 100)  // Replace with real meta if available
+                    'participants' => rand(50, 500),
+                    'likes'       => rand(10, 100)
                 ];
             }
             wp_reset_postdata();
