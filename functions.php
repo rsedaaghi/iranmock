@@ -570,8 +570,8 @@ function iranmock_bootstrap_scripts_loader()
 
 	// 1. Styles.
 	wp_enqueue_style('bootstrap-5.3.8', get_theme_file_uri('assets/bootstrap/css/bootstrap.min.css'), array(), $theme_version, 'all');
+	wp_enqueue_style('style', get_theme_file_uri('style.css'), array(), $theme_version, 'all');
 
-	// wp_enqueue_style('style', get_theme_file_uri('style.css'), array(), $theme_version, 'all');
 	// wp_enqueue_style('main', get_theme_file_uri('build/main.css'), array(), $theme_version, 'all'); // main.scss: Compiled Framework source + custom styles.
 
 	if (is_rtl()) {
@@ -616,3 +616,125 @@ function iranmock_translate($key)
 		?? $dictionary['en'][$key]
 		?? $key;
 }
+
+// Seeder: Create News Category
+// function seed_news_category()
+// {
+// 	if (!term_exists('news', 'category')) {
+// 		wp_insert_term('News', 'category', [
+// 			'slug' => 'news',
+// 			'description' => 'Category for news-related posts'
+// 		]);
+// 	}
+// }
+
+// // Seeder: Create Default Pages
+// function seed_default_pages()
+// {
+// 	$pages = [
+// 		'About Us' => 'This is the About Us page.',
+// 		'Contact' => 'This is the Contact page.',
+// 		'FAQ' => 'This is the FAQ page.'
+// 	];
+
+// 	foreach ($pages as $title => $content) {
+// 		if (!get_page_by_title($title)) {
+// 			wp_insert_post([
+// 				'post_title'   => $title,
+// 				'post_content' => $content,
+// 				'post_status'  => 'publish',
+// 				'post_type'    => 'page'
+// 			]);
+// 		}
+// 	}
+// }
+
+// // Seeder: Create Sample Post in News Category
+// function seed_sample_news_post()
+// {
+// 	if (!get_posts(['name' => 'sample-news-post'])) {
+// 		$news_category = get_term_by('slug', 'news', 'category');
+// 		if ($news_category) {
+// 			wp_insert_post([
+// 				'post_title'   => 'Sample News Post',
+// 				'post_name'    => 'sample-news-post',
+// 				'post_content' => 'This is a sample news post.',
+// 				'post_status'  => 'publish',
+// 				'post_type'    => 'post',
+// 				'post_category' => [$news_category->term_id]
+// 			]);
+// 		}
+// 	}
+// }
+
+// // Create core pages
+// function seed_core_pages()
+// {
+// 	$pages = [
+// 		'Exams'      => 'This is the Exams page.',
+// 		'Resources'  => 'This is the Resources page.',
+// 		'Questions'  => 'This is the Questions page.',
+// 		'Contact Us' => 'This is the Contact Us page.'
+// 	];
+
+// 	foreach ($pages as $title => $content) {
+// 		if (!get_page_by_title($title)) {
+// 			wp_insert_post([
+// 				'post_title'   => $title,
+// 				'post_content' => $content,
+// 				'post_status'  => 'publish',
+// 				'post_type'    => 'page'
+// 			]);
+// 		}
+// 	}
+// }
+
+// // Create menu and assign pages to it
+// function seed_main_menu()
+// {
+// 	$menu_name = 'Main Menu';
+// 	$location_slug = 'main-menu'; // Matches your theme's register_nav_menus()
+
+// 	// Check if menu exists
+// 	$menu = wp_get_nav_menu_object($menu_name);
+
+// 	if (!$menu) {
+// 		$menu_id = wp_create_nav_menu($menu_name);
+
+// 		// Add pages to menu
+// 		$page_titles = ['Exams', 'Resources', 'Questions', 'Contact Us'];
+// 		foreach ($page_titles as $title) {
+// 			$page = get_page_by_title($title);
+// 			if ($page) {
+// 				wp_update_nav_menu_item($menu_id, 0, [
+// 					'menu-item-title'     => $title,
+// 					'menu-item-object'    => 'page',
+// 					'menu-item-object-id' => $page->ID,
+// 					'menu-item-type'      => 'post_type',
+// 					'menu-item-status'    => 'publish'
+// 				]);
+// 			}
+// 		}
+
+// 		// Assign menu to theme location
+// 		$locations = get_theme_mod('nav_menu_locations');
+// 		$locations[$location_slug] = $menu_id;
+// 		set_theme_mod('nav_menu_locations', $locations);
+// 	}
+// }
+
+function run_site_seeder()
+{
+	// if (!get_option('site_seeder_ran')) {
+	// seed_core_pages();
+	// seed_main_menu();
+	// seed_news_category();
+	// seed_default_pages();
+	// seed_sample_news_post();
+	// update_option('site_seeder_ran', true);
+	// }
+}
+add_action('init', 'run_site_seeder');
+
+// If you want to rerun the seeder, just reset the flag:
+// delete_option('site_seeder_ran');

@@ -189,11 +189,11 @@
         "fields": [
             {
                 "key": "field_68dbd1b5f749c",
-                "label": "",
-                "name": "",
+                "label": "About us",
+                "name": "about_us",
                 "aria-label": "",
-                "type": "text",
-                "instructions": "",
+                "type": "textarea",
+                "instructions": "Enter the text for about us section.",
                 "required": 0,
                 "conditional_logic": 0,
                 "wrapper": {
@@ -204,9 +204,9 @@
                 "default_value": "",
                 "maxlength": "",
                 "allow_in_bindings": 0,
-                "placeholder": "",
-                "prepend": "",
-                "append": ""
+                "rows": "",
+                "placeholder": "For example: ما یک تیم از دانشگاه شریف هستیم ...",
+                "new_lines": ""
             }
         ],
         "location": [
@@ -223,7 +223,22 @@
         "style": "default",
         "label_placement": "top",
         "instruction_placement": "label",
-        "hide_on_screen": "",
+        "hide_on_screen": [
+            "permalink",
+            "the_content",
+            "excerpt",
+            "discussion",
+            "comments",
+            "revisions",
+            "slug",
+            "author",
+            "format",
+            "page_attributes",
+            "featured_image",
+            "categories",
+            "tags",
+            "send-trackbacks"
+        ],
         "active": true,
         "description": "",
         "show_in_rest": 0

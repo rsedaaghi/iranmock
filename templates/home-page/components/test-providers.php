@@ -13,7 +13,7 @@ $test_providers = new WP_Query([
 
 if ($test_providers->have_posts()):
 ?>
-    <div class="container my-5 py-4 bg-white rounded">
+    <div class="container my-5 py-4 bg-white rounded ">
         <h2 class="text-center mb-4">
             <?= esc_html(iranmock_translate('test_providers')); ?>
         </h2>
