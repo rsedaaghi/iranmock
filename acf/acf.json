@@ -188,6 +188,66 @@
         "title": "Home Page",
         "fields": [
             {
+                "key": "field_68ec9c0145f63",
+                "label": "Exam Tabs",
+                "name": "exam_tabs",
+                "aria-label": "",
+                "type": "group",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "block",
+                "sub_fields": [
+                    {
+                        "key": "field_68ec9bd045f62",
+                        "label": "Title",
+                        "name": "title",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "Enter the title for the Exam Tabs section.",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "50",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "allow_in_bindings": 0,
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_68ec9c2645f64",
+                        "label": "Description",
+                        "name": "description",
+                        "aria-label": "",
+                        "type": "textarea",
+                        "instructions": "Enter the description for the Exam Tabs section.",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "50",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "allow_in_bindings": 0,
+                        "rows": "",
+                        "placeholder": "",
+                        "new_lines": ""
+                    }
+                ]
+            },
+            {
                 "key": "field_68dbd1b5f749c",
                 "label": "About us",
                 "name": "about_us",
@@ -207,6 +267,66 @@
                 "rows": "",
                 "placeholder": "For example: ما یک تیم از دانشگاه شریف هستیم ...",
                 "new_lines": ""
+            },
+            {
+                "key": "field_68ecb8c0f83d8",
+                "label": "Newsletter",
+                "name": "newsletter",
+                "aria-label": "",
+                "type": "group",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "block",
+                "sub_fields": [
+                    {
+                        "key": "field_68ecb8c0f83d9",
+                        "label": "Title",
+                        "name": "title",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "Enter the title for the Newsletter section.",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "50",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "allow_in_bindings": 0,
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_68ecb8c0f83da",
+                        "label": "Description",
+                        "name": "description",
+                        "aria-label": "",
+                        "type": "textarea",
+                        "instructions": "Enter the description for the Newsletter section.",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "50",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "allow_in_bindings": 0,
+                        "rows": "",
+                        "placeholder": "",
+                        "new_lines": ""
+                    }
+                ]
             }
         ],
         "location": [
