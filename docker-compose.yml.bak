@@ -20,7 +20,6 @@ services:
       - "8080:80"
     restart: always
     environment:
-     environment:
       WORDPRESS_DB_HOST: mysql:3306
       WORDPRESS_DB_NAME: wpdb
       WORDPRESS_DB_USER: wpuser
@@ -28,3 +27,7 @@ services:
     volumes:
       - wp_data:/var/www/html
       - ./wp-theme/mytheme:/var/www/html/wp-content/themes/mytheme
+
+volumes:
+  mysql_data:
+  wp_data:
