@@ -4,10 +4,10 @@ services:
     container_name: wp-mysql
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: rootpassword
-      MYSQL_DATABASE: wordpress
-      MYSQL_USER: wordpress
-      MYSQL_PASSWORD: wordpress
+      MYSQL_ROOT_PASSWORD: rootpass123
+      MYSQL_DATABASE: wpdb
+      MYSQL_USER: wpuser
+      MYSQL_PASSWORD: wppass123
     volumes:
       - mysql_data:/var/lib/mysql
 
@@ -20,10 +20,11 @@ services:
       - "8080:80"
     restart: always
     environment:
+     environment:
       WORDPRESS_DB_HOST: mysql:3306
-      WORDPRESS_DB_USER: wordpress
-      WORDPRESS_DB_PASSWORD: wordpress
-      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_NAME: wpdb
+      WORDPRESS_DB_USER: wpuser
+      WORDPRESS_DB_PASSWORD: wppass123
     volumes:
       - wp_data:/var/www/html
       - ./wp-theme/mytheme:/var/www/html/wp-content/themes/mytheme
