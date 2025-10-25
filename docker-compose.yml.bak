@@ -10,6 +10,7 @@ services:
       MYSQL_PASSWORD: wppass123
     volumes:
       - mysql_data:/var/lib/mysql
+      - /etc/localtime:/etc/localtime:ro
 
   wordpress:
     image: wordpress:6.8.3
@@ -25,9 +26,9 @@ services:
       WORDPRESS_DB_USER: wpuser
       WORDPRESS_DB_PASSWORD: wppass123
     volumes:
-      - wp_data:/var/www/html
+      - volumes:
       - .:/var/www/html/wp-content/themes/iranmock-bootstrap
+      - /etc/localtime:/etc/localtime:ro
 
 volumes:
   mysql_data:
-  wp_data:
