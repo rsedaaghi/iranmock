@@ -26,7 +26,7 @@ services:
       WORDPRESS_DB_PASSWORD: wppass123
     volumes:
       - wp_data:/var/www/html
-      - ./iranmock-bootstrap:/var/www/html/wp-content/themes/iranmock-bootstrap
+      - .:/var/www/html/wp-content/themes/iranmock-bootstrap
 
 volumes:
   mysql_data:
