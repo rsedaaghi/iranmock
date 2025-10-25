@@ -26,8 +26,10 @@ services:
       WORDPRESS_DB_USER: wpuser
       WORDPRESS_DB_PASSWORD: wppass123
     volumes:
+      - wp_data:/var/www/html
       - .:/var/www/html/wp-content/themes/iranmock-bootstrap
       - /etc/localtime:/etc/localtime:ro
 
 volumes:
   mysql_data:
+  wp_data:
