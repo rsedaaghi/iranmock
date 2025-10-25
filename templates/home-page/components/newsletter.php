@@ -8,8 +8,8 @@ $description = $the_fields["description"];
 ?>
 
 <div class="large-container bg-white my-5 py-5">
-    <h2 class="text-center"><?= esc_html($title) ?></h2>
-    <p class="text-center mb-4"><?= esc_html($description) ?></p>
+    <h2 class="text-center newsletter-title"><?= esc_html($title) ?></h2>
+    <p class="text-center my-4 newsletter-description"><?= esc_html($description) ?></p>
 
     <form class="d-flex justify-content-center">
         <div class="newsletter-wrapper d-flex w-100">

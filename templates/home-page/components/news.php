@@ -1,4 +1,6 @@
 <?php
+$excerptMaxLength = 100;
+
 $news_query = new WP_Query([
     'post_type'      => 'post',
     'posts_per_page' => 3,
@@ -16,13 +18,22 @@ $news_query = new WP_Query([
             <?php while ($news_query->have_posts()): $news_query->the_post(); ?>
                 <div class="col-auto mb-4">
                     <div class="card text-center h-100 custom-news-card">
-                        <img src="<?= esc_url(get_the_post_thumbnail_url(get_the_ID(), 'medium')) ?>" class="card-img-top"
-                            alt="<?= esc_attr(get_the_title()) ?>">
+                        <div class="card-img-wrapper">
+                            <img src="<?= esc_url(get_the_post_thumbnail_url(get_the_ID(), 'medium')) ?>" class="card-img-top"
+                                alt="<?= esc_attr(get_the_title()) ?>">
+                        </div>
                         <div class="card-body">
-                            <p class="news-title mb-3"><?= esc_html(get_the_title()) ?></p>
-                            <p class="news-description my-3"><?= esc_html(get_the_excerpt()) ?></p>
-                            <a href="<?= esc_url(get_permalink()) ?>" class="btn btn-success my-3">
-                                <?= esc_html(iranmock_translate('view')); ?></a>
+                            <p class="news-title mb-2"><?= esc_html(get_the_title()) ?></p>
+                            <?php
+                            $excerpt = get_the_excerpt();
+                            $trimmedExcerpt = mb_strlen($excerpt) > $excerptMaxLength
+                                ? mb_substr($excerpt, 0, $excerptMaxLength) . '...'
+                                : $excerpt;
+                            ?>
+                            <p class="news-description my-3"><?= esc_html($trimmedExcerpt) ?></p>
+                            <a href="<?= esc_url(get_permalink()) ?>" class="btn btn-success mb-3">
+                                <?= esc_html(iranmock_translate('view')); ?>
+                            </a>
                         </div>
                     </div>
                 </div>

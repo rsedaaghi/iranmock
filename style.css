@@ -19,183 +19,6 @@ Text Domain: iranmock-bootstrap
 /* From http://codex.wordpress.org/CSS */
 
 /* rsedaaghi */
-.test-provider {
-	height: 10rem;
-}
-
-.test-provider-image-container {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 5rem;
-	height: 5rem;
-}
-
-.test-provider-logo {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	border-radius: 0;
-}
-
-.large-container {
-	max-width: 1920px;
-	width: 100%;
-	margin: 0 auto;
-	padding-left: 15px;
-	padding-right: 15px;
-}
-
-.slider-ratio {
-	aspect-ratio: 2.5 / 1;
-}
-
-.slider-ratio .carousel-inner,
-.slider-ratio .carousel-item,
-.slider-ratio img {
-	height: 100%;
-	width: 100%;
-	object-fit: contain;
-}
-
-/* Apply mx-5 between md and xxl breakpoints */
-@media (min-width: 768px) and (max-width: 1399.98px) {
-	.responsive-mx {
-		margin-left: 3rem !important;
-		/* mx-5 = 3rem */
-		margin-right: 3rem !important;
-	}
-}
-
-/* Remove margins below md (stick to edges) */
-@media (max-width: 767.98px) {
-	.responsive-mx {
-		margin-left: 0 !important;
-		margin-right: 0 !important;
-	}
-}
-
-@media (max-width: 767.98px) {
-	.no-gutter-sm {
-		--bs-gutter-x: 0 !important;
-		padding-left: 0 !important;
-		padding-right: 0 !important;
-	}
-}
-
-@media (max-width: 767.98px) {
-	.no-radius-sm {
-		border-radius: 0 !important;
-	}
-}
-
-.quarter-circle {
-	width: 60px;
-	height: 60px;
-	background-color: #CCDDBE;
-	border-top-left-radius: 100%;
-}
-
-.quarter-circle-lg {
-	width: 80px;
-	height: 80px;
-	background-color: #136E61;
-	border-top-left-radius: 100%;
-	transform: scaleX(-1);
-	flex-shrink: 0;
-}
-
-.about-us-img {
-	width: 3.1875rem;
-	height: 5.1875rem;
-	object-fit: cover;
-	border-radius: 8px;
-}
-
-.about-us-title {
-	font-size: 28px;
-	font-weight: bold;
-	margin-bottom: 1rem;
-}
-
-.custom-news-card {
-	border-radius: 10px;
-	border: 1px solid #004115B5;
-	width: 18.75rem;
-}
-
-.see-all-btn {
-	color: #000;
-	text-decoration: none;
-	font-weight: 800;
-	font-size: 15px;
-	line-height: 100%;
-	letter-spacing: -0.04em;
-	/* -4% */
-}
-
-.see-all-btn:hover {
-	text-decoration: none;
-	color: #000;
-}
-
-.newsletter-wrapper {
-	max-width: 500px;
-	width: 100%;
-}
-
-.newsletter-input {
-	background-color: rgba(217, 217, 217, 0.78);
-	/* #D9D9D9C7 */
-	border-radius: 0;
-	border: 1px solid #ccc;
-	flex: 1;
-}
-
-.newsletter-btn {
-	border-radius: 0;
-	background-color: #28a745;
-	color: #fff;
-	border: 1px solid #28a745;
-}
-
-.btn-success {
-	background-color: #136E61;
-	border-color: #136E61;
-	color: #fff;
-}
-
-.btn-success:hover,
-.btn-success:focus {
-	background-color: #0f594f;
-	border-color: #0f594f;
-	color: #fff;
-}
-
-#footer {
-	background-color: #093B3B;
-	color: #fff;
-	padding: 40px 0;
-}
-
-#footer a {
-	color: #fff;
-	text-decoration: none;
-}
-
-#footer a:hover {
-	color: #ccc;
-	text-decoration: underline;
-}
-
-#footer .edit-link a {
-	background-color: #fff;
-	color: #093B3B;
-	border-radius: 4px;
-	padding: 4px 8px;
-	font-weight: bold;
-}
-
 /* IRANSans Regular */
 @font-face {
 	font-family: 'IRANSans';
@@ -256,6 +79,9 @@ Text Domain: iranmock-bootstrap
 	font-style: normal;
 }
 
+/* ============================= */
+/* 🌐 GLOBAL STYLES */
+/* ============================= */
 body,
 nav#header {
 	background-color: #E8F6F3 !important;
@@ -265,6 +91,42 @@ body {
 	font-family: 'IRANSans', sans-serif;
 }
 
+button,
+a.btn {
+	--bs-border-radius: 0.5rem !important;
+}
+
+.large-container {
+	max-width: 1920px;
+	width: 100%;
+	margin: 0 auto;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.card-img-wrapper {
+	width: 100%;
+	aspect-ratio: 1.68;
+	/* Adjust this ratio as needed */
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #f8f9fa;
+	/* Optional: fallback background */
+}
+
+.card-img-wrapper img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+
+
+/* ============================= */
+/* 🧭 NAVIGATION TABS */
+/* ============================= */
 .nav-tabs {
 	--bs-nav-tabs-link-active-bg: unset;
 }
@@ -274,42 +136,29 @@ body {
 	border-bottom: 0.1875rem solid #004115B5;
 }
 
-/* exam-tabs-title */
-.exam-tabs-title {
-	font-family: 'IRANSans';
-	font-weight: 800;
-	font-size: 14px;
-	line-height: 100%;
-	letter-spacing: -0.04em;
+.custom-nav-link {
+	--bs-nav-link-color: #0F4C45 !important;
+	font-weight: bold !important;
 }
 
-/* exam-tabs-month-year */
-.exam-tabs-month-year {
-	font-family: 'IRANSans';
-	font-weight: 400;
-	font-size: 10px;
-	line-height: 100%;
-	letter-spacing: -0.04em;
+.custom-nav-link:hover {
+	color: #212529 !important;
 }
 
-/* exam-tabs-description-title */
-.exam-tabs-description-title {
-	font-family: 'IRANSans';
-	font-weight: 700;
-	font-size: 12px;
-	line-height: 100%;
-	letter-spacing: -0.04em;
-	text-align: right;
+.custom-nav-item {
+	margin-right: 0.2rem;
+	margin-left: 0.2rem;
 }
 
-/* exam-tabs-description-text */
-.exam-tabs-description-text {
-	font-family: 'IRANSans';
-	font-weight: 400;
-	font-size: 9px;
-	line-height: 100%;
-	letter-spacing: -0.03em;
-	text-align: right;
+/* ============================= */
+/* 📰 NEWS SECTION */
+/* ============================= */
+.custom-news-card {
+	border-radius: 15px;
+	border: 1px solid #004115B5;
+	--bs-card-spacer-y: 2rem !important;
+	--bs-border-radius: 0.8rem !important;
+	width: 20.0rem;
 }
 
 .news-title {
@@ -329,11 +178,261 @@ body {
 	text-align: center;
 }
 
+.see-all-btn {
+	color: #198754;
+	text-decoration: none;
+	font-weight: 800;
+	font-size: 1rem;
+	line-height: 100%;
+	letter-spacing: -0.04em;
+}
+
+.see-all-btn:hover {
+	text-decoration: none;
+	color: #000;
+}
+
+/* ============================= */
+/* 🧪 TEST PROVIDER SECTION */
+/* ============================= */
+.test-provider {
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+}
+
+.test-provider-image-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 8rem;
+	height: 8rem;
+}
+
+.test-provider-logo {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 0;
+}
+
+.scroll-wrapper {
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+}
+
+.scroll-track {
+	display: flex;
+	gap: 2rem;
+	width: max-content;
+	animation: scroll-marquee 40s linear infinite;
+}
+
+@keyframes scroll-marquee {
+	0% {
+		transform: translateX(0);
+	}
+
+	100% {
+		transform: translateX(-50%);
+	}
+}
+
+/* ============================= */
+/* 🧾 EXAM TABS SECTION */
+/* ============================= */
+.exam-tabs-title {
+	font-family: 'IRANSans';
+	font-weight: 800;
+	font-size: 14px;
+	line-height: 100%;
+	letter-spacing: -0.04em;
+}
+
+.exam-tabs-month-year {
+	font-family: 'IRANSans';
+	font-weight: 400;
+	font-size: 10px;
+	line-height: 100%;
+	letter-spacing: -0.04em;
+}
+
+.exam-tabs-description-title {
+	font-family: 'IRANSans';
+	font-weight: 700;
+	font-size: 12px;
+	line-height: 100%;
+	letter-spacing: -0.04em;
+	text-align: right;
+}
+
+.exam-tabs-description-text {
+	font-family: 'IRANSans';
+	font-weight: 400;
+	font-size: 9px;
+	line-height: 100%;
+	letter-spacing: -0.03em;
+	text-align: right;
+}
+
+.custom-exam-profile-card {
+	--bs-card-spacer-y: 2rem !important;
+	--bs-border-radius: 0.8rem !important;
+	--bs-border-width: 1.5px !important;
+	height: 105% !important;
+}
+
+/* ============================= */
+/* 📣 ABOUT US SECTION */
+/* ============================= */
+.about-us-img {
+	width: 3.1875rem;
+	height: 5.1875rem;
+	object-fit: cover;
+	border-radius: 8px;
+}
+
+.about-us-title {
+	font-size: 28px;
+	font-weight: bold;
+	margin-bottom: 1rem;
+}
+
 .about-us-content {
 	font-family: 'IRANSansWeb';
 	font-weight: 500;
 	font-size: 14px;
-	line-height: 150%;
+	line-height: 200%;
 	letter-spacing: -0.01em;
 	text-align: justify;
+}
+
+/* ============================= */
+/* 📧 NEWSLETTER SECTION */
+/* ============================= */
+.newsletter-wrapper {
+	max-width: 500px;
+	width: 100%;
+}
+
+.newsletter-input {
+	background-color: rgba(217, 217, 217, 0.78);
+	border-radius: 0;
+	border: 1px solid #ccc;
+	flex: 1;
+}
+
+.newsletter-btn {
+	border-radius: 0;
+	background-color: #28a745;
+	color: #fff;
+	border: 1px solid #28a745;
+}
+
+.newsletter-title {
+	font-weight: bold;
+}
+
+/* ============================= */
+/* ✅ BUTTONS */
+/* ============================= */
+.btn-success {
+	background-color: #136E61;
+	border-color: #136E61;
+	color: #fff;
+}
+
+.btn-success:hover,
+.btn-success:focus {
+	background-color: #0f594f;
+	border-color: #0f594f;
+	color: #fff;
+}
+
+/* ============================= */
+/* 🦶 FOOTER SECTION */
+/* ============================= */
+#footer {
+	background-color: #093B3B;
+	color: #fff;
+	padding: 40px 0;
+}
+
+#footer a {
+	color: #fff;
+	text-decoration: none;
+}
+
+#footer a:hover {
+	color: #ccc;
+	text-decoration: underline;
+}
+
+#footer .edit-link a {
+	background-color: #fff;
+	color: #093B3B;
+	border-radius: 4px;
+	padding: 4px 8px;
+	font-weight: bold;
+}
+
+/* ============================= */
+/* 📱 RESPONSIVE UTILITIES */
+/* ============================= */
+@media (min-width: 768px) and (max-width: 1399.98px) {
+	.responsive-mx {
+		margin-left: 3rem !important;
+		margin-right: 3rem !important;
+	}
+}
+
+@media (max-width: 767.98px) {
+	.responsive-mx {
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+	}
+
+	.no-gutter-sm {
+		--bs-gutter-x: 0 !important;
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
+
+	.no-radius-sm {
+		border-radius: 0 !important;
+	}
+}
+
+/* ============================= */
+/* 🌀 DECORATIVE ELEMENTS */
+/* ============================= */
+.quarter-circle {
+	width: 60px;
+	height: 60px;
+	background-color: #CCDDBE;
+	border-top-left-radius: 100%;
+}
+
+.quarter-circle-lg {
+	width: 80px;
+	height: 80px;
+	background-color: #136E61;
+	border-top-left-radius: 100%;
+	transform: scaleX(-1);
+	flex-shrink: 0;
+}
+
+/* ============================= */
+/* 🎞️ SLIDER SECTION */
+/* ============================= */
+.slider-ratio {
+	aspect-ratio: 2.5 / 1;
+}
+
+.slider-ratio .carousel-inner,
+.slider-ratio .carousel-item,
+.slider-ratio img {
+	height: 100%;
+	width: 100%;
+	object-fit: contain;
 }

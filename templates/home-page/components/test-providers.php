@@ -13,17 +13,30 @@ $test_providers = new WP_Query([
 
 if ($test_providers->have_posts()):
 ?>
-<div class="large-container test-provider my-5 py-4 bg-white rounded ">
-    <div class="d-flex overflow-auto justify-content-center h-100 align-items-center">
-        <?php while ($test_providers->have_posts()): $test_providers->the_post(); ?>
-        <?php if (get_the_title()): ?>
-        <div class="test-provider-image-container mx-3 flex-shrink-0">
-            <img src="<?= esc_url(get_the_post_thumbnail_url(null, 'thumbnail')) ?>"
-                alt="<?= esc_attr(get_the_title()) ?>" class="test-provider-logo">
+    <div class="large-container test-provider my-5 bg-white rounded">
+        <div class="scroll-wrapper">
+            <div class="scroll-track d-flex align-items-center">
+                <?php while ($test_providers->have_posts()): $test_providers->the_post(); ?>
+                    <?php if (get_the_title()): ?>
+                        <div class="test-provider-image-container mx-5 flex-shrink-0">
+                            <img src="<?= esc_url(get_the_post_thumbnail_url(null, 'thumbnail')) ?>"
+                                alt="<?= esc_attr(get_the_title()) ?>" class="test-provider-logo">
+                        </div>
+                    <?php endif; ?>
+                <?php endwhile; ?>
+                <?php
+                wp_reset_postdata(); ?>
+            </div>
         </div>
-        <?php endif; ?>
-        <?php endwhile;
-            wp_reset_postdata(); ?>
     </div>
-</div>
 <?php endif; ?>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const track = document.querySelector(".scroll-track");
+        const wrapper = document.querySelector(".scroll-wrapper");
+
+        if (track.scrollWidth <= wrapper.clientWidth) {
+            track.style.animation = "none";
+        }
+    });
+</script>
