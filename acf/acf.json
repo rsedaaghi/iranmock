@@ -20,7 +20,8 @@
         "hide_on_screen": "",
         "active": true,
         "description": "",
-        "show_in_rest": 0
+        "show_in_rest": 0,
+        "display_title": ""
     },
     {
         "key": "group_68da45f3cd7ac",
@@ -28,11 +29,11 @@
         "fields": [
             {
                 "key": "field_68da45f3d593d",
-                "label": "Title",
-                "name": "title",
+                "label": "Label",
+                "name": "label",
                 "aria-label": "",
                 "type": "text",
-                "instructions": "Title of the exam.",
+                "instructions": "Label of the exam.",
                 "required": 1,
                 "conditional_logic": 0,
                 "wrapper": {
@@ -96,7 +97,7 @@
             {
                 "key": "field_68da4949efa3e",
                 "label": "Description Title",
-                "name": "description_title",
+                "name": "description_label",
                 "aria-label": "",
                 "type": "text",
                 "instructions": "Description title of the exam.",
@@ -181,7 +182,8 @@
         ],
         "active": true,
         "description": "",
-        "show_in_rest": 0
+        "show_in_rest": 0,
+        "display_title": ""
     },
     {
         "key": "group_68dbd1b4ddab5",
@@ -205,11 +207,11 @@
                 "sub_fields": [
                     {
                         "key": "field_68ec9bd045f62",
-                        "label": "Title",
-                        "name": "title",
+                        "label": "Label",
+                        "name": "label",
                         "aria-label": "",
                         "type": "text",
-                        "instructions": "Enter the title for the Exam Tabs section.",
+                        "instructions": "Enter the label for the Exam Tabs section.",
                         "required": 0,
                         "conditional_logic": 0,
                         "wrapper": {
@@ -286,11 +288,11 @@
                 "sub_fields": [
                     {
                         "key": "field_68ecb8c0f83d9",
-                        "label": "Title",
-                        "name": "title",
+                        "label": "Label",
+                        "name": "label",
                         "aria-label": "",
                         "type": "text",
-                        "instructions": "Enter the title for the Newsletter section.",
+                        "instructions": "Enter the label for the Newsletter section.",
                         "required": 0,
                         "conditional_logic": 0,
                         "wrapper": {
@@ -361,7 +363,8 @@
         ],
         "active": true,
         "description": "",
-        "show_in_rest": 0
+        "show_in_rest": 0,
+        "display_title": ""
     },
     {
         "key": "group_68dbd2662e6bb",
@@ -369,11 +372,11 @@
         "fields": [
             {
                 "key": "field_68dbd26636137",
-                "label": "Title",
-                "name": "title",
+                "label": "Label",
+                "name": "label",
                 "aria-label": "",
                 "type": "text",
-                "instructions": "Title of the homepage slider.",
+                "instructions": "Label of the homepage slider.",
                 "required": 0,
                 "conditional_logic": 0,
                 "wrapper": {
@@ -449,19 +452,67 @@
         ],
         "active": true,
         "description": "",
-        "show_in_rest": 0
+        "show_in_rest": 0,
+        "display_title": ""
     },
     {
         "key": "group_68da5cdc0e54c",
         "title": "Member Plan",
         "fields": [
             {
+                "key": "field_68fdd06c443a1",
+                "label": "Exam Category",
+                "name": "exam_category",
+                "aria-label": "",
+                "type": "taxonomy",
+                "instructions": "Exam category of the plan.",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "taxonomy": "exam_category",
+                "add_term": 0,
+                "save_terms": 0,
+                "load_terms": 0,
+                "return_format": "id",
+                "field_type": "radio",
+                "allow_null": 0,
+                "allow_in_bindings": 0,
+                "bidirectional": 0,
+                "multiple": 0,
+                "bidirectional_target": []
+            },
+            {
+                "key": "field_68fdd1098a965",
+                "label": "Is active",
+                "name": "is_active",
+                "aria-label": "",
+                "type": "true_false",
+                "instructions": "Is the plan active?",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "",
+                "default_value": 1,
+                "allow_in_bindings": 0,
+                "ui": 0,
+                "ui_on_text": "",
+                "ui_off_text": ""
+            },
+            {
                 "key": "field_68da5cdc156e9",
-                "label": "Title",
-                "name": "title",
+                "label": "Label",
+                "name": "label",
                 "aria-label": "",
                 "type": "text",
-                "instructions": "Title of the plan.",
+                "instructions": "Label of the plan.",
                 "required": 1,
                 "conditional_logic": 0,
                 "wrapper": {
@@ -519,7 +570,8 @@
         ],
         "active": true,
         "description": "",
-        "show_in_rest": 0
+        "show_in_rest": 0,
+        "display_title": ""
     },
     {
         "key": "group_68db83828b014",
@@ -527,11 +579,11 @@
         "fields": [
             {
                 "key": "field_68db838293cf9",
-                "label": "Title",
-                "name": "title",
+                "label": "Label",
+                "name": "label",
                 "aria-label": "",
                 "type": "text",
-                "instructions": "Title of the test provider.",
+                "instructions": "Label of the test provider.",
                 "required": 1,
                 "conditional_logic": 0,
                 "wrapper": {
@@ -607,6 +659,7 @@
         ],
         "active": true,
         "description": "",
-        "show_in_rest": 0
+        "show_in_rest": 0,
+        "display_title": ""
     }
 ]

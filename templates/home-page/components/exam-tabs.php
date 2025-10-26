@@ -30,10 +30,10 @@ if (!empty($exam_categories)) {
                 $fields = get_fields($post_id);
 
                 $exam_profiles_by_category[$term->slug][] = [
-                    'title'             => $fields['title'] ?? get_the_title(),
+                    'label'             => $fields['label'] ?? get_the_title(),
                     'year'              => $fields['year'] ?? '',
                     'month'             => $fields['month'] ?? '',
-                    'description_title' => $fields['description_title'] ?? '',
+                    'description_label' => $fields['description_label'] ?? '',
                     'description_text'  => $fields['description_text'] ?? '',
                     'image'             => get_the_post_thumbnail_url($post_id, 'medium'),
                     'participants'      => rand(50, 500),
@@ -49,7 +49,7 @@ $page_id = get_option('page_on_front');
 $fields = get_fields($page_id);
 
 $the_fields = $fields["exam_tabs"];
-$title = $the_fields["title"];
+$label = $the_fields["label"];
 $description = $the_fields["description"];
 
 ?>
@@ -58,7 +58,7 @@ $description = $the_fields["description"];
     <div class="container my-5">
         <div class="d-flex align-items-center justify-content-between mb-3">
             <div>
-                <h2 class="text-start mb-1"><?= esc_html($title) ?></h2>
+                <h2 class="text-start mb-1"><?= esc_html($label) ?></h2>
                 <p class="text-start mb-0"><?= esc_html($description) ?></p>
             </div>
             <div class="quarter-circle"></div>
@@ -87,13 +87,13 @@ $description = $the_fields["description"];
                                 <div class="card custom-exam-profile-card">
                                     <div class="card-img-wrapper">
                                         <img src="<?= esc_url($exam['image']) ?>" class="card-img-top"
-                                            alt="<?= esc_attr($exam['title']) ?>">
+                                            alt="<?= esc_attr($exam['label']) ?>">
                                     </div>
                                     <div class="card-body">
                                         <p class="exam-tabs-title"><?= esc_html($exam['title']) ?></p>
                                         <p class="exam-tabs-month-year">
                                             <?= esc_html("{$exam['month']}/{$exam['year']}") ?></p>
-                                        <p class="exam-tabs-description-title"><?= esc_html($exam['description_title']) ?></p>
+                                        <p class="exam-tabs-description-label"><?= esc_html($exam['description_label']) ?></p>
                                         <p class="exam-tabs-description-text"><?= esc_html($exam['description_text']) ?></p>
                                         <!-- <div class="d-flex justify-content-between mt-3">
                                             <span>(<?= intval($exam['participants']) ?> participants)</span>

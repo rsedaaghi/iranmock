@@ -590,6 +590,8 @@ add_action('wp_enqueue_scripts', 'iranmock_bootstrap_scripts_loader');
 
 // RSedaaghi
 
+include_once('settings/cptAdminMenu/cptAdminMenu.php');
+
 function iranmock_load_textdomain()
 {
 	load_theme_textdomain('iranmock-bootstrap', get_template_directory() . '/languages');
