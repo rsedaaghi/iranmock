@@ -740,3 +740,42 @@ add_action('init', 'run_site_seeder');
 
 // If you want to rerun the seeder, just reset the flag:
 // delete_option('site_seeder_ran');
+
+function make_exam_category_readonly_meta_box()
+{
+	remove_meta_box('exam_categorydiv', 'exam_profile', 'side');
+
+	add_meta_box(
+		'exam_category_readonly',
+		__('Exam Categories'),
+		'render_exam_category_readonly',
+		'exam_profile',
+		'side',
+		'default'
+	);
+}
+add_action('add_meta_boxes', 'make_exam_category_readonly_meta_box');
+
+function render_exam_category_readonly($post)
+{
+	$terms = get_terms([
+		'taxonomy' => 'exam_category',
+		'hide_empty' => false,
+	]);
+
+	// Get the currently assigned term (assuming single selection)
+	$selected_terms = wp_get_object_terms($post->ID, 'exam_category', ['fields' => 'ids']);
+	$selected_id = !empty($selected_terms) ? $selected_terms[0] : null;
+
+	if (!empty($terms)) {
+		foreach ($terms as $term) {
+			$checked = ($term->term_id == $selected_id) ? 'checked' : '';
+			echo '<label style="display:block;">';
+			echo '<input type="radio" name="exam_category" value="' . esc_attr($term->term_id) . '" ' . $checked . '> ';
+			echo esc_html($term->name);
+			echo '</label>';
+		}
+	}
+}
+
+	?>
