@@ -5,7 +5,7 @@
 
         <!-- Featured Image Section -->
         <?php if (has_post_thumbnail()) : ?>
-            <div class="img-wrapper mb-5 mx-auto">
+            <div class="container-xxl no-gutter-sm img-wrapper mb-5">
                 <?php the_post_thumbnail('full', ['class' => 'featured-img']); ?>
             </div>
         <?php endif; ?>
@@ -22,17 +22,21 @@
 
         <div class="exam-profile-description mx-auto py-5 px-3">
             <div class="exam-profile-quarter-circle"></div>
-            <div class="col-12 col-lg-10 mx-auto text-justify">
-                <?php if ($month_year = get_field('description_title')) : ?>
-                    <h2 class="month-year"><?php echo esc_html($month_year); ?></h2>
+            <div class="col-12 col-lg-10 mx-auto px-5  text-justify">
+                <?php
+                $month = get_field('month');
+                $year = get_field('year');
+                if ($month && $year):
+                    $month_year = "{$month}/{$year}";
+                ?>
+                    <p class="month-year"><?php echo esc_html($month_year); ?></p>
                 <?php endif; ?>
 
-                <?php if ($desc_title = get_field('description_title')) : ?>
-                    <h2 class="description-title"><?php echo esc_html($desc_title); ?></h2>
-                <?php endif; ?>
-
-                <?php if ($desc_text = get_field('description_text')) : ?>
-                    <p class="description-text"><?php echo wpautop($desc_text); ?></p>
+                <?php
+                $single_page_settings = get_field('single_page_settings');
+                if (!empty($single_page_settings['description_text'])) :
+                ?>
+                    <p class="description-text"><?php echo wpautop($single_page_settings['description_text']); ?></p>
                 <?php endif; ?>
 
                 <?php
@@ -68,7 +72,6 @@
 
             </div>
         </div>
-
 
         <!-- Download Section -->
         <?php

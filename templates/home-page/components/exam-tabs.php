@@ -28,14 +28,16 @@ if (!empty($exam_categories)) {
                 $query->the_post();
                 $post_id = get_the_ID();
                 $fields = get_fields($post_id);
+                $card_settings = $fields["card_settings"];
 
                 $exam_profiles_by_category[$term->slug][] = [
+                    'post_id'           => $post_id,
                     'label'             => $fields['label'] ?? get_the_title(),
                     'year'              => $fields['year'] ?? '',
                     'month'             => $fields['month'] ?? '',
-                    'description_label' => $fields['description_label'] ?? '',
-                    'description_text'  => $fields['description_text'] ?? '',
-                    'image'             => get_the_post_thumbnail_url($post_id, 'medium'),
+                    'description_label' => $card_settings['description_label'] ?? '',
+                    'description_text'  => $card_settings['description_text'] ?? '',
+                    'image'             => $card_settings['image'] ? $card_settings['image'] : get_the_post_thumbnail_url($post_id, 'medium'),
                     'participants'      => rand(50, 500),
                     'likes'             => rand(10, 100)
                 ];
@@ -51,7 +53,6 @@ $fields = get_fields($page_id);
 $the_fields = $fields["exam_tabs"];
 $label = $the_fields["label"];
 $description = $the_fields["description"];
-
 ?>
 
 <?php if (!empty($exam_categories)): ?>
@@ -83,25 +84,22 @@ $description = $the_fields["description"];
                     role="tabpanel">
                     <div class="row">
                         <?php foreach ($exam_profiles_by_category[$cat->slug] as $exam): ?>
+                            <?php $permalink = get_permalink($exam['post_id']); ?>
                             <div class="col-md-3 mb-4">
-                                <div class="card custom-exam-profile-card">
-                                    <div class="card-img-wrapper">
-                                        <img src="<?= esc_url($exam['image']) ?>" class="card-img-top"
-                                            alt="<?= esc_attr($exam['label']) ?>">
+                                <a href="<?= esc_url($permalink) ?>" class="text-decoration-none">
+                                    <div class="card custom-exam-profile-card h-100">
+                                        <div class="card-img-wrapper">
+                                            <img src="<?= esc_url($exam['image']) ?>" class="card-img-top"
+                                                alt="<?= esc_attr($exam['label']) ?>">
+                                        </div>
+                                        <div class="card-body">
+                                            <p class="exam-tabs-label"><?= esc_html($exam['label']) ?></p>
+                                            <p class="exam-tabs-month-year"><?= esc_html("{$exam['month']}/{$exam['year']}") ?></p>
+                                            <p class="exam-tabs-description-label"><?= esc_html($exam['description_label']) ?></p>
+                                            <p class="exam-tabs-description-text"><?= esc_html($exam['description_text']) ?></p>
+                                        </div>
                                     </div>
-                                    <div class="card-body">
-                                        <p class="exam-tabs-title"><?= esc_html($exam['title']) ?></p>
-                                        <p class="exam-tabs-month-year">
-                                            <?= esc_html("{$exam['month']}/{$exam['year']}") ?></p>
-                                        <p class="exam-tabs-description-label"><?= esc_html($exam['description_label']) ?></p>
-                                        <p class="exam-tabs-description-text"><?= esc_html($exam['description_text']) ?></p>
-                                        <!-- <div class="d-flex justify-content-between mt-3">
-                                            <span>(<?= intval($exam['participants']) ?> participants)</span>
-                                            <span><i class="bi bi-star-fill text-warning"></i> <?= intval($exam['likes']) ?>
-                                                likes</span>
-                                        </div> -->
-                                    </div>
-                                </div>
+                                </a>
                             </div>
                         <?php endforeach; ?>
                     </div>

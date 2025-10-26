@@ -95,55 +95,6 @@
                 "append": ""
             },
             {
-                "key": "field_68da4949efa3e",
-                "label": "Description Title",
-                "name": "description_label",
-                "aria-label": "",
-                "type": "text",
-                "instructions": "Description title of the exam.",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "50",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "",
-                "maxlength": "",
-                "allow_in_bindings": 0,
-                "placeholder": "For example: شامل چهل آزمون تستی",
-                "prepend": "",
-                "append": ""
-            },
-            {
-                "key": "field_68da4989efa3f",
-                "label": "Description Text",
-                "name": "description_text",
-                "aria-label": "",
-                "type": "textarea",
-                "instructions": "Description text of the exam.",
-                "required": 0,
-                "conditional_logic": [
-                    [
-                        {
-                            "field": "field_68da4949efa3e",
-                            "operator": "!=empty"
-                        }
-                    ]
-                ],
-                "wrapper": {
-                    "width": "50",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "",
-                "maxlength": "",
-                "allow_in_bindings": 0,
-                "rows": "",
-                "placeholder": "For example: این آزمون دارای مشخصات جالبی است",
-                "new_lines": ""
-            },
-            {
                 "key": "field_68da4f172e1bf",
                 "label": "Image",
                 "name": "",
@@ -160,6 +111,389 @@
                 "message": "Add image using the \"set featured image\" section.",
                 "new_lines": "wpautop",
                 "esc_html": 0
+            },
+            {
+                "key": "field_68fdf8ad5b284",
+                "label": "Card Settings",
+                "name": "card_settings",
+                "aria-label": "",
+                "type": "group",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "block",
+                "sub_fields": [
+                    {
+                        "key": "field_68da4949efa3e",
+                        "label": "Description Label",
+                        "name": "description_label",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "Description label of the exam.",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "50",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "allow_in_bindings": 0,
+                        "placeholder": "For example: شامل چهل آزمون تستی",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_68da4989efa3f",
+                        "label": "Description Text",
+                        "name": "description_text",
+                        "aria-label": "",
+                        "type": "textarea",
+                        "instructions": "Description text of the exam.",
+                        "required": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_68da4949efa3e",
+                                    "operator": "!=empty"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "50",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "allow_in_bindings": 0,
+                        "rows": "",
+                        "placeholder": "For example: این آزمون دارای مشخصات جالبی است",
+                        "new_lines": ""
+                    },
+                    {
+                        "key": "field_68fdfa2f80ac4",
+                        "label": "Image",
+                        "name": "image",
+                        "aria-label": "",
+                        "type": "image",
+                        "instructions": "Image of the exam profile card.\r\nIf empty the featured image will be loaded instead",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "100",
+                            "class": "",
+                            "id": ""
+                        },
+                        "return_format": "url",
+                        "library": "all",
+                        "min_width": "",
+                        "min_height": "",
+                        "min_size": "",
+                        "max_width": "",
+                        "max_height": "",
+                        "max_size": "",
+                        "mime_types": "",
+                        "allow_in_bindings": 0,
+                        "preview_size": "medium"
+                    }
+                ]
+            },
+            {
+                "key": "field_68fdf8c15b285",
+                "label": "Single Page Settings",
+                "name": "single_page_settings",
+                "aria-label": "",
+                "type": "group",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "block",
+                "sub_fields": [
+                    {
+                        "key": "field_68fdf9669f2de",
+                        "label": "Description Text",
+                        "name": "description_text",
+                        "aria-label": "",
+                        "type": "textarea",
+                        "instructions": "Description text of the exam.",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "50",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "allow_in_bindings": 0,
+                        "rows": "",
+                        "placeholder": "For example: این آزمون دارای مشخصات جالبی است",
+                        "new_lines": ""
+                    },
+                    {
+                        "key": "field_68fdff160e12f",
+                        "label": "Downloads",
+                        "name": "downloads",
+                        "aria-label": "",
+                        "type": "group",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "layout": "block",
+                        "sub_fields": [
+                            {
+                                "key": "field_68fdff750e130",
+                                "label": "Download_1",
+                                "name": "download_1",
+                                "aria-label": "",
+                                "type": "group",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "layout": "block",
+                                "sub_fields": [
+                                    {
+                                        "key": "field_68fdff9e0e132",
+                                        "label": "Is active?",
+                                        "name": "is_active",
+                                        "aria-label": "",
+                                        "type": "true_false",
+                                        "instructions": "",
+                                        "required": 0,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "message": "",
+                                        "default_value": 0,
+                                        "allow_in_bindings": 0,
+                                        "ui": 0,
+                                        "ui_on_text": "",
+                                        "ui_off_text": ""
+                                    },
+                                    {
+                                        "key": "field_68fdff950e131",
+                                        "label": "Label",
+                                        "name": "label",
+                                        "aria-label": "",
+                                        "type": "text",
+                                        "instructions": "",
+                                        "required": 0,
+                                        "conditional_logic": [
+                                            [
+                                                {
+                                                    "field": "field_68fdff9e0e132",
+                                                    "operator": "==",
+                                                    "value": "1"
+                                                }
+                                            ]
+                                        ],
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "default_value": "",
+                                        "maxlength": "",
+                                        "allow_in_bindings": 0,
+                                        "placeholder": "",
+                                        "prepend": "",
+                                        "append": ""
+                                    },
+                                    {
+                                        "key": "field_68fdffc80e133",
+                                        "label": "Description",
+                                        "name": "description",
+                                        "aria-label": "",
+                                        "type": "textarea",
+                                        "instructions": "",
+                                        "required": 0,
+                                        "conditional_logic": [
+                                            [
+                                                {
+                                                    "field": "field_68fdff9e0e132",
+                                                    "operator": "==",
+                                                    "value": "1"
+                                                }
+                                            ]
+                                        ],
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "default_value": "",
+                                        "maxlength": "",
+                                        "allow_in_bindings": 0,
+                                        "rows": "",
+                                        "placeholder": "",
+                                        "new_lines": ""
+                                    },
+                                    {
+                                        "key": "field_68fe011284048",
+                                        "label": "Button_1",
+                                        "name": "button_1",
+                                        "aria-label": "",
+                                        "type": "group",
+                                        "instructions": "",
+                                        "required": 0,
+                                        "conditional_logic": [
+                                            [
+                                                {
+                                                    "field": "field_68fdff9e0e132",
+                                                    "operator": "==",
+                                                    "value": "1"
+                                                }
+                                            ]
+                                        ],
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "layout": "block",
+                                        "sub_fields": [
+                                            {
+                                                "key": "field_68fe013084049",
+                                                "label": "Label",
+                                                "name": "label",
+                                                "aria-label": "",
+                                                "type": "text",
+                                                "instructions": "",
+                                                "required": 0,
+                                                "conditional_logic": 0,
+                                                "wrapper": {
+                                                    "width": "",
+                                                    "class": "",
+                                                    "id": ""
+                                                },
+                                                "default_value": "",
+                                                "maxlength": "",
+                                                "allow_in_bindings": 0,
+                                                "placeholder": "",
+                                                "prepend": "",
+                                                "append": ""
+                                            },
+                                            {
+                                                "key": "field_68fe013c8404a",
+                                                "label": "File",
+                                                "name": "file",
+                                                "aria-label": "",
+                                                "type": "file",
+                                                "instructions": "",
+                                                "required": 0,
+                                                "conditional_logic": 0,
+                                                "wrapper": {
+                                                    "width": "",
+                                                    "class": "",
+                                                    "id": ""
+                                                },
+                                                "return_format": "",
+                                                "library": "",
+                                                "min_size": "",
+                                                "max_size": "",
+                                                "mime_types": "",
+                                                "allow_in_bindings": 0
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "key": "field_68fe016e8404e",
+                                        "label": "Button_2",
+                                        "name": "button_2",
+                                        "aria-label": "",
+                                        "type": "group",
+                                        "instructions": "",
+                                        "required": 0,
+                                        "conditional_logic": [
+                                            [
+                                                {
+                                                    "field": "field_68fdff9e0e132",
+                                                    "operator": "==",
+                                                    "value": "1"
+                                                }
+                                            ]
+                                        ],
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "layout": "block",
+                                        "sub_fields": [
+                                            {
+                                                "key": "field_68fe016e8404f",
+                                                "label": "Label",
+                                                "name": "label",
+                                                "aria-label": "",
+                                                "type": "text",
+                                                "instructions": "",
+                                                "required": 0,
+                                                "conditional_logic": 0,
+                                                "wrapper": {
+                                                    "width": "",
+                                                    "class": "",
+                                                    "id": ""
+                                                },
+                                                "default_value": "",
+                                                "maxlength": "",
+                                                "allow_in_bindings": 0,
+                                                "placeholder": "",
+                                                "prepend": "",
+                                                "append": ""
+                                            },
+                                            {
+                                                "key": "field_68fe016e84050",
+                                                "label": "File",
+                                                "name": "file",
+                                                "aria-label": "",
+                                                "type": "file",
+                                                "instructions": "",
+                                                "required": 0,
+                                                "conditional_logic": 0,
+                                                "wrapper": {
+                                                    "width": "",
+                                                    "class": "",
+                                                    "id": ""
+                                                },
+                                                "return_format": "",
+                                                "library": "",
+                                                "min_size": "",
+                                                "max_size": "",
+                                                "mime_types": "",
+                                                "allow_in_bindings": 0
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ],
         "location": [

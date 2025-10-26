@@ -256,7 +256,7 @@ a.btn {
 /* ============================= */
 /* 🧾 EXAM TABS SECTION */
 /* ============================= */
-.exam-tabs-title {
+.exam-tabs-label {
 	font-family: 'IRANSans';
 	font-weight: 800;
 	font-size: 14px;
@@ -482,7 +482,6 @@ a.btn {
 }
 
 .exam-label {
-	font-family: 'IRANSansWeb', sans-serif;
 	font-weight: 700;
 	font-size: 36px;
 	line-height: 28px;
@@ -491,7 +490,6 @@ a.btn {
 }
 
 .description-title {
-	font-family: 'IRANSansWeb', sans-serif;
 	font-weight: 500;
 	font-size: 16px;
 	line-height: 35px;
@@ -500,7 +498,6 @@ a.btn {
 }
 
 .description-text {
-	font-family: 'IRANSansWeb', sans-serif;
 	font-weight: 500;
 	font-size: 16px;
 	line-height: 35px;
@@ -510,7 +507,6 @@ a.btn {
 
 
 .download-label {
-	font-family: 'IRANSansWeb', sans-serif;
 	font-weight: 700;
 	font-size: 36px;
 	line-height: 28px;
@@ -519,7 +515,6 @@ a.btn {
 }
 
 .download-description {
-	font-family: 'IRANSansWeb', sans-serif;
 	font-weight: 500;
 	font-size: 16px;
 	line-height: 35px;
@@ -542,12 +537,22 @@ a.btn {
 
 .exam-profile-quarter-circle {
 	position: absolute;
-	top: -75px;
-	/* half of 150px height */
+	top: -50px;
+	/* half of 100px height */
 	left: 30px;
-	width: 150px;
-	height: 150px;
+	width: 100px;
+	height: 100px;
 	background-color: #CCDDBE;
 	border-top-left-radius: 100%;
 	z-index: 1;
+}
+
+.month-year {
+	font-weight: 500;
+	font-size: 1rem;
+	line-height: 100%;
+	letter-spacing: -4%;
+	text-align: left;
+	direction: rtl;
+	float: left;
 }
