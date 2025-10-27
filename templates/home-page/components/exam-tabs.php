@@ -10,8 +10,10 @@ if (!empty($exam_categories)) {
     foreach ($exam_categories as $term) {
         $query = new WP_Query([
             'post_type'      => 'exam_profile',
-            'posts_per_page' => -1,
+            'posts_per_page' => 4, // Limit to 4
             'post_status'    => 'publish',
+            'orderby'        => 'date', // Order by publish date
+            'order'          => 'DESC',
             'tax_query'      => [
                 [
                     'taxonomy' => 'exam_category',
