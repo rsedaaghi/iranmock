@@ -113,6 +113,8 @@ a.btn {
 	align-items: center;
 	justify-content: center;
 	background-color: #f8f9fa;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
 	/* Optional: fallback background */
 }
 
@@ -121,6 +123,12 @@ a.btn {
 	height: 100%;
 	object-fit: cover;
 	display: block;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+}
+
+header {
+	margin-bottom: 0.5rem;
 }
 
 
@@ -440,8 +448,9 @@ a.btn {
 /* ============================= */
 /* 🎞️ SLIDER SECTION */
 /* ============================= */
-.slider-ratio {
-	aspect-ratio: 2.5 / 1;
+.custom-image-slider #landingCarousel {
+	width: 100%;
+	aspect-ratio: 1 / 0.35;
 }
 
 .slider-ratio .carousel-inner,
@@ -459,14 +468,14 @@ a.btn {
 	background-color: #E8F6F3 !important;
 }
 
-.img-wrapper {
+.exam-profile-page .img-wrapper {
 	position: relative;
 	width: 100%;
-	max-width: 1369px;
-	aspect-ratio: 3 / 1;
+	aspect-ratio: 1 / 0.35;
 	overflow: hidden;
 	margin-left: auto;
 	margin-right: auto;
+	margin-bottom: 5rem;
 	border: 1px solid #475569;
 	border-radius: 1.25rem;
 }
@@ -478,7 +487,7 @@ a.btn {
 	position: absolute;
 	top: 0;
 	left: 0;
-	border-radius: 1.25rem;
+	border-radius: 0.8rem;
 }
 
 .exam-label {
@@ -558,16 +567,20 @@ a.btn {
 
 .member-card {
 	background-color: #E8F6F3;
-	width: 414px;
-	aspect-ratio: 414 / 694;
+	width: 350px;
+	aspect-ratio: 350 / 508;
 	border-radius: 20px;
-	border: 3px solid #136E61;
+	border: 2px solid #136E61;
 	padding: 4rem 2rem;
 	opacity: 1;
 	transform: rotate(0deg);
 	position: relative;
 	text-align: right;
 	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.member-plans-wrapper .custom-gutter {
+	--bs-gutter-x: 3rem;
 }
 
 .member-card.highlighted {
@@ -622,6 +635,7 @@ a.btn {
 
 .member-plans-section {
 	margin-top: 4rem;
+	max-width: 60rem;
 }
 
 .section-title {
@@ -632,6 +646,10 @@ a.btn {
 .section-description {
 	color: #5d6d7e;
 	line-height: 1.8;
+	margin-bottom: 5rem;
+	text-align: justify;
+	font-weight: 300;
+	font-size: 1.05rem;
 }
 
 .download-box {
@@ -706,8 +724,8 @@ a.btn {
 
 .suggested-exams-hr {
 	border-top: 1px solid #ccc;
-	width: 50px;
-	margin: 0 auto 3rem auto;
+	width: 25rem;
+	margin: 0 auto;
 	opacity: 1;
 	position: relative;
 	z-index: 2;
@@ -728,10 +746,11 @@ a.btn {
 
 .custom-exam-profile-card {
 	border: 1px solid #ddd;
-	border-radius: 8px;
+	border-radius: 10px;
 	overflow: hidden;
 	transition: box-shadow 0.3s ease, transform 0.3s ease;
 	text-align: right;
+	min-height: 330px;
 }
 
 @media (min-width: 768px) {

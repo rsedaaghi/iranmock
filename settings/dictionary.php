@@ -10,7 +10,8 @@ return [
         'send' => "Send",
         'view' => "View",
         'register' => "Register",
-        'search' => "Search"
+        'search' => "Search",
+        'panel_login' => "Enter Panel"
     ],
     'fa' => [
         'test_providers' => 'برگزارکنند‌گان آزمون',
@@ -22,6 +23,7 @@ return [
         'send' => "ارسال",
         'view' => "مشاهده",
         'register' => "ثبت‌نام",
-        'search' => "جستجو"
+        'search' => "جستجو",
+        'panel_login' => " ورود به پنل"
     ],
 ];

@@ -26,7 +26,7 @@ wp_reset_postdata();
 ?>
 
 <?php if (!empty($slides)): ?>
-    <div class="container-xxl no-gutter-sm">
+    <div class="custom-image-slider container-xxl no-gutter-sm">
         <div id="landingCarousel" class="carousel slide slider-ratio rounded-3 overflow-hidden responsive-mx no-radius-sm"
             data-bs-ride="carousel">
             <div class="carousel-inner">

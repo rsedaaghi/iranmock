@@ -81,8 +81,8 @@ $search_enabled  = get_theme_mod('search_enabled', '1'); // Get custom meta-valu
 										placeholder="<?php esc_attr_e(esc_html(iranmock_translate('search')), 'iranmock-bootstrap'); ?>"
 										title="<?php esc_attr_e(esc_html(iranmock_translate('search')), 'iranmock-bootstrap'); ?>" />
 								</div>
-								<a href="<?php echo esc_url(wp_registration_url()); ?>" class="btn btn-success">
-									<?php esc_html_e(esc_html(iranmock_translate('register')), 'iranmock-bootstrap'); ?>
+								<a href="<?php echo esc_url(wp_registration_url()); ?>" class="btn btn-success px-1 w-50">
+									<?php esc_html_e(esc_html(iranmock_translate('panel_login')), 'iranmock-bootstrap'); ?>
 								</a>
 							</form>
 						<?php
