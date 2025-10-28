@@ -313,7 +313,43 @@ header {
 	height: 5.1875rem;
 	object-fit: cover;
 	border-radius: 8px;
+	animation: bounce-rotate-wobble 3s ease-in-out infinite;
 }
+
+@keyframes bounce-rotate-wobble {
+	0% {
+		transform: translateY(0) scale(1) rotate(0deg);
+	}
+
+	30% {
+		transform: translateY(-10px) scale(1.1) rotate(10deg);
+	}
+
+	40% {
+		transform: translateY(-10px) scale(1.1) rotate(-8deg);
+	}
+
+	50% {
+		transform: translateY(-10px) scale(1.1) rotate(6deg);
+	}
+
+	60% {
+		transform: translateY(-10px) scale(1.1) rotate(-4deg);
+	}
+
+	70% {
+		transform: translateY(-10px) scale(1.1) rotate(2deg);
+	}
+
+	80% {
+		transform: translateY(-5px) scale(1.05) rotate(-1deg);
+	}
+
+	100% {
+		transform: translateY(0) scale(1) rotate(0deg);
+	}
+}
+
 
 .about-us-title {
 	font-size: 28px;
@@ -430,11 +466,25 @@ header {
 /* 🌀 DECORATIVE ELEMENTS */
 /* ============================= */
 .quarter-circle {
-	width: 60px;
-	height: 60px;
+	width: 90px;
+	height: 90px;
 	background-color: #CCDDBE;
 	border-top-left-radius: 100%;
+	animation: bounce 4s ease-in-out infinite;
 }
+
+@keyframes bounce {
+
+	0%,
+	100% {
+		transform: translateY(0) scale(1);
+	}
+
+	50% {
+		transform: translateY(-15px);
+	}
+}
+
 
 .quarter-circle-lg {
 	width: 80px;
@@ -443,6 +493,40 @@ header {
 	border-top-left-radius: 100%;
 	transform: scaleX(-1);
 	flex-shrink: 0;
+	animation: shake-rotate 4s linear 1s infinite normal none;
+}
+
+@keyframes shake-rotate {
+
+	0%,
+	100% {
+		transform: rotate(0deg);
+		transform-origin: 50% 50%;
+	}
+
+	10% {
+		transform: rotate(8deg);
+	}
+
+	20%,
+	40%,
+	60% {
+		transform: rotate(-10deg);
+	}
+
+	30%,
+	50%,
+	70% {
+		transform: rotate(10deg);
+	}
+
+	80% {
+		transform: rotate(-8deg);
+	}
+
+	90% {
+		transform: rotate(8deg);
+	}
 }
 
 /* ============================= */
