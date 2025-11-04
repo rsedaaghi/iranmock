@@ -107,7 +107,9 @@
             "editor",
             "thumbnail"
         ],
-        "taxonomies": [],
+        "taxonomies": [
+            "exam_category"
+        ],
         "labels": {
             "menu_name": "Exam Profiles",
             "all_items": "All Exam Profiles",

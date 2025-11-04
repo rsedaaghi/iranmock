@@ -58,60 +58,60 @@ $description = $the_fields["description"];
 ?>
 
 <?php if (!empty($exam_categories)): ?>
-<div class="container my-5">
-    <div class="d-flex align-items-center justify-content-between mb-3">
-        <div>
-            <h2 class="text-start mb-1"><?= esc_html($label) ?></h2>
-            <p class="text-start mb-0"><?= esc_html($description) ?></p>
+    <div class="container my-5">
+        <div class="d-flex align-items-center justify-content-between mb-3">
+            <div>
+                <h2 class="text-start mb-1"><?= esc_html($label) ?></h2>
+                <p class="text-start mb-0"><?= esc_html($description) ?></p>
+            </div>
+            <div class="quarter-circle"></div>
         </div>
-        <div class="quarter-circle"></div>
-    </div>
 
-    <!-- Tabs -->
-    <ul class="nav nav-tabs custom-navs" id="examTabs" role="tablist">
-        <?php foreach ($exam_categories as $index => $cat): ?>
-        <li class="nav-item custom-nav-item" role="presentation">
-            <button class="nav-link custom-nav-link <?= $index === 0 ? 'active' : '' ?>" data-bs-toggle="tab"
-                data-bs-target="#<?= esc_attr($cat->slug) ?>" type="button" role="tab">
-                <?= esc_html($cat->name) ?>
-            </button>
-        </li>
-        <?php endforeach; ?>
-    </ul>
+        <!-- Tabs -->
+        <ul class="nav nav-tabs custom-navs" id="examTabs" role="tablist">
+            <?php foreach ($exam_categories as $index => $cat): ?>
+                <li class="nav-item custom-nav-item" role="presentation">
+                    <button class="nav-link custom-nav-link <?= $index === 0 ? 'active' : '' ?>" data-bs-toggle="tab"
+                        data-bs-target="#<?= esc_attr($cat->slug) ?>" type="button" role="tab">
+                        <?= esc_html($cat->name) ?>
+                    </button>
+                </li>
+            <?php endforeach; ?>
+        </ul>
 
-    <!-- Tab Content -->
-    <div class="tab-content mt-4">
-        <?php foreach ($exam_categories as $index => $cat): ?>
-        <div class="tab-pane fade <?= $index === 0 ? 'show active' : '' ?>" id="<?= esc_attr($cat->slug) ?>"
-            role="tabpanel">
-            <div class="row">
-                <?php foreach ($exam_profiles_by_category[$cat->slug] as $exam): ?>
-                <?php $permalink = get_permalink($exam['post_id']); ?>
-                <div class="col-md-3 mb-4">
-                    <a href="<?= esc_url($permalink) ?>" class="text-decoration-none">
-                        <div class="card custom-exam-profile-card h-100">
-                            <div class="card-img-wrapper">
-                                <img src="<?= esc_url($exam['image']) ?>" class="card-img-top"
-                                    alt="<?= esc_attr($exam['label']) ?>">
+        <!-- Tab Content -->
+        <div class="tab-content mt-4">
+            <?php foreach ($exam_categories as $index => $cat): ?>
+                <div class="tab-pane fade <?= $index === 0 ? 'show active' : '' ?>" id="<?= esc_attr($cat->slug) ?>"
+                    role="tabpanel">
+                    <div class="row">
+                        <?php foreach ($exam_profiles_by_category[$cat->slug] as $exam): ?>
+                            <?php $permalink = get_permalink($exam['post_id']); ?>
+                            <div class="col-md-3 mb-4">
+                                <a href="<?= esc_url($permalink) ?>" class="text-decoration-none">
+                                    <div class="card custom-exam-profile-card h-100">
+                                        <div class="card-img-wrapper">
+                                            <img src="<?= esc_url($exam['image']) ?>" class="card-img-top"
+                                                alt="<?= esc_attr($exam['label']) ?>">
+                                        </div>
+                                        <div class="card-body">
+                                            <p class="exam-tabs-label"><?= esc_html($exam['label']) ?></p>
+                                            <p class="exam-tabs-month-year"><?= esc_html("{$exam['month']}/{$exam['year']}") ?></p>
+                                            <p class="exam-tabs-description-label"><?= esc_html($exam['description_label']) ?></p>
+                                            <p class="exam-tabs-description-text"><?= esc_html($exam['description_text']) ?></p>
+                                        </div>
+                                    </div>
+                                </a>
                             </div>
-                            <div class="card-body">
-                                <p class="exam-tabs-label"><?= esc_html($exam['label']) ?></p>
-                                <p class="exam-tabs-month-year"><?= esc_html("{$exam['month']}/{$exam['year']}") ?></p>
-                                <p class="exam-tabs-description-label"><?= esc_html($exam['description_label']) ?></p>
-                                <p class="exam-tabs-description-text"><?= esc_html($exam['description_text']) ?></p>
-                            </div>
-                        </div>
-                    </a>
+                        <?php endforeach; ?>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <a href="<?= esc_url(add_query_arg('exam_category', $cat->slug, get_post_type_archive_link('exam_profile'))) ?>"
+                            class="btn btn-link see-all-btn">
+                            <?= esc_html(iranmock_translate('see_all') . ' آزمون‌های ' . $cat->name); ?> </a>
+                    </div>
                 </div>
-                <?php endforeach; ?>
-            </div>
-            <div class="d-flex justify-content-end">
-                <button class="btn btn-link see-all-btn">
-                    <?= esc_html(iranmock_translate('see_all')); ?>
-                </button>
-            </div>
+            <?php endforeach; ?>
         </div>
-        <?php endforeach; ?>
     </div>
-</div>
 <?php endif; ?>

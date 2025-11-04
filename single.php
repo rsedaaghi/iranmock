@@ -1,59 +1,38 @@
+<?php get_header(); ?>
+
 <?php
-/**
- * The Template for displaying all single posts.
- */
+global $post;
 
-get_header();
+// Get featured image
+$image = get_the_post_thumbnail_url($post->ID, 'full');
 
-if ( have_posts() ) :
-	while ( have_posts() ) :
-		the_post();
-
-		get_template_part( 'content', 'single' );
-
-		// If comments are open or we have at least one comment, load up the comment template.
-		if ( comments_open() || get_comments_number() ) :
-			comments_template();
-		endif;
-	endwhile;
-endif;
-
-wp_reset_postdata();
-
-$count_posts = wp_count_posts();
-
-if ( $count_posts->publish > '1' ) :
-	$next_post = get_next_post();
-	$prev_post = get_previous_post();
+// Get post title and content
+$title = get_the_title($post);
+$content = apply_filters('the_content', get_the_content());
 ?>
-<hr class="mt-5">
-<div class="post-navigation d-flex justify-content-between">
-	<?php
-		if ( $prev_post ) {
-			$prev_title = get_the_title( $prev_post->ID );
-	?>
-		<div class="pr-3">
-			<a class="previous-post btn btn-lg btn-outline-secondary" href="<?php echo esc_url( get_permalink( $prev_post->ID ) ); ?>" title="<?php echo esc_attr( $prev_title ); ?>">
-				<span class="arrow">&larr;</span>
-				<span class="title"><?php echo wp_kses_post( $prev_title ); ?></span>
-			</a>
-		</div>
-	<?php
-		}
-		if ( $next_post ) {
-			$next_title = get_the_title( $next_post->ID );
-	?>
-		<div class="pl-3">
-			<a class="next-post btn btn-lg btn-outline-secondary" href="<?php echo esc_url( get_permalink( $next_post->ID ) ); ?>" title="<?php echo esc_attr( $next_title ); ?>">
-				<span class="title"><?php echo wp_kses_post( $next_title ); ?></span>
-				<span class="arrow">&rarr;</span>
-			</a>
-		</div>
-	<?php
-		}
-	?>
-</div><!-- /.post-navigation -->
-<?php
-endif;
 
-get_footer();
+<div class="exam-profile-page">
+	<!-- Featured Image Section -->
+	<?php if (!empty($image)) : ?>
+		<div class="container-xxl no-gutter-sm img-wrapper">
+			<img src="<?= esc_url($image) ?>" alt="<?= esc_attr($title) ?>" class="featured-img" />
+		</div>
+	<?php endif; ?>
+
+	<!-- Label Section -->
+	<div class="row justify-content-center mb-3">
+		<div class="col-12 col-lg-10">
+			<h1 class="exam-label text-center"><?= esc_html($title) ?></h1>
+		</div>
+	</div>
+
+	<!-- Description Section -->
+	<div class="exam-profile-description mx-auto py-5 px-3">
+		<div class="exam-profile-quarter-circle"></div>
+		<div class="col-12 col-lg-10 mx-auto px-5 text-justify">
+			<div class="description-text"><?= $content ?></div>
+		</div>
+	</div>
+</div>
+
+<?php get_footer(); ?>

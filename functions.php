@@ -725,6 +725,19 @@ function iranmock_translate($key)
 // 	}
 // }
 
+// function seed_exam_profile_archive_page()
+// {
+// 	if (!get_page_by_path('exam_profile')) {
+// 		wp_insert_post([
+// 			'post_title'   => 'Exam Profile Archive',
+// 			'post_name'    => 'exam_profile',
+// 			'post_content' => 'This page serves as the archive for Exam Profiles.',
+// 			'post_status'  => 'publish',
+// 			'post_type'    => 'page'
+// 		]);
+// 	}
+// }
+
 function run_site_seeder()
 {
 	// if (!get_option('site_seeder_ran')) {
@@ -735,6 +748,7 @@ function run_site_seeder()
 	// seed_sample_news_post();
 	// update_option('site_seeder_ran', true);
 	// }
+	// seed_exam_profile_archive_page();
 }
 add_action('init', 'run_site_seeder');
 
