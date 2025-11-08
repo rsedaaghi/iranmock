@@ -947,3 +947,42 @@ a.btn {
 		display: none !important;
 	}
 }
+
+/* Scrollable tab container */
+.tabs-scroll-container {
+	overflow-x: auto;
+	overflow-y: hidden;
+	-webkit-overflow-scrolling: touch;
+	scroll-snap-type: x mandatory;
+	padding-left: 1rem;
+	margin-left: -1rem;
+	/* peek effect */
+}
+
+/* Hide scrollbar */
+.tabs-scroll-container::-webkit-scrollbar {
+	display: none;
+}
+
+/* Scrollable tab list */
+.scroll-tabs {
+	display: flex;
+	flex-wrap: nowrap;
+	gap: 0.5rem;
+	white-space: nowrap;
+	border-bottom: none;
+	/* optional: cleaner look */
+}
+
+/* Individual tab */
+.scroll-tabs .nav-item {
+	flex: 0 0 auto;
+	scroll-snap-align: start;
+}
+
+/* Hide scrollable tabs on desktop */
+@media (min-width: 768px) {
+	.tabs-scroll-container {
+		display: none !important;
+	}
+}
