@@ -449,6 +449,14 @@ a.btn {
 	animation: bounce-rotate-wobble 3s ease-in-out infinite;
 }
 
+@media (max-width: 767.98px) {
+	.about-us-img {
+		width: 30px;
+		height: auto;
+		aspect-ratio: 51 / 83;
+	}
+}
+
 @keyframes bounce-rotate-wobble {
 	0% {
 		transform: translateY(0) scale(1) rotate(0deg);
@@ -631,18 +639,27 @@ a.btn {
 	width: 80px;
 	height: 80px;
 	background-color: #136E61;
-	border-top-left-radius: 100%;
-	transform: scaleX(-1);
+	border-top-right-radius: 100%;
+	border-top-left-radius: 0;
 	flex-shrink: 0;
-	animation: shake-rotate 4s linear 1s infinite normal none;
+	transform-origin: 50% 50%;
+	animation: shake-rotate 4s linear 1s infinite;
 }
+
+@media (max-width: 767.98px) {
+	.quarter-circle-lg {
+		width: 60px;
+		height: 60px;
+		margin-left: 1rem;
+	}
+}
+
 
 @keyframes shake-rotate {
 
 	0%,
 	100% {
 		transform: rotate(0deg);
-		transform-origin: 50% 50%;
 	}
 
 	10% {
@@ -669,6 +686,7 @@ a.btn {
 		transform: rotate(8deg);
 	}
 }
+
 
 /* ============================= */
 /* 🎞️ SLIDER SECTION */
