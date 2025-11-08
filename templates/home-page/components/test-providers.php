@@ -13,7 +13,7 @@ $test_providers = new WP_Query([
 
 if ($test_providers->have_posts()):
 ?>
-    <div class="large-container test-provider my-5 bg-white rounded">
+    <div class="large-container test-provider my-5 bg-white rounded d-none d-sm-block">
         <div class="scroll-wrapper">
             <div class="scroll-track d-flex align-items-center">
                 <?php while ($test_providers->have_posts()): $test_providers->the_post(); ?>

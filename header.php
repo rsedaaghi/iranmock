@@ -25,11 +25,8 @@ $search_enabled  = get_theme_mod('search_enabled', '1'); // Get custom meta-valu
 <body>
 	<?php wp_body_open(); ?>
 
-	<a href="#main"
-		class="visually-hidden-focusable"><?php esc_html_e('Skip to main content', 'iranmock-bootstrap'); ?></a>
-
 	<div id="wrapper">
-		<header class="container-md mt-5">
+		<header class="container-md my-2 mt-sm-5 mb-sm-1">
 			<nav id="header" class="navbar navbar-expand-md <?php echo esc_attr($navbar_scheme);
 															if (isset($navbar_position) && 'fixed_top' === $navbar_position) : echo ' fixed-top';
 															elseif (isset($navbar_position) && 'fixed_bottom' === $navbar_position) : echo ' fixed-bottom';
