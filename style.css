@@ -900,35 +900,43 @@ a.btn {
 /* ============================= */
 /* 🎞️ EXAM PROFILE MOBILE VIEW CARDS */
 /* ============================= */
-/* Mobile scroll container */
+/* Force scroll container to allow horizontal scroll */
 .mobile-scroll {
-	overflow-x: auto;
-	overflow-y: hidden;
+	overflow-x: scroll !important;
+	overflow-y: hidden !important;
 	-webkit-overflow-scrolling: touch;
 	scroll-snap-type: x mandatory;
 	display: block;
 	white-space: nowrap;
 	padding-left: 1rem;
 	margin-left: -1rem;
-	/* creates peek effect */
 	cursor: grab;
+	position: relative;
+	z-index: 1;
 }
 
+/* Ensure wrapper doesn't block scroll */
 .scroll-wrapper {
-	display: flex;
+	display: flex !important;
+	flex-wrap: nowrap !important;
 	gap: 1rem;
-	padding-bottom: 1rem;
+	overflow: visible !important;
 }
 
+/* Ensure cards are fixed width and scrollable */
 .scroll-card {
-	flex: 0 0 auto;
-	width: 167px;
-	height: calc(167px * 1.34);
-	/* ≈224px */
+	flex: 0 0 auto !important;
+	width: 167px !important;
+	height: calc(167px * 1.34) !important;
 	scroll-snap-align: start;
 }
 
-/* Optional: hide scrollbar */
+/* Ensure card content fills height */
+.scroll-card .card {
+	height: 100% !important;
+}
+
+/* Hide scrollbar (optional) */
 .mobile-scroll::-webkit-scrollbar {
 	display: none;
 }
