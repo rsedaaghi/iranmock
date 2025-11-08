@@ -98,6 +98,7 @@ $description = $the_fields["description"];
             <?php foreach ($exam_categories as $index => $cat): ?>
                 <div class="tab-pane fade <?= $index === 0 ? 'show active' : '' ?>" id="<?= esc_attr($cat->slug) ?>"
                     role="tabpanel">
+                    <!-- Desktop -->
                     <div class="row d-none d-md-flex">
                         <?php foreach ($exam_profiles_by_category[$cat->slug] as $exam): ?>
                             <?php $permalink = get_permalink($exam['post_id']); ?>
@@ -119,6 +120,7 @@ $description = $the_fields["description"];
                             </div>
                         <?php endforeach; ?>
                     </div>
+                    <!-- Mobile -->
                     <div class="mobile-scroll d-md-none">
                         <!-- Mobile scroll -->
                         <div class="scroll-wrapper">
