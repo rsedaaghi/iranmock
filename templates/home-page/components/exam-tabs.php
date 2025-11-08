@@ -145,7 +145,7 @@ $description = $the_fields["description"];
                             <?php endforeach; ?>
                         </div>
                     </div>
-                    <div class="d-flex justify-content-end">
+                    <div class="d-flex justify-content-end mt-3 mt-md-0">
                         <a href="<?= esc_url(add_query_arg('exam_category', $cat->slug, get_post_type_archive_link('exam_profile'))) ?>"
                             class="btn btn-link see-all-btn">
                             <?= esc_html(iranmock_translate('see_all') . ' آزمون‌های ' . $cat->name); ?> </a>
