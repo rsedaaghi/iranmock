@@ -61,8 +61,8 @@ $description = $the_fields["description"];
     <div class="container mt-5 mb-3">
         <div class="d-flex align-items-center justify-content-between mb-3">
             <div>
-                <h2 class="mb-1"><?= esc_html($label) ?></h2>
-                <p class="mb-0"><?= esc_html($description) ?></p>
+                <h2 class="mb-1 exam-tabs-section-label"><?= esc_html($label) ?></h2>
+                <p class="mb-0 exam-tabs-section-description"><?= esc_html($description) ?></p>
             </div>
             <div class="quarter-circle"></div>
         </div>
