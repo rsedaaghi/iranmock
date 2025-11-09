@@ -327,7 +327,7 @@ a.btn {
 
 	.news-description {
 		font-weight: 300;
-		font-size: 10px;
+		font-size: 12px;
 		line-height: 1;
 		letter-spacing: -0.04em;
 		text-align: center;
@@ -446,7 +446,7 @@ a.btn {
 	height: 5.1875rem;
 	object-fit: cover;
 	border-radius: 8px;
-	animation: bounce-rotate-wobble 3s ease-in-out infinite;
+	animation: shake-bottom 3s ease 3s infinite normal forwards;
 }
 
 @media (max-width: 767.98px) {
@@ -455,39 +455,9 @@ a.btn {
 		height: auto;
 		aspect-ratio: 51 / 83;
 	}
-}
 
-@keyframes bounce-rotate-wobble {
-	0% {
-		transform: translateY(0) scale(1) rotate(0deg);
-	}
-
-	30% {
-		transform: translateY(-10px) scale(1.1) rotate(10deg);
-	}
-
-	40% {
-		transform: translateY(-10px) scale(1.1) rotate(-8deg);
-	}
-
-	50% {
-		transform: translateY(-10px) scale(1.1) rotate(6deg);
-	}
-
-	60% {
-		transform: translateY(-10px) scale(1.1) rotate(-4deg);
-	}
-
-	70% {
-		transform: translateY(-10px) scale(1.1) rotate(2deg);
-	}
-
-	80% {
-		transform: translateY(-5px) scale(1.05) rotate(-1deg);
-	}
-
-	100% {
-		transform: translateY(0) scale(1) rotate(0deg);
+	.about-us-wrapper {
+		margin-right: 10px;
 	}
 }
 
@@ -622,6 +592,7 @@ a.btn {
 	}
 }
 
+/* confirm */
 @keyframes bounce {
 
 	0%,
@@ -643,7 +614,6 @@ a.btn {
 	border-top-left-radius: 0;
 	flex-shrink: 0;
 	transform-origin: 50% 50%;
-	animation: shake-rotate 4s linear 1s infinite;
 }
 
 @media (max-width: 767.98px) {
@@ -655,35 +625,36 @@ a.btn {
 }
 
 
-@keyframes shake-rotate {
+@keyframes shake-bottom {
 
 	0%,
 	100% {
 		transform: rotate(0deg);
+		transform-origin: 50% 100%;
 	}
 
 	10% {
-		transform: rotate(8deg);
+		transform: rotate(2deg);
 	}
 
 	20%,
 	40%,
 	60% {
-		transform: rotate(-10deg);
+		transform: rotate(-4deg);
 	}
 
 	30%,
 	50%,
 	70% {
-		transform: rotate(10deg);
+		transform: rotate(4deg);
 	}
 
 	80% {
-		transform: rotate(-8deg);
+		transform: rotate(-2deg);
 	}
 
 	90% {
-		transform: rotate(8deg);
+		transform: rotate(2deg);
 	}
 }
 

@@ -9,8 +9,8 @@ $news_query = new WP_Query([
 ]);
 ?>
 
-<div class="large-container bg-white my-5 py-3">
-    <h2 class="text-center mb-4">
+<div class="large-container bg-white mt-3 mb-5 py-3">
+    <h2 class="text-center mt-2 mb-4">
         <?= esc_html(iranmock_translate('related_news')); ?>
     </h2>
 

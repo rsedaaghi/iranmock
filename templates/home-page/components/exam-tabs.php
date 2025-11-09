@@ -58,7 +58,7 @@ $description = $the_fields["description"];
 ?>
 
 <?php if (!empty($exam_categories)): ?>
-    <div class="container my-5">
+    <div class="container mt-5 mb-3">
         <div class="d-flex align-items-center justify-content-between mb-3">
             <div>
                 <h2 class="mb-1"><?= esc_html($label) ?></h2>
@@ -147,8 +147,8 @@ $description = $the_fields["description"];
                             <?php endforeach; ?>
                         </div>
                     </div>
-                    <div class="d-flex justify-content-end mt-3 mt-md-0">
-                        <a href="<?= esc_url(add_query_arg('exam_category', $cat->slug, get_post_type_archive_link('exam_profile'))) ?>"
+                    <div class="d-flex justify-content-center justify-content-md-end mt-3 mt-md-2"> <a
+                            href="<?= esc_url(add_query_arg('exam_category', $cat->slug, get_post_type_archive_link('exam_profile'))) ?>"
                             class="btn btn-link see-all-btn">
                             <?= esc_html(iranmock_translate('see_all') . ' آزمون‌های ' . $cat->name); ?> </a>
                     </div>
