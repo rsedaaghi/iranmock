@@ -1,4 +1,4 @@
-/*!
+/*
 Theme Name: IranMock Bootstrap
 Theme URI: https://them.es/starter
 Author: Reza Sedaaghi
@@ -573,6 +573,44 @@ header a.nav-link {
 	padding: 4px 8px;
 	font-weight: bold;
 }
+
+/* Footer Menu Title */
+.footer-menu-title {
+	font-weight: 700;
+	font-style: normal;
+	font-size: 20px;
+	line-height: 1;
+	letter-spacing: -0.04em;
+	/* -4% converted to em */
+	color: white;
+}
+
+/* Footer Menu Items */
+.footer-menu-item {
+	font-weight: 300;
+	font-style: normal;
+	/* 'Medium' is handled by font-weight */
+	font-size: 16px;
+	line-height: 1;
+	letter-spacing: -0.04em;
+	color: white;
+}
+
+.social-icon {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+footer ul {
+	padding: unset;
+}
+
+footer .nav {
+	--bs-nav-link-padding-x: unset;
+}
+
 
 /* ============================= */
 /* 📱 RESPONSIVE UTILITIES */
@@ -1150,5 +1188,37 @@ header a.nav-link {
 @media (min-width: 768px) {
 	.tabs-scroll-container {
 		display: none !important;
+	}
+}
+
+.category-page .img-wrapper {
+	position: relative;
+	width: 100%;
+	aspect-ratio: 1 / 0.35;
+	overflow: hidden;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 3rem;
+	border: 1px solid #475569;
+	border-radius: 1.25rem;
+}
+
+.category-page .featured-img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: 0.8rem;
+}
+
+.category-header-row {
+	min-height: 80px;
+}
+
+@media (min-width: 768px) {
+	.category-header-row {
+		min-height: 100px;
 	}
 }

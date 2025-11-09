@@ -7,6 +7,7 @@
 get_header();
 
 $category = get_queried_object();
+$image = get_field('image', $category);
 $excerptMaxLength = 100;
 
 $category_query = new WP_Query([
@@ -17,8 +18,16 @@ $category_query = new WP_Query([
 ]);
 ?>
 
-<div class="container my-5">
-	<div class="row" style="min-height: 100px;">
+
+
+<div class="container category-page mt-3 mb-3 my-md-5 ">
+	<?php if (!empty($image)) : ?>
+		<div class="container-xxl no-gutter-sm img-wrapper">
+			<img src="<?= esc_url($image) ?>" alt="<?= esc_attr($category->name) ?>" class="featured-img" />
+		</div>
+	<?php endif; ?>
+
+	<div class="row category-header-row">
 		<div class="col text-center">
 			<h2 class="section-title mb-4">
 				<?= esc_html(iranmock_translate($category->name)); ?>
@@ -35,7 +44,7 @@ $category_query = new WP_Query([
 	?>
 
 	<!-- Desktop Grid -->
-	<div class="row justify-content-center d-none d-md-flex">
+	<div class="row bg-white pt-5 pb-4 justify-content-center d-none d-md-flex">
 		<?php if ($category_query->have_posts()) : ?>
 			<?php while ($category_query->have_posts()) : $category_query->the_post(); ?>
 				<div class="col-auto mb-4">
@@ -67,7 +76,7 @@ $category_query = new WP_Query([
 	</div>
 
 	<!-- Mobile Grid: Two Columns -->
-	<div class="row d-md-none">
+	<div class="row bg-white pt-4 pb-2 d-md-none">
 		<?php if ($category_query->have_posts()) : ?>
 			<?php while ($category_query->have_posts()) : $category_query->the_post(); ?>
 				<div class="col-6 mb-4">

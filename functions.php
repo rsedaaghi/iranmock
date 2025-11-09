@@ -538,12 +538,11 @@ if (function_exists('register_nav_menus')) {
 	 *
 	 * @return void
 	 */
-	register_nav_menus(
-		array(
-			'main-menu'   => 'Main Navigation Menu',
-			'footer-menu' => 'Footer Menu',
-		)
-	);
+	register_nav_menus([
+		'main-menu'     => 'Main Navigation Menu',
+		'footer-menu-1' => 'Footer Menu 1',
+		'footer-menu-2' => 'Footer Menu 2',
+	]);
 }
 
 // Custom Nav Walker: wp_bootstrap_navwalker().
