@@ -26,69 +26,83 @@ $search_enabled  = get_theme_mod('search_enabled', '1'); // Get custom meta-valu
 	<?php wp_body_open(); ?>
 
 	<div id="wrapper">
-		<header class="container-md my-2 mt-sm-5 mb-sm-1">
-			<nav id="header" class="navbar navbar-expand-md <?php echo esc_attr($navbar_scheme);
-															if (isset($navbar_position) && 'fixed_top' === $navbar_position) : echo ' fixed-top';
-															elseif (isset($navbar_position) && 'fixed_bottom' === $navbar_position) : echo ' fixed-bottom';
-															endif;
-															if (is_home() || is_front_page()) : echo ' home';
-															endif; ?>">
-				<div class="container w-100">
-					<a class="navbar-brand" href="<?php echo esc_url(home_url()); ?>"
-						title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home">
+		<header class="container-xxl no-gutter-sm my-2 mt-sm-5 mb-sm-1">
+			<nav id="header"
+				class="navbar justify-content-center <?php echo esc_attr($navbar_scheme); ?> container-fluid">
+
+				<!-- Mobile Header -->
+				<div class="row w-100 align-items-center d-flex d-md-none px-3">
+					<!-- Brand -->
+					<div class="col">
+						<a class="navbar-brand" href="<?php echo esc_url(home_url()); ?>">
+							<?php
+							$header_logo = get_theme_mod('header_logo');
+							echo !empty($header_logo)
+								? '<img src="' . esc_url($header_logo) . '" alt="' . esc_attr(get_bloginfo('name', 'display')) . '" />'
+								: esc_attr(get_bloginfo('name', 'display'));
+							?>
+						</a>
+					</div>
+
+					<!-- Register Button -->
+					<div class="col-auto">
+						<a href="<?php echo esc_url(wp_registration_url()); ?>"
+							class="btn btn-success text-nowrap w-100">
+							<?php esc_html_e(esc_html(iranmock_translate('panel_login')), 'iranmock-bootstrap'); ?>
+						</a>
+					</div>
+				</div>
+
+				<!-- Desktop Header -->
+				<div class="row w-100 align-items-center d-none d-md-flex">
+					<!-- Brand -->
+					<div class="col-auto">
+						<a class="navbar-brand" href="<?php echo esc_url(home_url()); ?>">
+							<?php
+							$header_logo = get_theme_mod('header_logo');
+							echo !empty($header_logo)
+								? '<img src="' . esc_url($header_logo) . '" alt="' . esc_attr(get_bloginfo('name', 'display')) . '" />'
+								: esc_attr(get_bloginfo('name', 'display'));
+							?>
+						</a>
+					</div>
+
+					<!-- Menu -->
+					<div class="col-auto">
 						<?php
-						$header_logo = get_theme_mod('header_logo'); // Get custom meta-value.
-
-						if (! empty($header_logo)) :
+						wp_nav_menu([
+							'menu_class'     => 'navbar-nav flex-row',
+							'container'      => '',
+							'fallback_cb'    => 'WP_Bootstrap_Navwalker::fallback',
+							'walker'         => new WP_Bootstrap_Navwalker(),
+							'theme_location' => 'main-menu',
+						]);
 						?>
-							<img src="<?php echo esc_url($header_logo); ?>"
-								alt="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" />
-						<?php
-						else :
-							echo esc_attr(get_bloginfo('name', 'display'));
-						endif;
-						?>
-					</a>
+					</div>
 
-					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
-						aria-controls="navbar" aria-expanded="false"
-						aria-label="<?php esc_attr_e('Toggle navigation', 'iranmock-bootstrap'); ?>">
-						<span class="navbar-toggler-icon"></span>
-					</button>
-
-					<div id="navbar" class="collapse navbar-collapse justify-content-between">
-						<?php
-						// Loading WordPress Custom Menu (theme_location).
-						wp_nav_menu(
-							array(
-								'menu_class'     => 'navbar-nav',
-								'container'      => '',
-								'fallback_cb'    => 'WP_Bootstrap_Navwalker::fallback',
-								'walker'         => new WP_Bootstrap_Navwalker(),
-								'theme_location' => 'main-menu',
-							)
-						);
-
-						if ('1' === $search_enabled) :
-						?>
-							<form class="search-form my-2 my-lg-0 d-flex align-items-center" role="search" method="get"
-								action="<?php echo esc_url(home_url('/')); ?>">
-								<div class="input-group">
-									<input type="text" name="s" class="form-control mx-4"
+					<!-- Search -->
+					<?php if ('1' === $search_enabled) : ?>
+						<div class="col">
+							<form class="search-form d-flex align-items-center justify-content-start" role="search"
+								method="get" action="<?php echo esc_url(home_url('/')); ?>">
+								<div class="input-group justify-content-end">
+									<input type="text" name="s" class="form-control"
 										placeholder="<?php esc_attr_e(esc_html(iranmock_translate('search')), 'iranmock-bootstrap'); ?>"
 										title="<?php esc_attr_e(esc_html(iranmock_translate('search')), 'iranmock-bootstrap'); ?>" />
 								</div>
-
 							</form>
-						<?php
-						endif;
-						?>
-						<a href="<?php echo esc_url(wp_registration_url()); ?>" class="btn btn-success px-1 w-50">
+						</div>
+					<?php endif; ?>
+
+					<!-- Register Button -->
+					<div class="col-auto">
+						<a href="<?php echo esc_url(wp_registration_url()); ?>"
+							class="btn btn-success w-100 text-nowrap">
 							<?php esc_html_e(esc_html(iranmock_translate('panel_login')), 'iranmock-bootstrap'); ?>
 						</a>
-					</div><!-- /.navbar-collapse -->
-				</div><!-- /.container -->
-			</nav><!-- /#header -->
+					</div>
+				</div>
+			</nav>
 		</header>
 
 		<main id="main" <?php if (isset($navbar_position) && 'fixed_top' === $navbar_position) : echo ' style="padding-top: 100px;"';

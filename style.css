@@ -135,8 +135,13 @@ a.btn {
 header a.nav-link {
 	font-size: 1.075rem !important;
 	font-weight: 700 !important;
+	margin-left: 10px;
+	margin-right: 10px;
 }
 
+.search-form .form-control {
+	max-width: 210px;
+}
 
 /* ============================= */
 /* 🧭 NAVIGATION TABS */
