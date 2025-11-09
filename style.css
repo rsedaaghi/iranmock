@@ -296,6 +296,15 @@ a.btn {
 /* Hide desktop grid on mobile */
 @media (max-width: 767.98px) {
 
+	.see-all-btn {
+		font-weight: 500;
+		font-size: 0.8rem;
+	}
+
+	.news-section-label {
+		font-size: 20px !important;
+	}
+
 	.news-label,
 	.news-description {
 		max-width: 100%;
