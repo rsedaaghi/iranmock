@@ -43,7 +43,7 @@
 						</div>
 
 						<!-- Column 3: Contact Us (Desktop only) -->
-						<div class="col-md-4 mb-4 d-none d-md-block">
+						<div id="contact-us" class="col-md-4 mb-4 d-none d-md-block">
 							<h5 class="footer-menu-title">تماس با ما</h5>
 							<p class="small">شما میتواند از طریق راه‌های ارتباطی زیر با ما در تماس باشد.</p>
 							<div class="d-flex gap-3 mt-3 justify-content-start">
