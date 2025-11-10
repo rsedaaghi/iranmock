@@ -58,7 +58,7 @@ $description = $the_fields["description"];
 ?>
 
 <?php if (!empty($exam_categories)): ?>
-    <div class="container mt-5 mb-3">
+    <div id="exam-profiles" class="container mt-5 mb-3">
         <div class="d-flex align-items-center justify-content-between mb-3">
             <div>
                 <h2 class="mb-1 exam-tabs-section-label"><?= esc_html($label) ?></h2>
