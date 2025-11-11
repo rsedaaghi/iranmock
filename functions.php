@@ -791,4 +791,13 @@ function render_exam_category_readonly($post)
 	}
 }
 
+function enqueue_dashicons()
+{
+	if (is_front_page() || is_single() || is_page()) { // Adjust conditions as necessary
+		wp_enqueue_style('dashicons');
+	}
+}
+add_action('wp_enqueue_scripts', 'enqueue_dashicons');
+
+
 	?>
