@@ -12,7 +12,8 @@ return [
         'view' => "View",
         'register' => "Register",
         'search' => "Search",
-        'panel_login' => "Enter Panel"
+        'panel_login' => "Enter Panel",
+        'participants' => "Participants"
     ],
     'fa' => [
         'test_providers' => 'برگزارکنند‌گان آزمون',
@@ -26,6 +27,7 @@ return [
         'view' => "مشاهده",
         'register' => "ثبت‌نام",
         'search' => "جستجو",
-        'panel_login' => " ورود به پنل"
+        'panel_login' => " ورود به پنل",
+        'participants' => "شرکت‌کنندگان"
     ],
 ];

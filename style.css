@@ -4,7 +4,7 @@ Theme URI: https://them.es/starter
 Author: Reza Sedaaghi
 Author URI: https://rsedaaghi.github.io/
 Description: A great theme for Iran Mock project
-Version: 0.0.2
+Version: 0.0.3
 Requires at least: 5.0
 Tested up to: 6.8
 Requires PHP: 7.2
@@ -422,37 +422,38 @@ header a.nav-link {
 /* 🧾 EXAM TABS SECTION */
 /* ============================= */
 .exam-tabs-label {
-	font-family: 'IRANSans';
 	font-weight: 800;
-	font-size: 14px;
+	font-size: 1rem;
 	line-height: 100%;
 	letter-spacing: -0.04em;
 }
 
 .exam-tabs-month-year {
-	font-family: 'IRANSans';
 	font-weight: 400;
-	font-size: 10px;
+	font-size: 0.875rem;
 	line-height: 100%;
 	letter-spacing: -0.04em;
 }
 
 .exam-tabs-description-label {
-	font-family: 'IRANSans';
 	font-weight: 700;
-	font-size: 12px;
+	font-size: 1rem;
 	line-height: 100%;
 	letter-spacing: -0.04em;
 	text-align: right;
 }
 
 .exam-tabs-description-text {
-	font-family: 'IRANSans';
 	font-weight: 400;
-	font-size: 9px;
+	font-size: 0.875rem;
 	line-height: 100%;
 	letter-spacing: -0.03em;
 	text-align: right;
+}
+
+.exam-tabs-footer-text {
+	font-weight: 400;
+	font-size: 12px;
 }
 
 .custom-exam-profile-card {
@@ -461,6 +462,26 @@ header a.nav-link {
 	--bs-border-width: 1.5px !important;
 	height: 105% !important;
 }
+
+.custom-star-full {
+	display: inline-block;
+	width: 20px;
+	/* Modify as needed */
+	height: 20px;
+	/* Modify as needed */
+	background-color: white;
+	/* White fill */
+	border: 2px solid black;
+	/* Black border */
+	clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.custom-star-empty {
+	display: none;
+	/* Hide or create a separate logic for empty stars */
+}
+
+
 
 /* ============================= */
 /* 📣 ABOUT US SECTION */
@@ -579,7 +600,7 @@ header a.nav-link {
 	font-weight: 700;
 	font-style: normal;
 	font-size: 20px;
-	line-height: 1;
+	line-height: 2;
 	letter-spacing: -0.04em;
 	/* -4% converted to em */
 	color: white;
@@ -591,7 +612,7 @@ header a.nav-link {
 	font-style: normal;
 	/* 'Medium' is handled by font-weight */
 	font-size: 16px;
-	line-height: 1;
+	line-height: 2;
 	letter-spacing: -0.04em;
 	color: white;
 }

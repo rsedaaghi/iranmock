@@ -56,8 +56,8 @@ $search_enabled  = get_theme_mod('search_enabled', '1'); // Get custom meta-valu
 				<!-- Desktop Header -->
 				<div class="row w-100 align-items-center d-none d-md-flex">
 					<!-- Brand -->
-					<div class="col-auto">
-						<a class="navbar-brand" href="<?php echo esc_url(home_url()); ?>">
+					<div class="col-auto px-0">
+						<a class="navbar-brand mx-0" href="<?php echo esc_url(home_url()); ?>">
 							<?php
 							$header_logo = get_theme_mod('header_logo');
 							echo !empty($header_logo)
@@ -95,7 +95,7 @@ $search_enabled  = get_theme_mod('search_enabled', '1'); // Get custom meta-valu
 					<?php endif; ?>
 
 					<!-- Register Button -->
-					<div class="col-auto">
+					<div class="col-auto px-0">
 						<a href="<?php echo esc_url(wp_registration_url()); ?>"
 							class="btn btn-success w-100 text-nowrap">
 							<?php esc_html_e(esc_html(iranmock_translate('panel_login')), 'iranmock-bootstrap'); ?>

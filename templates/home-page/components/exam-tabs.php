@@ -6,7 +6,7 @@ $exam_categories = get_terms([
 
 $exam_profiles_by_category = [];
 
-if (!empty($exam_categories)) {
+if (!empty($exam_categories) && !is_wp_error($exam_categories)) {
     foreach ($exam_categories as $term) {
         $query = new WP_Query([
             'post_type'      => 'exam_profile',
@@ -30,7 +30,7 @@ if (!empty($exam_categories)) {
                 $query->the_post();
                 $post_id = get_the_ID();
                 $fields = get_fields($post_id);
-                $card_settings = $fields["card_settings"];
+                $card_settings = $fields["card_settings"] ?? [];
 
                 $exam_profiles_by_category[$term->slug][] = [
                     'post_id'           => $post_id,
@@ -39,9 +39,9 @@ if (!empty($exam_categories)) {
                     'month'             => $fields['month'] ?? '',
                     'description_label' => $card_settings['description_label'] ?? '',
                     'description_text'  => $card_settings['description_text'] ?? '',
-                    'image'             => $card_settings['image'] ? $card_settings['image'] : get_the_post_thumbnail_url($post_id, 'medium'),
-                    'participants'      => rand(50, 500),
-                    'likes'             => rand(10, 100)
+                    'image'             => $card_settings['image'] ?? get_the_post_thumbnail_url($post_id, 'medium'),
+                    'participants' => round(rand(10000, 50000) / 1000),
+                    'rating'            => number_format(rand(30, 50) / 10, 1),
                 ];
             }
             wp_reset_postdata();
@@ -52,9 +52,14 @@ if (!empty($exam_categories)) {
 $page_id = get_option('page_on_front');
 $fields = get_fields($page_id);
 
-$the_fields = $fields["exam_tabs"];
-$label = $the_fields["label"];
-$description = $the_fields["description"];
+if (is_array($fields) && isset($fields["exam_tabs"])) {
+    $the_fields = $fields["exam_tabs"];
+    $label = $the_fields["label"] ?? '';
+    $description = $the_fields["description"] ?? '';
+} else {
+    $label = '';
+    $description = '';
+}
 ?>
 
 <?php if (!empty($exam_categories)): ?>
@@ -114,6 +119,15 @@ $description = $the_fields["description"];
                                             <p class="exam-tabs-month-year"><?= esc_html("{$exam['month']}/{$exam['year']}") ?></p>
                                             <p class="exam-tabs-description-label"><?= esc_html($exam['description_label']) ?></p>
                                             <p class="exam-tabs-description-text"><?= esc_html($exam['description_text']) ?></p>
+                                            <div class="mt-3 d-flex justify-content-between">
+                                                <span
+                                                    class="participants exam-tabs-footer-text">(<?= esc_html((iranmock_translate('participants') . ' ' . $exam['participants'] . 'k')) ?>)</span>
+                                                <div>
+                                                    <span class="dashicons dashicons-star-empty"></span>
+                                                    <span
+                                                        class="rating exam-tabs-footer-text"><?= esc_html($exam['rating']) ?>/5</span>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </a>
@@ -140,7 +154,17 @@ $description = $the_fields["description"];
                                                 <p class="exam-tabs-description-label"><?= esc_html($exam['description_label']) ?>
                                                 </p>
                                                 <p class="exam-tabs-description-text"><?= esc_html($exam['description_text']) ?></p>
+                                                <div class="mt-3 d-flex justify-content-between">
+                                                    <span
+                                                        class="participants exam-tabs-footer-text">(<?= esc_html((iranmock_translate('participants') . ' ' . $exam['participants'] . 'k')) ?>)</span>
+                                                    <div>
+                                                        <span class="dashicons dashicons-star-empty"></span>
+                                                        <span
+                                                            class="rating exam-tabs-footer-text"><?= esc_html($exam['rating']) ?>/5</span>
+                                                    </div>
+                                                </div>
                                             </div>
+
                                         </div>
                                     </a>
                                 </div>
@@ -149,7 +173,7 @@ $description = $the_fields["description"];
                     </div>
                     <div class="d-flex justify-content-center justify-content-md-end mt-3 mt-md-2"> <a
                             href="<?= esc_url(add_query_arg('exam_category', $cat->slug, get_post_type_archive_link('exam_profile'))) ?>"
-                            class="btn btn-link see-all-btn">
+                            class="btn btn-link see-all-btn px-0">
                             <?= esc_html(iranmock_translate('see_all') . ' آزمون‌های ' . $cat->name); ?> </a>
                     </div>
                 </div>
