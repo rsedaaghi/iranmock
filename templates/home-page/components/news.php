@@ -79,7 +79,7 @@ $news_query = new WP_Query([
         </div>
     </div>
 
-    <div class="text-center mt-3">
+    <div class="d-flex justify-content-end mt-3">
         <a href="<?= esc_url(get_category_link(get_category_by_slug('news')->term_id)) ?>"
             class="btn btn-link see-all-btn">
             <?= esc_html(iranmock_translate('see_all') . ' ' . iranmock_translate('news')); ?>
