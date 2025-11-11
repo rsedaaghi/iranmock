@@ -4,7 +4,7 @@ Theme URI: https://them.es/starter
 Author: Reza Sedaaghi
 Author URI: https://rsedaaghi.github.io/
 Description: A great theme for Iran Mock project
-Version: 0.0.3
+Version: 0.0.4
 Requires at least: 5.0
 Tested up to: 6.8
 Requires PHP: 7.2
@@ -175,7 +175,6 @@ header a.nav-link {
 .news-label {
 	font-weight: 500;
 	font-size: 20px;
-	line-height: 100%;
 	letter-spacing: -0.04em;
 }
 
@@ -192,7 +191,6 @@ header a.nav-link {
 	text-decoration: none;
 	font-weight: 800;
 	font-size: 1rem;
-	line-height: 100%;
 	letter-spacing: -0.04em;
 }
 
@@ -333,7 +331,6 @@ header a.nav-link {
 		font-weight: 500;
 		font-style: normal;
 		font-size: 12px;
-		line-height: 100%;
 		letter-spacing: -0.04em;
 		display: inline-block;
 	}
@@ -345,7 +342,6 @@ header a.nav-link {
 	.news-label {
 		font-weight: 500;
 		font-size: 12px;
-		line-height: 100%;
 		letter-spacing: -0.04em;
 	}
 
@@ -424,21 +420,18 @@ header a.nav-link {
 .exam-tabs-label {
 	font-weight: 800;
 	font-size: 1rem;
-	line-height: 100%;
 	letter-spacing: -0.04em;
 }
 
 .exam-tabs-month-year {
 	font-weight: 400;
 	font-size: 0.875rem;
-	line-height: 100%;
 	letter-spacing: -0.04em;
 }
 
 .exam-tabs-description-label {
 	font-weight: 700;
 	font-size: 1rem;
-	line-height: 100%;
 	letter-spacing: -0.04em;
 	text-align: right;
 }
@@ -446,7 +439,6 @@ header a.nav-link {
 .exam-tabs-description-text {
 	font-weight: 400;
 	font-size: 0.875rem;
-	line-height: 100%;
 	letter-spacing: -0.03em;
 	text-align: right;
 }
@@ -860,7 +852,6 @@ footer .nav {
 .month-year {
 	font-weight: 500;
 	font-size: 1rem;
-	line-height: 100%;
 	letter-spacing: -4%;
 	text-align: left;
 	direction: rtl;
@@ -902,7 +893,6 @@ footer .nav {
 .member-title {
 	font-weight: 700;
 	font-size: 32px;
-	line-height: 100%;
 	letter-spacing: -4%;
 	margin-bottom: 1rem;
 }
@@ -918,7 +908,6 @@ footer .nav {
 .member-price {
 	font-weight: 700;
 	font-size: 24px;
-	line-height: 100%;
 	letter-spacing: -4%;
 	margin-bottom: 1rem;
 }
@@ -1111,7 +1100,6 @@ footer .nav {
 	font-weight: 400;
 	font-style: Regular;
 	font-size: 12px;
-	line-height: 100%;
 	letter-spacing: -4%;
 }
 
