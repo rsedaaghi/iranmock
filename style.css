@@ -156,6 +156,7 @@ header a.nav-link {
 	width: 100% !important;
 	height: 100% !important;
 	object-fit: cover;
+	border-radius: 20px;
 }
 
 /* ============================= */
