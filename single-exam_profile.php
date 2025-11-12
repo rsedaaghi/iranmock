@@ -37,7 +37,7 @@
                     $single_page_settings = get_field('single_page_settings');
                     if (!empty($single_page_settings['description_text'])) :
                     ?>
-                        <p class="description-text"><?php echo wpautop($single_page_settings['description_text']); ?></p>
+                        <div class="description-text"><?php echo wpautop($single_page_settings['description_text']); ?></div>
                     <?php endif; ?>
 
                     <?php
