@@ -14,7 +14,8 @@ return [
         'search' => "Search",
         'panel_login' => "Enter Panel",
         'participants' => "Participants",
-        'enter_email' => "Enter your email"
+        'enter_email' => "Enter your email",
+        'submit' => "Submit"
     ],
     'fa' => [
         'test_providers' => 'برگزارکنند‌گان آزمون',
@@ -30,6 +31,7 @@ return [
         'search' => "جستجو",
         'panel_login' => " ورود به پنل",
         'participants' => "شرکت‌کنندگان",
-        'enter_email' => "ایمیل خود را وارد کنید"
+        'enter_email' => "ایمیل خود را وارد کنید",
+        'submit' => "ثبت"
     ],
 ];
