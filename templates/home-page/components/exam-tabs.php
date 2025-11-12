@@ -104,21 +104,24 @@ if (is_array($fields) && isset($fields["exam_tabs"])) {
                 <div class="tab-pane fade <?= $index === 0 ? 'show active' : '' ?>" id="<?= esc_attr($cat->slug) ?>"
                     role="tabpanel">
                     <!-- Desktop -->
-                    <div class="row d-none d-md-flex">
+                    <div class="row d-none d-md-flex gx-4">
                         <?php foreach ($exam_profiles_by_category[$cat->slug] as $exam): ?>
                             <?php $permalink = get_permalink($exam['post_id']); ?>
-                            <div class="col-md-3 mb-4">
+                            <div class="col-md-3 mb-4 px-0">
                                 <a href="<?= esc_url($permalink) ?>" class="text-decoration-none">
-                                    <div class="card custom-exam-profile-card h-100">
+                                    <div class="card custom-exam-profile-card">
                                         <div class="card-img-wrapper">
                                             <img src="<?= esc_url($exam['image']) ?>" class="card-img-top"
                                                 alt="<?= esc_attr($exam['label']) ?>">
                                         </div>
                                         <div class="card-body">
-                                            <p class="exam-tabs-label"><?= esc_html($exam['label']) ?></p>
-                                            <p class="exam-tabs-month-year"><?= esc_html("{$exam['month']}/{$exam['year']}") ?></p>
-                                            <p class="exam-tabs-description-label"><?= esc_html($exam['description_label']) ?></p>
-                                            <p class="exam-tabs-description-text"><?= esc_html($exam['description_text']) ?></p>
+                                            <p class="exam-tabs-label make-block"><?= esc_html($exam['label']) ?></p>
+                                            <p class="exam-tabs-month-year make-block">
+                                                <?= esc_html("{$exam['month']}/{$exam['year']}") ?></p>
+                                            <p class="exam-tabs-description-label make-block">
+                                                <?= esc_html($exam['description_label']) ?></p>
+                                            <p class="exam-tabs-description-text make-block">
+                                                <?= esc_html($exam['description_text']) ?></p>
                                             <div class="mt-3 d-flex justify-content-between">
                                                 <span
                                                     class="participants exam-tabs-footer-text">(<?= esc_html((iranmock_translate('participants') . ' ' . $exam['participants'] . 'k')) ?>)</span>
@@ -142,7 +145,7 @@ if (is_array($fields) && isset($fields["exam_tabs"])) {
                                 <?php $permalink = get_permalink($exam['post_id']); ?>
                                 <div class="scroll-card">
                                     <a href="<?= esc_url($permalink) ?>" class="text-decoration-none">
-                                        <div class="card custom-exam-profile-card h-100">
+                                        <div class="card custom-exam-profile-card">
                                             <div class="card-img-wrapper">
                                                 <img src="<?= esc_url($exam['image']) ?>" class="card-img-top"
                                                     alt="<?= esc_attr($exam['label']) ?>">

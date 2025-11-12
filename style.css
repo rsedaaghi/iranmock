@@ -175,14 +175,12 @@ header a.nav-link {
 .news-label {
 	font-weight: 500;
 	font-size: 20px;
-	letter-spacing: -0.04em;
 }
 
 .news-description {
 	font-weight: 400;
 	font-size: 14px;
 	line-height: 140%;
-	letter-spacing: -0.04em;
 	text-align: center;
 }
 
@@ -191,7 +189,6 @@ header a.nav-link {
 	text-decoration: none;
 	font-weight: 800;
 	font-size: 1rem;
-	letter-spacing: -0.04em;
 }
 
 .see-all-btn:hover {
@@ -331,7 +328,7 @@ header a.nav-link {
 		font-weight: 500;
 		font-style: normal;
 		font-size: 12px;
-		letter-spacing: -0.04em;
+
 		display: inline-block;
 	}
 
@@ -342,14 +339,14 @@ header a.nav-link {
 	.news-label {
 		font-weight: 500;
 		font-size: 12px;
-		letter-spacing: -0.04em;
+
 	}
 
 	.news-description {
 		font-weight: 300;
 		font-size: 12px;
 		line-height: 1;
-		letter-spacing: -0.04em;
+
 		text-align: center;
 	}
 }
@@ -420,39 +417,29 @@ header a.nav-link {
 .exam-tabs-label {
 	font-weight: 800;
 	font-size: 1rem;
-	letter-spacing: -0.04em;
 }
 
 .exam-tabs-month-year {
 	font-weight: 400;
 	font-size: 0.875rem;
-	letter-spacing: -0.04em;
 }
 
 .exam-tabs-description-label {
 	font-weight: 700;
 	font-size: 1rem;
-	letter-spacing: -0.04em;
 	text-align: right;
 }
 
 .exam-tabs-description-text {
 	font-weight: 400;
 	font-size: 0.875rem;
-	letter-spacing: -0.03em;
-	text-align: right;
+	text-align: justify;
+	height: 72px;
 }
 
 .exam-tabs-footer-text {
 	font-weight: 400;
 	font-size: 12px;
-}
-
-.custom-exam-profile-card {
-	--bs-card-spacer-y: 2rem !important;
-	--bs-border-radius: 0.8rem !important;
-	--bs-border-width: 1.5px !important;
-	height: 105% !important;
 }
 
 .custom-star-full {
@@ -593,7 +580,6 @@ header a.nav-link {
 	font-style: normal;
 	font-size: 20px;
 	line-height: 2;
-	letter-spacing: -0.04em;
 	/* -4% converted to em */
 	color: white;
 }
@@ -605,7 +591,6 @@ header a.nav-link {
 	/* 'Medium' is handled by font-weight */
 	font-size: 16px;
 	line-height: 2;
-	letter-spacing: -0.04em;
 	color: white;
 }
 
@@ -758,6 +743,18 @@ footer .nav {
 /* ============================= */
 /* 🎞️ EXAM PROFILE SECTION */
 /* ============================= */
+.custom-exam-profile-card {
+	width: 320px;
+	aspect-ratio: 320 / 435;
+	border: 1px solid #ddd;
+	border-radius: 10px;
+	overflow: hidden;
+	transition: box-shadow 0.3s ease, transform 0.3s ease;
+	--bs-card-spacer-y: 1rem !important;
+	--bs-border-radius: 0.8rem !important;
+	--bs-border-width: 1.5px !important;
+}
+
 .bg-page-color {
 	background-color: #E8F6F3 !important;
 }
@@ -765,7 +762,7 @@ footer .nav {
 .exam-profile-page .img-wrapper {
 	position: relative;
 	width: 100%;
-	aspect-ratio: 1 / 0.35;
+	aspect-ratio: 320 / 190;
 	overflow: hidden;
 	margin-left: auto;
 	margin-right: auto;
@@ -788,7 +785,6 @@ footer .nav {
 	font-weight: 700;
 	font-size: 36px;
 	line-height: 28px;
-	letter-spacing: -4%;
 	text-align: justify;
 }
 
@@ -796,7 +792,6 @@ footer .nav {
 	font-weight: 500;
 	font-size: 16px;
 	line-height: 35px;
-	letter-spacing: 4%;
 	text-align: justify;
 }
 
@@ -804,7 +799,6 @@ footer .nav {
 	font-weight: 500;
 	font-size: 16px;
 	line-height: 35px;
-	letter-spacing: 4%;
 	text-align: justify;
 }
 
@@ -813,7 +807,6 @@ footer .nav {
 	font-weight: 700;
 	font-size: 36px;
 	line-height: 28px;
-	letter-spacing: -4%;
 	text-align: justify;
 }
 
@@ -821,7 +814,6 @@ footer .nav {
 	font-weight: 500;
 	font-size: 16px;
 	line-height: 35px;
-	letter-spacing: 4%;
 	text-align: justify;
 }
 
@@ -847,6 +839,14 @@ footer .nav {
 	background-color: #CCDDBE;
 	border-top-left-radius: 100%;
 	z-index: 1;
+}
+
+.make-block {
+	width: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: block;
 }
 
 .month-year {
@@ -1033,15 +1033,6 @@ footer .nav {
 	border-radius: 0 0 100px 100px;
 	transform: rotate(0deg);
 	z-index: 1;
-}
-
-.custom-exam-profile-card {
-	border: 1px solid #ddd;
-	border-radius: 10px;
-	overflow: hidden;
-	transition: box-shadow 0.3s ease, transform 0.3s ease;
-	text-align: right;
-	min-height: 330px;
 }
 
 @media (min-width: 768px) {
