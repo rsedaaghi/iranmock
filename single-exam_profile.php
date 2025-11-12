@@ -230,7 +230,7 @@
                     while ($related_query->have_posts()) {
                         $related_query->the_post();
                         $post_id = get_the_ID();
-                        $fields = get_fields($post_id); // Fetch ACF fields
+                        $fields = get_fields($post_id);
                         $card_settings = $fields["card_settings"] ?? [];
 
                         $suggested_exams_posts[] = [
@@ -240,7 +240,9 @@
                             'month'             => $fields['month'] ?? '',
                             'description_label' => $card_settings['description_label'] ?? '',
                             'description_text'  => $card_settings['description_text'] ?? '',
-                            'image'             => $card_settings['image'] ? $card_settings['image'] : get_the_post_thumbnail_url($post_id, 'medium'),
+                            'image'             => $card_settings['image'] ?? get_the_post_thumbnail_url($post_id, 'medium'),
+                            'participants' => round(rand(10000, 50000) / 1000),
+                            'rating'            => number_format(rand(30, 50) / 10, 1),
                         ];
                     }
                     wp_reset_postdata();
@@ -248,41 +250,50 @@
             }
             ?>
             <?php if (!empty($suggested_exams_posts)) : ?>
-
                 <div class="container suggested-exams-section-wrapper">
                     <div class="floating-half-circle"></div>
 
                     <div class="row justify-content-center my-5">
-
-                        <h2 class="section-title text-center mb-4 mt-5"><?php echo esc_html($suggested_section_title); ?></h2>
-
+                        <h2 class="section-title text-center mb-4 mt-5"><?= esc_html($suggested_section_title); ?></h2>
                         <hr class="suggested-exams-hr">
-                        <div class="row g-4 justify-content-center">
 
+                        <div class="row d-none d-md-flex gx-4">
                             <?php foreach ($suggested_exams_posts as $exam): ?>
                                 <?php $permalink = get_permalink($exam['post_id']); ?>
-
-                                <div class="col-6 col-md-3 mb-4">
-                                    <a href="<?= esc_url($permalink) ?>" class="text-decoration-none d-block h-100">
-                                        <div class="card custom-exam-profile-card h-100">
+                                <div class="col-md-3 mb-4 px-0">
+                                    <a href="<?= esc_url($permalink) ?>" class="text-decoration-none">
+                                        <div class="card custom-exam-profile-card">
                                             <div class="card-img-wrapper">
                                                 <img src="<?= esc_url($exam['image']) ?>" class="card-img-top"
                                                     alt="<?= esc_attr($exam['label']) ?>">
                                             </div>
-                                            <div class="card-body d-flex flex-column">
-                                                <p class="exam-tabs-label fw-bold mb-1"><?= esc_html($exam['label']) ?></p>
-                                                <p class="exam-tabs-month-year text-muted small mb-2">
-                                                    <?= esc_html("{$exam['month']} / {$exam['year']}") ?></p>
-                                                <p class="exam-tabs-description-label fw-semibold mt-auto mb-1">
-                                                    <?= esc_html($exam['description_label']) ?></p>
-                                                <p class="exam-tabs-description-text small text-secondary mb-0">
-                                                    <?= esc_html($exam['description_text']) ?></p>
+                                            <div class="card-body">
+                                                <p class="exam-tabs-label make-block"><?= esc_html($exam['label']) ?></p>
+                                                <p class="exam-tabs-month-year make-block">
+                                                    <?= esc_html("{$exam['month']}/{$exam['year']}") ?>
+                                                </p>
+                                                <p class="exam-tabs-description-label make-block">
+                                                    <?= esc_html($exam['description_label']) ?>
+                                                </p>
+                                                <p class="exam-tabs-description-text">
+                                                    <?= esc_html(wp_trim_words($exam['description_text'], 25, '...')) ?>
+                                                </p>
+                                                <div class="mt-3 d-flex justify-content-between">
+                                                    <span class="participants exam-tabs-footer-text">
+                                                        (<?= esc_html(iranmock_translate('participants') . ' ' . rand(10, 50) . 'k') ?>)
+                                                    </span>
+                                                    <div>
+                                                        <span class="dashicons dashicons-star-empty"></span>
+                                                        <span class="rating exam-tabs-footer-text">
+                                                            <?= esc_html(number_format(rand(30, 50) / 10, 1)) ?>/5
+                                                        </span>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </a>
                                 </div>
                             <?php endforeach; ?>
-
                         </div>
                     </div>
                 </div>
