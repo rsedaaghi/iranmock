@@ -38,7 +38,7 @@ if (!empty($exam_categories) && !is_wp_error($exam_categories)) {
                     'year'              => $fields['year'] ?? '',
                     'month'             => $fields['month'] ?? '',
                     'description_label' => $card_settings['description_label'] ?? '',
-                    'description_text'  => wp_trim_words($card_settings['description_text'] ?? '', 20, '...'),
+                    'description_text'  => wp_trim_words($card_settings['description_text'] ?? '', 30, '...'),
                     'image'             => $card_settings['image'] ?? get_the_post_thumbnail_url($post_id, 'medium'),
                     'participants' => round(rand(10000, 50000) / 1000),
                     'rating'            => number_format(rand(30, 50) / 10, 1),
