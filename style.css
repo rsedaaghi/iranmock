@@ -149,7 +149,7 @@ header a.nav-link {
 	border: 1px solid #475569;
 	opacity: 1;
 	border-radius: 20px;
-	margin-bottom: 8rem;
+	margin-bottom: 5rem;
 }
 
 .header-img-wrapper img {
@@ -193,13 +193,6 @@ header a.nav-link {
 	font-size: 20px;
 }
 
-.news-description {
-	font-weight: 400;
-	font-size: 14px;
-	line-height: 140%;
-	text-align: center;
-}
-
 .see-all-btn {
 	color: #198754;
 	text-decoration: none;
@@ -216,9 +209,19 @@ header a.nav-link {
 /* 🖥️ DESKTOP NEWS CARDS */
 /* ============================= */
 @media (min-width: 768px) {
+	.news-description {
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 140%;
+		text-align: center;
+		height: 80px;
+		overflow: hidden;
+		display: -webkit-box;
+	}
+
 	.custom-news-card {
-		width: 388.625px;
-		height: 494.739px;
+		width: 390px;
+		aspect-ratio: 390 / 495;
 		border-radius: 15px;
 		border: 1px solid #004115B5;
 		display: flex;
@@ -229,8 +232,8 @@ header a.nav-link {
 	}
 
 	.custom-news-card .card-img-wrapper {
-		width: 299.05px;
-		height: 226.01px;
+		width: 300px;
+		aspect-ratio: 300 / 225;
 		margin: 40px auto 0 auto;
 		border-radius: 10px;
 		overflow: hidden;
@@ -249,6 +252,10 @@ header a.nav-link {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
+	}
+
+	.news-box-wrapper {
+		width: 1245px;
 	}
 }
 
@@ -331,15 +338,6 @@ header a.nav-link {
 		font-size: 20px !important;
 	}
 
-	.news-label,
-	.news-description {
-		max-width: 100%;
-		overflow: hidden;
-		white-space: nowrap;
-		text-overflow: ellipsis;
-		display: block;
-	}
-
 	.news-scroll-card .btn-success {
 		font-weight: 500;
 		font-style: normal;
@@ -355,7 +353,6 @@ header a.nav-link {
 	.news-label {
 		font-weight: 500;
 		font-size: 12px;
-
 	}
 
 	.news-description {
