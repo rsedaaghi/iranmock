@@ -437,13 +437,23 @@ header a.nav-link {
 	height: 72px;
 	overflow: hidden;
 	display: -webkit-box;
-	-webkit-line-clamp: 4;
-	-webkit-box-orient: vertical;
 }
 
 .exam-tabs-footer-text {
 	font-weight: 400;
 	font-size: 12px;
+}
+
+.make-block {
+	width: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: block;
+}
+
+p.make-block {
+	margin-bottom: 12px;
 }
 
 .custom-star-full {
@@ -843,14 +853,6 @@ footer .nav {
 	background-color: #CCDDBE;
 	border-top-left-radius: 100%;
 	z-index: 1;
-}
-
-.make-block {
-	width: 100%;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	display: block;
 }
 
 .month-year {
