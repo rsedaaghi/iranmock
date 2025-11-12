@@ -70,7 +70,7 @@ $search_enabled  = get_theme_mod('search_enabled', '1'); // Get custom meta-valu
 					<!-- Menu -->
 					<div class="col-auto">
 						<?php
-						if (! is_front_page()) {
+						if (is_front_page()) {
 							wp_nav_menu([
 								'menu_class'     => 'navbar-nav flex-row',
 								'container'      => '',
