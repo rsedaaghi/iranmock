@@ -151,6 +151,10 @@ header a.nav-link {
 	border-radius: 20px;
 }
 
+.aligncenter {
+	text-align: center;
+}
+
 /* ============================= */
 /* 🧭 NAVIGATION TABS */
 /* ============================= */
