@@ -96,14 +96,6 @@ a.btn {
 	--bs-border-radius: 0.5rem !important;
 }
 
-.large-container {
-	max-width: 1920px;
-	width: 100%;
-	margin: 0 auto;
-	padding-left: 15px;
-	padding-right: 15px;
-}
-
 .card-img-wrapper {
 	width: 100%;
 	aspect-ratio: 1.68;
@@ -395,7 +387,6 @@ header a.nav-link {
 
 .scroll-track {
 	display: flex;
-	gap: 2rem;
 	width: max-content;
 	animation: scroll-marquee 40s linear infinite;
 }

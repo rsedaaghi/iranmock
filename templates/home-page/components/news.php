@@ -15,7 +15,7 @@ $news_query = new WP_Query([
     </h2>
 
     <!-- Desktop Grid -->
-    <div class="row justify-content-center d-none d-md-flex">
+    <div class="justify-content-center d-none d-md-flex">
         <div class="col-12 news-box-wrapper">
             <!-- Card container using flexbox -->
             <div class="d-flex flex-wrap justify-content-center gap-4">
