@@ -13,7 +13,8 @@ return [
         'register' => "Register",
         'search' => "Search",
         'panel_login' => "Enter Panel",
-        'participants' => "Participants"
+        'participants' => "Participants",
+        'enter_email' => "Enter your email"
     ],
     'fa' => [
         'test_providers' => 'برگزارکنند‌گان آزمون',
@@ -28,6 +29,7 @@ return [
         'register' => "ثبت‌نام",
         'search' => "جستجو",
         'panel_login' => " ورود به پنل",
-        'participants' => "شرکت‌کنندگان"
+        'participants' => "شرکت‌کنندگان",
+        'enter_email' => "ایمیل خود را وارد کنید"
     ],
 ];

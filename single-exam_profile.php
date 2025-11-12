@@ -5,11 +5,12 @@
         <div class="exam-profile-page">
             <!-- Featured Image Section -->
             <?php if (has_post_thumbnail()) : ?>
-                <div class="container-xxl no-gutter-sm img-wrapper">
-                    <?php the_post_thumbnail('full', ['class' => 'featured-img']); ?>
+                <div class="container-xxl no-gutter-sm">
+                    <div class="header-img-wrapper">
+                        <?php the_post_thumbnail('full', ['class' => 'featured-img']); ?>
+                    </div>
                 </div>
             <?php endif; ?>
-
 
             <!-- Label Section -->
             <?php if ($label = get_field('label')) : ?>

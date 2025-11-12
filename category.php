@@ -1,29 +1,31 @@
-<?php
+The Template for displaying Category Archive pages.The Template for displaying Category Archive pages.<?php
 
-/**
- * The Template for displaying Category Archive pages.
- */
+																										/**
+																										 * The Template for displaying Category Archive pages.
+																										 */
 
-get_header();
+																										get_header();
 
-$category = get_queried_object();
-$image = get_field('image', $category);
-$excerptMaxLength = 100;
+																										$category = get_queried_object();
+																										$image = get_field('image', $category);
+																										$excerptMaxLength = 100;
 
-$category_query = new WP_Query([
-	'post_type'      => 'post',
-	'posts_per_page' => 12,
-	'post_status'    => 'publish',
-	'cat'            => $category->term_id
-]);
-?>
+																										$category_query = new WP_Query([
+																											'post_type'      => 'post',
+																											'posts_per_page' => 12,
+																											'post_status'    => 'publish',
+																											'cat'            => $category->term_id
+																										]);
+																										?>
 
 
 
 <div class="container category-page mt-3 mb-3 my-md-5 ">
 	<?php if (!empty($image)) : ?>
-		<div class="container-xxl no-gutter-sm img-wrapper">
-			<img src="<?= esc_url($image) ?>" alt="<?= esc_attr($category->name) ?>" class="featured-img" />
+		<div class="container-xxl no-gutter-sm">
+			<div class="header-img-wrapper">
+				<img src="<?= esc_url($image) ?>" alt="<?= esc_attr($category->name) ?>" />
+			</div>
 		</div>
 	<?php endif; ?>
 

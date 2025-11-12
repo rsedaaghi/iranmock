@@ -13,8 +13,9 @@ $description = $the_fields["description"];
 
     <form class="d-flex justify-content-center">
         <div class="newsletter-wrapper d-flex w-100">
-            <button class="btn newsletter-btn btn-success"> <?= esc_html(iranmock_translate('send')); ?> </button>
-            <input type="email" class="form-control newsletter-input" placeholder="Enter your email">
+            <button class="btn newsletter-btn btn-success"> <?= esc_html(iranmock_translate('submit')); ?> </button>
+            <input type="email" class="form-control newsletter-input"
+                placeholder="<?= esc_html(iranmock_translate('enter_email')) ?>">
         </div>
     </form>
 

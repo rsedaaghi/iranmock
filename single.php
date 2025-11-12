@@ -14,8 +14,10 @@ $content = apply_filters('the_content', get_the_content());
 <div class="exam-profile-page">
 	<!-- Featured Image Section -->
 	<?php if (!empty($image)) : ?>
-		<div class="container-xxl no-gutter-sm img-wrapper">
-			<img src="<?= esc_url($image) ?>" alt="<?= esc_attr($title) ?>" class="featured-img" />
+		<div class="container-xxl no-gutter-sm">
+			<div class="header-img-wrapper">
+				<img src="<?= esc_url($image) ?>" alt="<?= esc_attr($title) ?>" />
+			</div>
 		</div>
 	<?php endif; ?>
 

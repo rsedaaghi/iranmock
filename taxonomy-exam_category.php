@@ -86,8 +86,10 @@ $jalali_months = [
 <div class="exam-profile-page">
     <!-- Featured Image Section -->
     <?php if (!empty($image)) : ?>
-        <div class="container-xxl no-gutter-sm img-wrapper">
-            <img src="<?= esc_url($image) ?>" alt="<?= esc_attr($term->name) ?>" class="featured-img" />
+        <div class="container-xxl no-gutter-sm">
+            <div class="header-img-wrapper">
+                <img src="<?= esc_url($image) ?>" alt="<?= esc_attr($term->name) ?>" />
+            </div>
         </div>
     <?php endif; ?>
 
