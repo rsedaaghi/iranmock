@@ -120,7 +120,7 @@ if (is_array($fields) && isset($fields["exam_tabs"])) {
                                                 <?= esc_html("{$exam['month']}/{$exam['year']}") ?></p>
                                             <p class="exam-tabs-description-label make-block">
                                                 <?= esc_html($exam['description_label']) ?></p>
-                                            <p class="exam-tabs-description-text make-block">
+                                            <p class="exam-tabs-description-text">
                                                 <?= esc_html($exam['description_text']) ?></p>
                                             <div class="mt-3 d-flex justify-content-between">
                                                 <span

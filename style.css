@@ -435,6 +435,10 @@ header a.nav-link {
 	font-size: 0.875rem;
 	text-align: justify;
 	height: 72px;
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 4;
+	-webkit-box-orient: vertical;
 }
 
 .exam-tabs-footer-text {
