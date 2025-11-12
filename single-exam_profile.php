@@ -7,7 +7,7 @@
             <?php if (has_post_thumbnail()) : ?>
                 <div class="container-xxl no-gutter-sm">
                     <div class="header-img-wrapper">
-                        <?php the_post_thumbnail('full', ['class' => 'featured-img']); ?>
+                        <?php the_post_thumbnail('full'); ?>
                     </div>
                 </div>
             <?php endif; ?>
