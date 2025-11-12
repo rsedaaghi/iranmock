@@ -276,7 +276,7 @@
                                                     <?= esc_html($exam['description_label']) ?>
                                                 </p>
                                                 <p class="exam-tabs-description-text">
-                                                    <?= esc_html(wp_trim_words($exam['description_text'], 25, '...')) ?>
+                                                    <?= esc_html($exam['description_text']) ?></p>
                                                 </p>
                                                 <div class="mt-3 d-flex justify-content-between">
                                                     <span class="participants exam-tabs-footer-text">
