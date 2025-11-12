@@ -30,7 +30,7 @@
                     if ($month && $year):
                         $month_year = "{$month}/{$year}";
                     ?>
-                        <p class="month-year"><?php echo esc_html($month_year); ?></p>
+                        <p class="month-year">تاریخ انتشار: <?php echo esc_html($month_year); ?></p>
                     <?php endif; ?>
 
                     <?php
