@@ -70,13 +70,23 @@ $search_enabled  = get_theme_mod('search_enabled', '1'); // Get custom meta-valu
 					<!-- Menu -->
 					<div class="col-auto">
 						<?php
-						wp_nav_menu([
-							'menu_class'     => 'navbar-nav flex-row',
-							'container'      => '',
-							'fallback_cb'    => 'WP_Bootstrap_Navwalker::fallback',
-							'walker'         => new WP_Bootstrap_Navwalker(),
-							'theme_location' => 'main-menu',
-						]);
+						if (! is_front_page()) {
+							wp_nav_menu([
+								'menu_class'     => 'navbar-nav flex-row',
+								'container'      => '',
+								'fallback_cb'    => 'WP_Bootstrap_Navwalker::fallback',
+								'walker'         => new WP_Bootstrap_Navwalker(),
+								'theme_location' => 'main-menu-homepage',
+							]);
+						} else {
+							wp_nav_menu([
+								'menu_class'     => 'navbar-nav flex-row',
+								'container'      => '',
+								'fallback_cb'    => 'WP_Bootstrap_Navwalker::fallback',
+								'walker'         => new WP_Bootstrap_Navwalker(),
+								'theme_location' => 'main-menu',
+							]);
+						}
 						?>
 					</div>
 

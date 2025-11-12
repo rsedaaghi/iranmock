@@ -539,6 +539,7 @@ if (function_exists('register_nav_menus')) {
 	 * @return void
 	 */
 	register_nav_menus([
+		'main-menu-home'     => 'Main Navigation Menu Homepage',
 		'main-menu'     => 'Main Navigation Menu',
 		'footer-menu-1' => 'Footer Menu 1',
 		'footer-menu-2' => 'Footer Menu 2',
