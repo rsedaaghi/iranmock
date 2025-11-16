@@ -86,7 +86,7 @@
                                                         $icon_html = '<span class="dashicons dashicons-no-alt" style="color:red;"></span>';
                                                         break;
                                                     default:
-                                                        $icon_html = '';
+                                                        $icon_html = '<span>&nbsp;</span>';
                                                         break;
                                                 }
                                             ?>
