@@ -86,12 +86,13 @@
                                                         $icon_html = '<span class="dashicons dashicons-no-alt" style="color:red;"></span>';
                                                         break;
                                                     default:
-                                                        $icon_html = '<span class="dashicons dashicons-minus" style="color:gray;"></span>';
+                                                        $icon_html = '';
                                                         break;
                                                 }
                                             ?>
                                                 <?php if (!empty($feature["label"])) : ?>
-                                                    <li><?php echo $icon_html . ' ' . esc_html($feature["label"]); ?></li>
+                                                    <li><?php echo ($icon_html ? $icon_html : '') . ' ' . esc_html($feature["label"]); ?>
+                                                    </li>
                                                 <?php endif; ?>
                                             <?php endforeach; ?>
                                         </ul>
