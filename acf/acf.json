@@ -82,6 +82,41 @@
                 "mime_types": "",
                 "allow_in_bindings": 0,
                 "preview_size": "medium"
+            },
+            {
+                "key": "field_69196fc7f422d",
+                "label": "Member Plans",
+                "name": "member_plans",
+                "aria-label": "",
+                "type": "relationship",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "post_type": [
+                    "member_plan"
+                ],
+                "post_status": [
+                    "publish"
+                ],
+                "taxonomy": "",
+                "filters": [
+                    "search",
+                    "taxonomy"
+                ],
+                "return_format": "object",
+                "min": "",
+                "max": "",
+                "allow_in_bindings": 0,
+                "elements": "",
+                "bidirectional": 1,
+                "bidirectional_target": [
+                    "field_691964e43ea9a"
+                ]
             }
         ],
         "location": [
@@ -206,7 +241,7 @@
                 "required": 0,
                 "conditional_logic": 0,
                 "wrapper": {
-                    "width": "",
+                    "width": "50",
                     "class": "",
                     "id": ""
                 },
@@ -1199,37 +1234,31 @@
             },
             {
                 "key": "field_691964e43ea9a",
-                "label": "Exam Profiles",
-                "name": "exam_profiles",
+                "label": "Exam Categories",
+                "name": "exam_categories",
                 "aria-label": "",
-                "type": "relationship",
+                "type": "taxonomy",
                 "instructions": "",
                 "required": 0,
                 "conditional_logic": 0,
                 "wrapper": {
-                    "width": "",
+                    "width": "50",
                     "class": "",
                     "id": ""
                 },
-                "post_type": [
-                    "exam_profile"
-                ],
-                "post_status": [
-                    "publish"
-                ],
-                "taxonomy": "",
-                "filters": [
-                    "search",
-                    "post_type",
-                    "taxonomy"
-                ],
-                "return_format": "object",
-                "min": "",
-                "max": "",
+                "taxonomy": "exam_category",
+                "add_term": 0,
+                "save_terms": 0,
+                "load_terms": 0,
+                "return_format": "id",
+                "field_type": "checkbox",
                 "allow_in_bindings": 0,
-                "elements": "",
                 "bidirectional": 1,
-                "bidirectional_target": ""
+                "bidirectional_target": [
+                    "field_69196fc7f422d"
+                ],
+                "multiple": 0,
+                "allow_null": 0
             }
         ],
         "location": [
