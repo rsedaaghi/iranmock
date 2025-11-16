@@ -121,7 +121,7 @@
                 "required": 1,
                 "conditional_logic": 0,
                 "wrapper": {
-                    "width": "50",
+                    "width": "33",
                     "class": "",
                     "id": ""
                 },
@@ -133,6 +133,24 @@
                 "append": ""
             },
             {
+                "key": "field_68da4f172e1bf",
+                "label": "Image",
+                "name": "",
+                "aria-label": "",
+                "type": "message",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "22",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "Add image using the \"set featured image\" section.",
+                "new_lines": "wpautop",
+                "esc_html": 0
+            },
+            {
                 "key": "field_68da490f2c351",
                 "label": "Year",
                 "name": "year",
@@ -142,7 +160,7 @@
                 "required": 1,
                 "conditional_logic": 0,
                 "wrapper": {
-                    "width": "50",
+                    "width": "22",
                     "class": "",
                     "id": ""
                 },
@@ -165,7 +183,7 @@
                 "required": 1,
                 "conditional_logic": 0,
                 "wrapper": {
-                    "width": "50",
+                    "width": "22",
                     "class": "",
                     "id": ""
                 },
@@ -179,22 +197,40 @@
                 "append": ""
             },
             {
-                "key": "field_68da4f172e1bf",
-                "label": "Image",
-                "name": "",
+                "key": "field_69196518b46c0",
+                "label": "Member Plans",
+                "name": "member_plans",
                 "aria-label": "",
-                "type": "message",
+                "type": "relationship",
                 "instructions": "",
                 "required": 0,
                 "conditional_logic": 0,
                 "wrapper": {
-                    "width": "50",
+                    "width": "",
                     "class": "",
                     "id": ""
                 },
-                "message": "Add image using the \"set featured image\" section.",
-                "new_lines": "wpautop",
-                "esc_html": 0
+                "post_type": [
+                    "member_plan"
+                ],
+                "post_status": [
+                    "publish"
+                ],
+                "taxonomy": "",
+                "filters": [
+                    "search",
+                    "post_type",
+                    "taxonomy"
+                ],
+                "return_format": "object",
+                "min": "",
+                "max": "",
+                "allow_in_bindings": 0,
+                "elements": "",
+                "bidirectional": 1,
+                "bidirectional_target": [
+                    "field_691964e43ea9a"
+                ]
             },
             {
                 "key": "field_68fdf8ad5b284",
@@ -222,7 +258,7 @@
                         "required": 0,
                         "conditional_logic": 0,
                         "wrapper": {
-                            "width": "50",
+                            "width": "33",
                             "class": "",
                             "id": ""
                         },
@@ -250,7 +286,7 @@
                             ]
                         ],
                         "wrapper": {
-                            "width": "50",
+                            "width": "33",
                             "class": "",
                             "id": ""
                         },
@@ -271,7 +307,7 @@
                         "required": 0,
                         "conditional_logic": 0,
                         "wrapper": {
-                            "width": "100",
+                            "width": "33",
                             "class": "",
                             "id": ""
                         },
@@ -306,6 +342,24 @@
                 "layout": "block",
                 "sub_fields": [
                     {
+                        "key": "field_691967d31691d",
+                        "label": "Description",
+                        "name": "",
+                        "aria-label": "",
+                        "type": "tab",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "placement": "top",
+                        "endpoint": 0,
+                        "selected": 0
+                    },
+                    {
                         "key": "field_68fdf9669f2de",
                         "label": "Description Text",
                         "name": "description_text",
@@ -327,11 +381,11 @@
                         "new_lines": ""
                     },
                     {
-                        "key": "field_68fdff160e12f",
-                        "label": "Downloads",
-                        "name": "downloads",
+                        "key": "field_691967428f27c",
+                        "label": "Download 1",
+                        "name": "",
                         "aria-label": "",
-                        "type": "group",
+                        "type": "tab",
                         "instructions": "",
                         "required": 0,
                         "conditional_logic": 0,
@@ -340,62 +394,122 @@
                             "class": "",
                             "id": ""
                         },
+                        "placement": "top",
+                        "endpoint": 0,
+                        "selected": 0
+                    },
+                    {
+                        "key": "field_68fdff9e0e132",
+                        "label": "Is active?",
+                        "name": "is_active",
+                        "aria-label": "",
+                        "type": "true_false",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "message": "",
+                        "default_value": 0,
+                        "allow_in_bindings": 0,
+                        "ui": 0,
+                        "ui_on_text": "",
+                        "ui_off_text": ""
+                    },
+                    {
+                        "key": "field_68fdff750e130",
+                        "label": "D_1",
+                        "name": "d_1",
+                        "aria-label": "",
+                        "type": "group",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_68fdff9e0e132",
+                                    "operator": "==",
+                                    "value": "1"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
                         "layout": "block",
                         "sub_fields": [
                             {
-                                "key": "field_68fdff750e130",
-                                "label": "Download_1",
-                                "name": "download_1",
+                                "key": "field_68fdff950e131",
+                                "label": "Label",
+                                "name": "label",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_68fdffc80e133",
+                                "label": "Description",
+                                "name": "description",
+                                "aria-label": "",
+                                "type": "textarea",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "rows": "",
+                                "placeholder": "",
+                                "new_lines": ""
+                            },
+                            {
+                                "key": "field_68fe011284048",
+                                "label": "Button_1",
+                                "name": "button_1",
                                 "aria-label": "",
                                 "type": "group",
                                 "instructions": "",
                                 "required": 0,
                                 "conditional_logic": 0,
                                 "wrapper": {
-                                    "width": "",
+                                    "width": "50",
                                     "class": "",
                                     "id": ""
                                 },
                                 "layout": "block",
                                 "sub_fields": [
                                     {
-                                        "key": "field_68fdff9e0e132",
-                                        "label": "Is active?",
-                                        "name": "is_active",
-                                        "aria-label": "",
-                                        "type": "true_false",
-                                        "instructions": "",
-                                        "required": 0,
-                                        "conditional_logic": 0,
-                                        "wrapper": {
-                                            "width": "",
-                                            "class": "",
-                                            "id": ""
-                                        },
-                                        "message": "",
-                                        "default_value": 0,
-                                        "allow_in_bindings": 0,
-                                        "ui": 0,
-                                        "ui_on_text": "",
-                                        "ui_off_text": ""
-                                    },
-                                    {
-                                        "key": "field_68fdff950e131",
+                                        "key": "field_68fe013084049",
                                         "label": "Label",
                                         "name": "label",
                                         "aria-label": "",
                                         "type": "text",
                                         "instructions": "",
                                         "required": 0,
-                                        "conditional_logic": [
-                                            [
-                                                {
-                                                    "field": "field_68fdff9e0e132",
-                                                    "operator": "==",
-                                                    "value": "1"
-                                                }
-                                            ]
-                                        ],
+                                        "conditional_logic": 0,
                                         "wrapper": {
                                             "width": "",
                                             "class": "",
@@ -409,22 +523,53 @@
                                         "append": ""
                                     },
                                     {
-                                        "key": "field_68fdffc80e133",
-                                        "label": "Description",
-                                        "name": "description",
+                                        "key": "field_68fe013c8404a",
+                                        "label": "File",
+                                        "name": "file",
                                         "aria-label": "",
-                                        "type": "textarea",
+                                        "type": "file",
                                         "instructions": "",
                                         "required": 0,
-                                        "conditional_logic": [
-                                            [
-                                                {
-                                                    "field": "field_68fdff9e0e132",
-                                                    "operator": "==",
-                                                    "value": "1"
-                                                }
-                                            ]
-                                        ],
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "return_format": "",
+                                        "library": "",
+                                        "min_size": "",
+                                        "max_size": "",
+                                        "mime_types": "",
+                                        "allow_in_bindings": 0
+                                    }
+                                ]
+                            },
+                            {
+                                "key": "field_68fe016e8404e",
+                                "label": "Button_2",
+                                "name": "button_2",
+                                "aria-label": "",
+                                "type": "group",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "layout": "block",
+                                "sub_fields": [
+                                    {
+                                        "key": "field_68fe016e8404f",
+                                        "label": "Label",
+                                        "name": "label",
+                                        "aria-label": "",
+                                        "type": "text",
+                                        "instructions": "",
+                                        "required": 0,
+                                        "conditional_logic": 0,
                                         "wrapper": {
                                             "width": "",
                                             "class": "",
@@ -433,149 +578,261 @@
                                         "default_value": "",
                                         "maxlength": "",
                                         "allow_in_bindings": 0,
-                                        "rows": "",
                                         "placeholder": "",
-                                        "new_lines": ""
+                                        "prepend": "",
+                                        "append": ""
                                     },
                                     {
-                                        "key": "field_68fe011284048",
-                                        "label": "Button_1",
-                                        "name": "button_1",
+                                        "key": "field_68fe016e84050",
+                                        "label": "File",
+                                        "name": "file",
                                         "aria-label": "",
-                                        "type": "group",
+                                        "type": "file",
                                         "instructions": "",
                                         "required": 0,
-                                        "conditional_logic": [
-                                            [
-                                                {
-                                                    "field": "field_68fdff9e0e132",
-                                                    "operator": "==",
-                                                    "value": "1"
-                                                }
-                                            ]
-                                        ],
+                                        "conditional_logic": 0,
                                         "wrapper": {
                                             "width": "",
                                             "class": "",
                                             "id": ""
                                         },
-                                        "layout": "block",
-                                        "sub_fields": [
-                                            {
-                                                "key": "field_68fe013084049",
-                                                "label": "Label",
-                                                "name": "label",
-                                                "aria-label": "",
-                                                "type": "text",
-                                                "instructions": "",
-                                                "required": 0,
-                                                "conditional_logic": 0,
-                                                "wrapper": {
-                                                    "width": "",
-                                                    "class": "",
-                                                    "id": ""
-                                                },
-                                                "default_value": "",
-                                                "maxlength": "",
-                                                "allow_in_bindings": 0,
-                                                "placeholder": "",
-                                                "prepend": "",
-                                                "append": ""
-                                            },
-                                            {
-                                                "key": "field_68fe013c8404a",
-                                                "label": "File",
-                                                "name": "file",
-                                                "aria-label": "",
-                                                "type": "file",
-                                                "instructions": "",
-                                                "required": 0,
-                                                "conditional_logic": 0,
-                                                "wrapper": {
-                                                    "width": "",
-                                                    "class": "",
-                                                    "id": ""
-                                                },
-                                                "return_format": "",
-                                                "library": "",
-                                                "min_size": "",
-                                                "max_size": "",
-                                                "mime_types": "",
-                                                "allow_in_bindings": 0
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "key": "field_68fe016e8404e",
-                                        "label": "Button_2",
-                                        "name": "button_2",
-                                        "aria-label": "",
-                                        "type": "group",
-                                        "instructions": "",
-                                        "required": 0,
-                                        "conditional_logic": [
-                                            [
-                                                {
-                                                    "field": "field_68fdff9e0e132",
-                                                    "operator": "==",
-                                                    "value": "1"
-                                                }
-                                            ]
-                                        ],
-                                        "wrapper": {
-                                            "width": "",
-                                            "class": "",
-                                            "id": ""
-                                        },
-                                        "layout": "block",
-                                        "sub_fields": [
-                                            {
-                                                "key": "field_68fe016e8404f",
-                                                "label": "Label",
-                                                "name": "label",
-                                                "aria-label": "",
-                                                "type": "text",
-                                                "instructions": "",
-                                                "required": 0,
-                                                "conditional_logic": 0,
-                                                "wrapper": {
-                                                    "width": "",
-                                                    "class": "",
-                                                    "id": ""
-                                                },
-                                                "default_value": "",
-                                                "maxlength": "",
-                                                "allow_in_bindings": 0,
-                                                "placeholder": "",
-                                                "prepend": "",
-                                                "append": ""
-                                            },
-                                            {
-                                                "key": "field_68fe016e84050",
-                                                "label": "File",
-                                                "name": "file",
-                                                "aria-label": "",
-                                                "type": "file",
-                                                "instructions": "",
-                                                "required": 0,
-                                                "conditional_logic": 0,
-                                                "wrapper": {
-                                                    "width": "",
-                                                    "class": "",
-                                                    "id": ""
-                                                },
-                                                "return_format": "",
-                                                "library": "",
-                                                "min_size": "",
-                                                "max_size": "",
-                                                "mime_types": "",
-                                                "allow_in_bindings": 0
-                                            }
-                                        ]
+                                        "return_format": "",
+                                        "library": "",
+                                        "min_size": "",
+                                        "max_size": "",
+                                        "mime_types": "",
+                                        "allow_in_bindings": 0
                                     }
                                 ]
                             }
                         ]
+                    },
+                    {
+                        "key": "field_69196766a8976",
+                        "label": "Download 2",
+                        "name": "",
+                        "aria-label": "",
+                        "type": "tab",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "placement": "top",
+                        "endpoint": 0,
+                        "selected": 0
+                    },
+                    {
+                        "key": "field_691968d240b5a",
+                        "label": "D_2",
+                        "name": "d_2",
+                        "aria-label": "",
+                        "type": "group",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_68fdff9e0e132",
+                                    "operator": "==",
+                                    "value": "1"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "layout": "block",
+                        "sub_fields": [
+                            {
+                                "key": "field_691968d240b5b",
+                                "label": "Label",
+                                "name": "label",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_691968d240b5c",
+                                "label": "Description",
+                                "name": "description",
+                                "aria-label": "",
+                                "type": "textarea",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "rows": "",
+                                "placeholder": "",
+                                "new_lines": ""
+                            },
+                            {
+                                "key": "field_691968d240b5d",
+                                "label": "Button_1",
+                                "name": "button_1",
+                                "aria-label": "",
+                                "type": "group",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "layout": "",
+                                "sub_fields": [
+                                    {
+                                        "key": "field_691968d240b5e",
+                                        "label": "Label",
+                                        "name": "label",
+                                        "aria-label": "",
+                                        "type": "text",
+                                        "instructions": "",
+                                        "required": 0,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "default_value": "",
+                                        "maxlength": "",
+                                        "allow_in_bindings": 0,
+                                        "placeholder": "",
+                                        "prepend": "",
+                                        "append": ""
+                                    },
+                                    {
+                                        "key": "field_691968d240b5f",
+                                        "label": "File",
+                                        "name": "file",
+                                        "aria-label": "",
+                                        "type": "file",
+                                        "instructions": "",
+                                        "required": 0,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "return_format": "",
+                                        "library": "",
+                                        "min_size": "",
+                                        "max_size": "",
+                                        "mime_types": "",
+                                        "allow_in_bindings": 0
+                                    }
+                                ]
+                            },
+                            {
+                                "key": "field_691968d240b60",
+                                "label": "Button_2",
+                                "name": "button_2",
+                                "aria-label": "",
+                                "type": "group",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "layout": "",
+                                "sub_fields": [
+                                    {
+                                        "key": "field_691968d240b61",
+                                        "label": "Label",
+                                        "name": "label",
+                                        "aria-label": "",
+                                        "type": "text",
+                                        "instructions": "",
+                                        "required": 0,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "default_value": "",
+                                        "maxlength": "",
+                                        "allow_in_bindings": 0,
+                                        "placeholder": "",
+                                        "prepend": "",
+                                        "append": ""
+                                    },
+                                    {
+                                        "key": "field_691968d240b62",
+                                        "label": "File",
+                                        "name": "file",
+                                        "aria-label": "",
+                                        "type": "file",
+                                        "instructions": "",
+                                        "required": 0,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "return_format": "",
+                                        "library": "",
+                                        "min_size": "",
+                                        "max_size": "",
+                                        "mime_types": "",
+                                        "allow_in_bindings": 0
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "key": "field_691966ff19937",
+                        "label": "Is active?",
+                        "name": "is_active",
+                        "aria-label": "",
+                        "type": "true_false",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "message": "",
+                        "default_value": 0,
+                        "allow_in_bindings": 0,
+                        "ui": 0,
+                        "ui_on_text": "",
+                        "ui_off_text": ""
                     }
                 ]
             }
@@ -878,32 +1135,6 @@
         "title": "Member Plan",
         "fields": [
             {
-                "key": "field_68fdd06c443a1",
-                "label": "Exam Category",
-                "name": "exam_category",
-                "aria-label": "",
-                "type": "taxonomy",
-                "instructions": "Exam category of the plan.",
-                "required": 1,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "50",
-                    "class": "",
-                    "id": ""
-                },
-                "taxonomy": "exam_category",
-                "add_term": 0,
-                "save_terms": 0,
-                "load_terms": 0,
-                "return_format": "id",
-                "field_type": "radio",
-                "allow_null": 0,
-                "allow_in_bindings": 0,
-                "bidirectional": 0,
-                "multiple": 0,
-                "bidirectional_target": []
-            },
-            {
                 "key": "field_68fdd1098a965",
                 "label": "Is active",
                 "name": "is_active",
@@ -965,6 +1196,40 @@
                 "rows": "",
                 "placeholder": "For example: بانک کامل سوالات و ...",
                 "new_lines": ""
+            },
+            {
+                "key": "field_691964e43ea9a",
+                "label": "Exam Profiles",
+                "name": "exam_profiles",
+                "aria-label": "",
+                "type": "relationship",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "post_type": [
+                    "exam_profile"
+                ],
+                "post_status": [
+                    "publish"
+                ],
+                "taxonomy": "",
+                "filters": [
+                    "search",
+                    "post_type",
+                    "taxonomy"
+                ],
+                "return_format": "object",
+                "min": "",
+                "max": "",
+                "allow_in_bindings": 0,
+                "elements": "",
+                "bidirectional": 1,
+                "bidirectional_target": ""
             }
         ],
         "location": [
@@ -992,57 +1257,15 @@
         "display_title": ""
     },
     {
-        "key": "group_68db83828b014",
-        "title": "Test Provider",
+        "key": "group_69196600f2863",
+        "title": "News Settings",
         "fields": [
             {
-                "key": "field_68db838293cf9",
-                "label": "Label",
-                "name": "label",
+                "key": "field_6919660102002",
+                "label": "News Lead",
+                "name": "news_lead",
                 "aria-label": "",
                 "type": "text",
-                "instructions": "Label of the test provider.",
-                "required": 1,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "50",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "",
-                "maxlength": "",
-                "allow_in_bindings": 0,
-                "placeholder": "For example: آیلتس",
-                "prepend": "",
-                "append": ""
-            },
-            {
-                "key": "field_68db838294126",
-                "label": "Description Text",
-                "name": "description_text",
-                "aria-label": "",
-                "type": "textarea",
-                "instructions": "Description text of the test provider.",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "50",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "",
-                "maxlength": "",
-                "allow_in_bindings": 0,
-                "rows": "",
-                "placeholder": "For example: آزمون آیلتس توسط سازمان ...",
-                "new_lines": ""
-            },
-            {
-                "key": "field_68db83ff50408",
-                "label": "Image",
-                "name": "",
-                "aria-label": "",
-                "type": "message",
                 "instructions": "",
                 "required": 0,
                 "conditional_logic": 0,
@@ -1051,9 +1274,12 @@
                     "class": "",
                     "id": ""
                 },
-                "message": "Add image using the \"set featured image\" section.",
-                "new_lines": "wpautop",
-                "esc_html": 0
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 0,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
             }
         ],
         "location": [
@@ -1061,20 +1287,21 @@
                 {
                     "param": "post_type",
                     "operator": "==",
-                    "value": "test_provider"
+                    "value": "post"
+                },
+                {
+                    "param": "post_category",
+                    "operator": "==",
+                    "value": "category:news"
                 }
             ]
         ],
         "menu_order": 0,
-        "position": "normal",
+        "position": "acf_after_title",
         "style": "default",
         "label_placement": "top",
         "instruction_placement": "label",
-        "hide_on_screen": [
-            "the_content",
-            "page_attributes",
-            "categories"
-        ],
+        "hide_on_screen": "",
         "active": true,
         "description": "",
         "show_in_rest": 0,
@@ -1187,6 +1414,96 @@
         ],
         "active": true,
         "description": "",
-        "show_in_rest": 0
+        "show_in_rest": 0,
+        "display_title": ""
+    },
+    {
+        "key": "group_68db83828b014",
+        "title": "Test Provider",
+        "fields": [
+            {
+                "key": "field_68db838293cf9",
+                "label": "Label",
+                "name": "label",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "Label of the test provider.",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 0,
+                "placeholder": "For example: آیلتس",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_68db838294126",
+                "label": "Description Text",
+                "name": "description_text",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "Description text of the test provider.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 0,
+                "rows": "",
+                "placeholder": "For example: آزمون آیلتس توسط سازمان ...",
+                "new_lines": ""
+            },
+            {
+                "key": "field_68db83ff50408",
+                "label": "Image",
+                "name": "",
+                "aria-label": "",
+                "type": "message",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "Add image using the \"set featured image\" section.",
+                "new_lines": "wpautop",
+                "esc_html": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "test_provider"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": [
+            "the_content",
+            "page_attributes",
+            "categories"
+        ],
+        "active": true,
+        "description": "",
+        "show_in_rest": 0,
+        "display_title": ""
     }
 ]
