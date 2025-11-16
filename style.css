@@ -4,7 +4,7 @@ Theme URI: https://them.es/starter
 Author: Reza Sedaaghi
 Author URI: https://rsedaaghi.github.io/
 Description: A great theme for Iran Mock project
-Version: 0.0.4
+Version: 0.0.5
 Requires at least: 5.0
 Tested up to: 6.8
 Requires PHP: 7.2
@@ -828,6 +828,10 @@ footer .nav {
 	text-align: justify;
 }
 
+.news-lead {
+	font-weight: 700 !important;
+	font-size: 18px !important;
+}
 
 .download-label {
 	font-weight: 700;

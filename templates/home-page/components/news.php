@@ -23,6 +23,7 @@ $news_query = new WP_Query([
                     <?php
                     $count = 0;
                     while ($news_query->have_posts() && $count < 6): $news_query->the_post();
+                        $news_lead = get_field('news_lead');
                     ?>
                         <div class="custom-news-card-wrapper mb-4">
                             <div class="card text-center custom-news-card">
@@ -33,7 +34,7 @@ $news_query = new WP_Query([
                                 <div class="card-body">
                                     <p class="news-label mb-2 make-block"><?= esc_html(get_the_title()) ?></p>
                                     <p class="news-description mt-1 mb-3">
-                                        <?= esc_html(get_the_excerpt()) ?>
+                                        <?= esc_html($news_lead) ?>
                                     </p>
                                     <a href="<?= esc_url(get_permalink()) ?>" class="btn btn-success mb-3">
                                         <?= esc_html(iranmock_translate('view')) ?>
@@ -69,7 +70,13 @@ $news_query = new WP_Query([
     <div class="news-scroll d-md-none">
         <div class="news-scroll-wrapper">
             <?php if ($news_query->have_posts()): ?>
-                <?php while ($news_query->have_posts()): $news_query->the_post(); ?>
+                <?php while ($news_query->have_posts()): $news_query->the_post();
+                    $news_lead = get_field('news_lead');
+                    $mobileExcerptMaxLength = 60;
+                    $trimmedLead = mb_strlen($news_lead) > $mobileExcerptMaxLength
+                        ? mb_substr($news_lead, 0, $mobileExcerptMaxLength) . '...'
+                        : $news_lead;
+                ?>
                     <div class="news-scroll-card">
                         <div class="card text-center h-100 custom-news-card">
                             <div class="card-img-wrapper">
@@ -78,14 +85,7 @@ $news_query = new WP_Query([
                             </div>
                             <div class="card-body">
                                 <p class="news-label mb-2"><?= esc_html(get_the_title()) ?></p>
-                                <?php
-                                $excerpt = get_the_excerpt();
-                                $mobileExcerptMaxLength = 60;
-                                $trimmedExcerptMobile = mb_strlen($excerpt) > $mobileExcerptMaxLength
-                                    ? mb_substr($excerpt, 0, $mobileExcerptMaxLength) . '...'
-                                    : $excerpt;
-                                ?>
-                                <p class="news-description my-3"><?= esc_html($trimmedExcerptMobile) ?></p>
+                                <p class="news-description my-3"><?= esc_html($trimmedLead) ?></p>
                                 <a href="<?= esc_url(get_permalink()) ?>" class="btn btn-success">
                                     <?= esc_html(iranmock_translate('view')); ?>
                                 </a>
@@ -103,6 +103,4 @@ $news_query = new WP_Query([
             </a>
         </div>
     </div>
-
-
 </div>

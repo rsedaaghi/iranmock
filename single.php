@@ -39,7 +39,7 @@ if (has_category('news', $post)) {
 		<div class="exam-profile-quarter-circle"></div>
 		<div class="col-12 col-lg-10 mx-auto px-5 text-justify">
 			<?php if (!empty($news_lead)) : ?>
-				<div class="description-text"><?= wp_kses_post($news_lead) ?><br></div>
+				<div class="description-text news-lead"><?= wp_kses_post($news_lead) ?><br></div>
 			<?php endif; ?>
 			<div class="description-text"><?= $content ?></div>
 		</div>
