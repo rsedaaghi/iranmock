@@ -10,9 +10,9 @@ $image = get_the_post_thumbnail_url($post->ID, 'full');
 $title = get_the_title($post);
 $content = apply_filters('the_content', get_the_content());
 
-// Check if post type is 'news' and get news_lead
+// Check if post is in 'news' category and get news_lead
 $news_lead = '';
-if (get_post_type($post) === 'news') {
+if (has_category('news', $post)) {
 	$news_lead = get_field('news_lead', $post->ID);
 }
 ?>
