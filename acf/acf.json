@@ -4,6 +4,27 @@
         "title": "Category",
         "fields": [
             {
+                "key": "field_69197b58f1a39",
+                "label": "Label",
+                "name": "label",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 0,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
                 "key": "field_69107d0be1509",
                 "label": "Image",
                 "name": "image",
@@ -13,7 +34,7 @@
                 "required": 0,
                 "conditional_logic": 0,
                 "wrapper": {
-                    "width": "",
+                    "width": "50",
                     "class": "",
                     "id": ""
                 },
@@ -67,7 +88,7 @@
                 "required": 0,
                 "conditional_logic": 0,
                 "wrapper": {
-                    "width": "",
+                    "width": "50",
                     "class": "",
                     "id": ""
                 },

@@ -15,7 +15,8 @@ return [
         'panel_login' => "Enter Panel",
         'participants' => "Participants",
         'enter_email' => "Enter your email",
-        'submit' => "Submit"
+        'submit' => "Submit",
+        'archive' => "Archive",
     ],
     'fa' => [
         'test_providers' => 'برگزارکنند‌گان آزمون',
@@ -32,6 +33,7 @@ return [
         'panel_login' => " ورود به پنل",
         'participants' => "شرکت‌کنندگان",
         'enter_email' => "ایمیل خود را وارد کنید",
-        'submit' => "ثبت"
+        'submit' => "ثبت",
+        'archive' => "آرشیو",
     ],
 ];
