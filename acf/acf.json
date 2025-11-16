@@ -253,42 +253,6 @@
                 "append": ""
             },
             {
-                "key": "field_69196518b46c0",
-                "label": "Member Plans",
-                "name": "member_plans",
-                "aria-label": "",
-                "type": "relationship",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "50",
-                    "class": "",
-                    "id": ""
-                },
-                "post_type": [
-                    "member_plan"
-                ],
-                "post_status": [
-                    "publish"
-                ],
-                "taxonomy": "",
-                "filters": [
-                    "search",
-                    "post_type",
-                    "taxonomy"
-                ],
-                "return_format": "object",
-                "min": "",
-                "max": "",
-                "allow_in_bindings": 0,
-                "elements": "",
-                "bidirectional": 1,
-                "bidirectional_target": [
-                    "field_691964e43ea9a"
-                ]
-            },
-            {
                 "key": "field_68fdf8ad5b284",
                 "label": "Card Settings",
                 "name": "card_settings",
@@ -1200,7 +1164,7 @@
                 "required": 0,
                 "conditional_logic": 0,
                 "wrapper": {
-                    "width": "50",
+                    "width": "33",
                     "class": "",
                     "id": ""
                 },
@@ -1210,6 +1174,50 @@
                 "ui": 0,
                 "ui_on_text": "",
                 "ui_off_text": ""
+            },
+            {
+                "key": "field_69197f11c6f5c",
+                "label": "Highlight",
+                "name": "highlight",
+                "aria-label": "",
+                "type": "true_false",
+                "instructions": "Highlight active?",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "33",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "",
+                "default_value": 0,
+                "allow_in_bindings": 0,
+                "ui": 0,
+                "ui_on_text": "",
+                "ui_off_text": ""
+            },
+            {
+                "key": "field_691984b50f0be",
+                "label": "Price (Tomans)",
+                "name": "price_tomans",
+                "aria-label": "",
+                "type": "number",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "33",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "min": "",
+                "max": "",
+                "allow_in_bindings": 0,
+                "placeholder": "",
+                "step": "",
+                "prepend": "",
+                "append": ""
             },
             {
                 "key": "field_68da5cdc156e9",
@@ -1280,6 +1288,32 @@
                 ],
                 "multiple": 0,
                 "allow_null": 0
+            },
+            {
+                "key": "field_6919830ecbd8c",
+                "label": "Icon",
+                "name": "icon",
+                "aria-label": "",
+                "type": "image",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "url",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": "",
+                "allow_in_bindings": 0,
+                "preview_size": "medium"
             }
         ],
         "location": [

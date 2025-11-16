@@ -39,83 +39,44 @@
                     ?>
                         <div class="description-text"><?php echo wpautop($single_page_settings['description_text']); ?></div>
                     <?php endif; ?>
-
-                    <?php
-                    $exam_category_id = get_field('exam_category');
-                    if ($exam_category_id) {
-                        $args = [
-                            'post_type' => 'member_plan',
-                            'posts_per_page' => 1,
-                            'meta_query' => [
-                                [
-                                    'key' => 'is_active',
-                                    'value' => true,
-                                    'compare' => '='
-                                ]
-                            ],
-                            'tax_query' => [
-                                [
-                                    'taxonomy' => 'exam_category',
-                                    'field' => 'term_id',
-                                    'terms' => $exam_category_id
-                                ]
-                            ]
-                        ];
-                        $active_plan = new WP_Query($args);
-                        if ($active_plan->have_posts()) {
-                            echo '<p class="text-success mt-3">✅ Active Member Plan available for this exam category.</p>';
-                        } else {
-                            echo '<p class="text-muted mt-3">No active Member Plan found for this exam category.</p>';
-                        }
-                        wp_reset_postdata();
-                    }
-                    ?>
-
                 </div>
                 <br>
                 <div class="col-12 col-lg-10 mx-auto text-justify member-plans-section">
                     <div class="container member-plans-wrapper px-4">
                         <div class="row custom-gutter">
                             <?php
-                            $plans = [
-                                [
-                                    'title' => 'عضویت نقره‌ای',
-                                    'features' => ['دسترسی به منابع آنلاین', 'آزمون‌های شبیه‌ساز', 'نمودارهای پیشرفت'],
-                                    'price' => '۲۸۰ هزار تومان',
-                                    'highlight' => false
-                                ],
-                                [
-                                    'title' => 'عضویت طلایی',
-                                    'features' => ['همه امکانات نقره‌ای', 'پیشنهاد مسیر مطالعه', 'یادآوری هوشمند'],
-                                    'price' => '۴۵۰ هزار تومان',
-                                    'highlight' => true,
-                                    'image' => 'https://img.freepik.com/premium-vector/black-white-member-member-logo-black-white-hd-png-download_24886-972.jpg'
-                                ],
-                                [
-                                    'title' => 'عضویت الماسی',
-                                    'features' => ['همه امکانات طلایی', 'مشاوره اختصاصی', 'ارتباط با داوطلبان'],
-                                    'price' => '۷۰۰ هزار تومان',
-                                    'highlight' => false
-                                ]
-                            ];
+                            $exam_category_id = null;
+                            $terms = get_the_terms(get_the_ID(), 'exam_category');
+                            if ($terms && !is_wp_error($terms)) {
+                                $exam_category_id = $terms[0]->term_id;
+                            }
 
-                            foreach ($plans as $plan) :
+                            $member_plans = [];
+                            if ($exam_category_id) {
+                                $member_plans = get_field('member_plans', 'exam_category_' . $exam_category_id);
+                            }
+
+                            foreach ($member_plans as $member_plan) :
+                                $plan_id = $member_plan->ID;
+                                $plan_fields = get_fields($plan_id);
+                                $is_active = $plan_fields['is_active'] ?? [];
+                                $highlight = $plan_fields['highlight'] ?? [];
+                                $price = $plan_fields['price_tomans'] ?? '';
+                                $label = $plan_fields['label'] ?? [];
+                                $image = get_the_post_thumbnail_url($plan_id, 'medium');
+                                $features = $plan_fields['description_text'] ?? [];
+                                $icon = $plan_fields['icon'] ?? [];
                             ?>
                                 <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
-                                    <div class="member-card <?php echo $plan['highlight'] ? 'highlighted' : ''; ?>">
-                                        <?php if (!empty($plan['image'])) : ?>
-                                            <img src="<?php echo esc_url($plan['image']); ?>" alt="عضویت" class="membership-icon">
-                                        <?php elseif ($plan['highlight']) : ?>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/membership-icon.png"
-                                                alt="عضویت" class="membership-icon">
+                                    <div class="member-card <?php echo $highlight ? 'highlighted' : ''; ?>">
+                                        <?php if (!empty($icon)) : ?>
+                                            <img src="<?php echo esc_url($icon); ?>" alt="عضویت" class="membership-icon">
                                         <?php endif; ?>
-                                        <h3 class="member-title"><?php echo $plan['title']; ?></h3>
+                                        <h3 class="member-title"><?php echo $label; ?></h3>
                                         <ul class="member-features">
-                                            <?php foreach ($plan['features'] as $feature) : ?>
-                                                <li><?php echo $feature; ?></li>
-                                            <?php endforeach; ?>
+                                            <li><?php echo $features; ?></li>
                                         </ul>
-                                        <p class="member-price"><?php echo $plan['price']; ?></p>
+                                        <p class="member-price"><?php echo $price . ' ' . 'تومان'; ?></p>
                                         <button class="buy-button">خرید</button>
                                     </div>
                                 </div>
