@@ -32,7 +32,6 @@ $category_query = new WP_Query([
 			<h2 class="section-title mb-4">
 				<?= esc_html(iranmock_translate($category->name)); ?>
 			</h2>
-			<hr class="suggested-exams-hr">
 		</div>
 
 	</div>

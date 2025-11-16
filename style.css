@@ -1238,6 +1238,6 @@ footer .nav {
 
 @media (min-width: 768px) {
 	.category-header-row {
-		min-height: 100px;
+		min-height: 65px;
 	}
 }
