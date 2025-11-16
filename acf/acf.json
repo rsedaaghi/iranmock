@@ -1241,27 +1241,6 @@
                 "append": ""
             },
             {
-                "key": "field_68da5cdc1eeab",
-                "label": "Description Text",
-                "name": "description_text",
-                "aria-label": "",
-                "type": "textarea",
-                "instructions": "Description text of the plan.",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "50",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "",
-                "maxlength": "",
-                "allow_in_bindings": 0,
-                "rows": "",
-                "placeholder": "For example: بانک کامل سوالات و ...",
-                "new_lines": ""
-            },
-            {
                 "key": "field_691964e43ea9a",
                 "label": "Exam Categories",
                 "name": "exam_categories",
@@ -1288,6 +1267,816 @@
                 ],
                 "multiple": 0,
                 "allow_null": 0
+            },
+            {
+                "key": "field_69199ac71c906",
+                "label": "Features",
+                "name": "features",
+                "aria-label": "",
+                "type": "group",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "block",
+                "sub_fields": [
+                    {
+                        "key": "field_69199ad41c907",
+                        "label": "Feature_1",
+                        "name": "feature_1",
+                        "aria-label": "",
+                        "type": "group",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "33",
+                            "class": "",
+                            "id": ""
+                        },
+                        "layout": "block",
+                        "sub_fields": [
+                            {
+                                "key": "field_69199ae51c908",
+                                "label": "Label",
+                                "name": "label",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_69199aec1c909",
+                                "label": "Icon",
+                                "name": "icon",
+                                "aria-label": "",
+                                "type": "radio",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "choices": {
+                                    "null": "Not selected",
+                                    "check": "Check",
+                                    "cross": "Cross"
+                                },
+                                "default_value": "",
+                                "return_format": "",
+                                "allow_null": 1,
+                                "other_choice": 0,
+                                "allow_in_bindings": 0,
+                                "layout": "",
+                                "save_other_choice": 0
+                            }
+                        ]
+                    },
+                    {
+                        "key": "field_69199bb389aef",
+                        "label": "Feature_2",
+                        "name": "feature_2",
+                        "aria-label": "",
+                        "type": "group",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "33",
+                            "class": "",
+                            "id": ""
+                        },
+                        "layout": "block",
+                        "sub_fields": [
+                            {
+                                "key": "field_69199bb389af0",
+                                "label": "Label",
+                                "name": "label",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_69199bb389af1",
+                                "label": "Icon",
+                                "name": "icon",
+                                "aria-label": "",
+                                "type": "radio",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "choices": {
+                                    "null": "Not selected",
+                                    "check": "Check",
+                                    "cross": "Cross"
+                                },
+                                "default_value": "",
+                                "return_format": "",
+                                "allow_null": 1,
+                                "other_choice": 0,
+                                "allow_in_bindings": 0,
+                                "layout": "",
+                                "save_other_choice": 0
+                            }
+                        ]
+                    },
+                    {
+                        "key": "field_69199bb589af2",
+                        "label": "Feature_3",
+                        "name": "feature_3",
+                        "aria-label": "",
+                        "type": "group",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "33",
+                            "class": "",
+                            "id": ""
+                        },
+                        "layout": "block",
+                        "sub_fields": [
+                            {
+                                "key": "field_69199bb589af3",
+                                "label": "Label",
+                                "name": "label",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_69199bb589af4",
+                                "label": "Icon",
+                                "name": "icon",
+                                "aria-label": "",
+                                "type": "radio",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "choices": {
+                                    "null": "Not selected",
+                                    "check": "Check",
+                                    "cross": "Cross"
+                                },
+                                "default_value": "",
+                                "return_format": "",
+                                "allow_null": 1,
+                                "other_choice": 0,
+                                "allow_in_bindings": 0,
+                                "layout": "",
+                                "save_other_choice": 0
+                            }
+                        ]
+                    },
+                    {
+                        "key": "field_69199bb689af5",
+                        "label": "Feature_4",
+                        "name": "feature_4",
+                        "aria-label": "",
+                        "type": "group",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "33",
+                            "class": "",
+                            "id": ""
+                        },
+                        "layout": "block",
+                        "sub_fields": [
+                            {
+                                "key": "field_69199bb689af6",
+                                "label": "Label",
+                                "name": "label",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_69199bb689af7",
+                                "label": "Icon",
+                                "name": "icon",
+                                "aria-label": "",
+                                "type": "radio",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "choices": {
+                                    "null": "Not selected",
+                                    "check": "Check",
+                                    "cross": "Cross"
+                                },
+                                "default_value": "",
+                                "return_format": "",
+                                "allow_null": 1,
+                                "other_choice": 0,
+                                "allow_in_bindings": 0,
+                                "layout": "",
+                                "save_other_choice": 0
+                            }
+                        ]
+                    },
+                    {
+                        "key": "field_69199bb989af8",
+                        "label": "Feature_5",
+                        "name": "feature_5",
+                        "aria-label": "",
+                        "type": "group",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "33",
+                            "class": "",
+                            "id": ""
+                        },
+                        "layout": "block",
+                        "sub_fields": [
+                            {
+                                "key": "field_69199bb989af9",
+                                "label": "Label",
+                                "name": "label",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_69199bb989afa",
+                                "label": "Icon",
+                                "name": "icon",
+                                "aria-label": "",
+                                "type": "radio",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "choices": {
+                                    "null": "Not selected",
+                                    "check": "Check",
+                                    "cross": "Cross"
+                                },
+                                "default_value": "",
+                                "return_format": "",
+                                "allow_null": 1,
+                                "other_choice": 0,
+                                "allow_in_bindings": 0,
+                                "layout": "",
+                                "save_other_choice": 0
+                            }
+                        ]
+                    },
+                    {
+                        "key": "field_69199bba89afb",
+                        "label": "Feature_6",
+                        "name": "feature_6",
+                        "aria-label": "",
+                        "type": "group",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "33",
+                            "class": "",
+                            "id": ""
+                        },
+                        "layout": "block",
+                        "sub_fields": [
+                            {
+                                "key": "field_69199bba89afc",
+                                "label": "Label",
+                                "name": "label",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_69199bba89afd",
+                                "label": "Icon",
+                                "name": "icon",
+                                "aria-label": "",
+                                "type": "radio",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "choices": {
+                                    "null": "Not selected",
+                                    "check": "Check",
+                                    "cross": "Cross"
+                                },
+                                "default_value": "",
+                                "return_format": "",
+                                "allow_null": 1,
+                                "other_choice": 0,
+                                "allow_in_bindings": 0,
+                                "layout": "",
+                                "save_other_choice": 0
+                            }
+                        ]
+                    },
+                    {
+                        "key": "field_69199bbb89afe",
+                        "label": "Feature_7",
+                        "name": "feature_7",
+                        "aria-label": "",
+                        "type": "group",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "33",
+                            "class": "",
+                            "id": ""
+                        },
+                        "layout": "block",
+                        "sub_fields": [
+                            {
+                                "key": "field_69199bbc89aff",
+                                "label": "Label",
+                                "name": "label",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_69199bbc89b00",
+                                "label": "Icon",
+                                "name": "icon",
+                                "aria-label": "",
+                                "type": "radio",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "choices": {
+                                    "null": "Not selected",
+                                    "check": "Check",
+                                    "cross": "Cross"
+                                },
+                                "default_value": "",
+                                "return_format": "",
+                                "allow_null": 1,
+                                "other_choice": 0,
+                                "allow_in_bindings": 0,
+                                "layout": "",
+                                "save_other_choice": 0
+                            }
+                        ]
+                    },
+                    {
+                        "key": "field_69199bbd89b01",
+                        "label": "Feature_8",
+                        "name": "feature_8",
+                        "aria-label": "",
+                        "type": "group",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "33",
+                            "class": "",
+                            "id": ""
+                        },
+                        "layout": "block",
+                        "sub_fields": [
+                            {
+                                "key": "field_69199bbd89b02",
+                                "label": "Label",
+                                "name": "label",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_69199bbd89b03",
+                                "label": "Icon",
+                                "name": "icon",
+                                "aria-label": "",
+                                "type": "radio",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "choices": {
+                                    "null": "Not selected",
+                                    "check": "Check",
+                                    "cross": "Cross"
+                                },
+                                "default_value": "",
+                                "return_format": "",
+                                "allow_null": 1,
+                                "other_choice": 0,
+                                "allow_in_bindings": 0,
+                                "layout": "",
+                                "save_other_choice": 0
+                            }
+                        ]
+                    },
+                    {
+                        "key": "field_69199bbe89b04",
+                        "label": "Feature_9",
+                        "name": "feature_9",
+                        "aria-label": "",
+                        "type": "group",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "33",
+                            "class": "",
+                            "id": ""
+                        },
+                        "layout": "block",
+                        "sub_fields": [
+                            {
+                                "key": "field_69199bbe89b05",
+                                "label": "Label",
+                                "name": "label",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_69199bbe89b06",
+                                "label": "Icon",
+                                "name": "icon",
+                                "aria-label": "",
+                                "type": "radio",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "choices": {
+                                    "null": "Not selected",
+                                    "check": "Check",
+                                    "cross": "Cross"
+                                },
+                                "default_value": "",
+                                "return_format": "",
+                                "allow_null": 1,
+                                "other_choice": 0,
+                                "allow_in_bindings": 0,
+                                "layout": "",
+                                "save_other_choice": 0
+                            }
+                        ]
+                    },
+                    {
+                        "key": "field_69199bc089b07",
+                        "label": "Feature_10",
+                        "name": "feature_10",
+                        "aria-label": "",
+                        "type": "group",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "33",
+                            "class": "",
+                            "id": ""
+                        },
+                        "layout": "block",
+                        "sub_fields": [
+                            {
+                                "key": "field_69199bc089b08",
+                                "label": "Label",
+                                "name": "label",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_69199bc089b09",
+                                "label": "Icon",
+                                "name": "icon",
+                                "aria-label": "",
+                                "type": "radio",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "choices": {
+                                    "null": "Not selected",
+                                    "check": "Check",
+                                    "cross": "Cross"
+                                },
+                                "default_value": "",
+                                "return_format": "",
+                                "allow_null": 1,
+                                "other_choice": 0,
+                                "allow_in_bindings": 0,
+                                "layout": "",
+                                "save_other_choice": 0
+                            }
+                        ]
+                    },
+                    {
+                        "key": "field_69199bc489b0a",
+                        "label": "Feature_11",
+                        "name": "feature_11",
+                        "aria-label": "",
+                        "type": "group",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "33",
+                            "class": "",
+                            "id": ""
+                        },
+                        "layout": "block",
+                        "sub_fields": [
+                            {
+                                "key": "field_69199bc489b0b",
+                                "label": "Label",
+                                "name": "label",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_69199bc489b0c",
+                                "label": "Icon",
+                                "name": "icon",
+                                "aria-label": "",
+                                "type": "radio",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "choices": {
+                                    "null": "Not selected",
+                                    "check": "Check",
+                                    "cross": "Cross"
+                                },
+                                "default_value": "",
+                                "return_format": "",
+                                "allow_null": 1,
+                                "other_choice": 0,
+                                "allow_in_bindings": 0,
+                                "layout": "",
+                                "save_other_choice": 0
+                            }
+                        ]
+                    },
+                    {
+                        "key": "field_69199bc589b0d",
+                        "label": "Feature_12",
+                        "name": "feature_12",
+                        "aria-label": "",
+                        "type": "group",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "33",
+                            "class": "",
+                            "id": ""
+                        },
+                        "layout": "block",
+                        "sub_fields": [
+                            {
+                                "key": "field_69199bc589b0e",
+                                "label": "Label",
+                                "name": "label",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_69199bc589b0f",
+                                "label": "Icon",
+                                "name": "icon",
+                                "aria-label": "",
+                                "type": "radio",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "choices": {
+                                    "null": "Not selected",
+                                    "check": "Check",
+                                    "cross": "Cross"
+                                },
+                                "default_value": "",
+                                "return_format": "value",
+                                "allow_null": 1,
+                                "other_choice": 0,
+                                "allow_in_bindings": 0,
+                                "layout": "vertical",
+                                "save_other_choice": 0
+                            }
+                        ]
+                    }
+                ]
             },
             {
                 "key": "field_6919830ecbd8c",

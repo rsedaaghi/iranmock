@@ -64,7 +64,7 @@
                                 $price = $plan_fields['price_tomans'] ?? '';
                                 $label = $plan_fields['label'] ?? [];
                                 $image = get_the_post_thumbnail_url($plan_id, 'medium');
-                                $features = $plan_fields['description_text'] ?? [];
+                                $features = $plan_fields['features'] ?? [];
                                 $icon = $plan_fields['icon'] ?? [];
                             ?>
                                 <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
@@ -74,9 +74,31 @@
                                         <?php endif; ?>
                                         <h3 class="member-title"><?php echo $label; ?></h3>
                                         <ul class="member-features">
-                                            <li><?php echo $features; ?></li>
+                                            <?php foreach ($features as $feature) :
+                                                $status = $feature['icon'] ?? null; // assuming 'status' holds 'check', 'cross', or null
+                                                $icon_html = '';
+
+                                                switch ($status) {
+                                                    case 'check':
+                                                        $icon_html = '<span class="dashicons dashicons-yes" style="color:green;"></span>';
+                                                        break;
+                                                    case 'cross':
+                                                        $icon_html = '<span class="dashicons dashicons-no-alt" style="color:red;"></span>';
+                                                        break;
+                                                    default:
+                                                        $icon_html = '<span class="dashicons dashicons-minus" style="color:gray;"></span>';
+                                                        break;
+                                                }
+                                            ?>
+                                                <?php if (!empty($feature["label"])) : ?>
+                                                    <li><?php echo $icon_html . ' ' . esc_html($feature["label"]); ?></li>
+                                                <?php endif; ?>
+                                            <?php endforeach; ?>
                                         </ul>
-                                        <p class="member-price"><?php echo $price . ' ' . 'تومان'; ?></p>
+                                        <?php if (!empty($price)) : ?>
+                                            <p class="member-price"><?php echo $price . ' ' . 'تومان'; ?></p>
+                                        <?php endif; ?>
+
                                         <button class="buy-button">خرید</button>
                                     </div>
                                 </div>
