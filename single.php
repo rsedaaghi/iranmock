@@ -9,6 +9,12 @@ $image = get_the_post_thumbnail_url($post->ID, 'full');
 // Get post title and content
 $title = get_the_title($post);
 $content = apply_filters('the_content', get_the_content());
+
+// Check if post type is 'news' and get news_lead
+$news_lead = '';
+if (get_post_type($post) === 'news') {
+	$news_lead = get_field('news_lead', $post->ID);
+}
 ?>
 
 <div class="exam-profile-page">
@@ -32,6 +38,9 @@ $content = apply_filters('the_content', get_the_content());
 	<div class="exam-profile-description mx-auto py-5 px-3">
 		<div class="exam-profile-quarter-circle"></div>
 		<div class="col-12 col-lg-10 mx-auto px-5 text-justify">
+			<?php if (!empty($news_lead)) : ?>
+				<div class="description-text"><?= wp_kses_post($news_lead) ?><br></div>
+			<?php endif; ?>
 			<div class="description-text"><?= $content ?></div>
 		</div>
 	</div>
