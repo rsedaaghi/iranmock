@@ -75,7 +75,7 @@
                                         <h3 class="member-title"><?php echo $label; ?></h3>
                                         <ul class="member-features">
                                             <?php foreach ($features as $feature) :
-                                                $status = $feature['icon'] ?? null; // assuming 'status' holds 'check', 'cross', or null
+                                                $status = $feature['icon'] ?? null;
                                                 $icon_html = '';
 
                                                 switch ($status) {
@@ -86,13 +86,12 @@
                                                         $icon_html = '<span class="dashicons dashicons-no-alt" style="color:red;"></span>';
                                                         break;
                                                     default:
-                                                        $icon_html = '<span>&nbsp;</span>';
+                                                        $icon_html = '<span class="dashicons dashicons-yes" style="visibility:hidden;"></span>';
                                                         break;
                                                 }
                                             ?>
                                                 <?php if (!empty($feature["label"])) : ?>
-                                                    <li><?php echo ($icon_html ? $icon_html : '') . ' ' . esc_html($feature["label"]); ?>
-                                                    </li>
+                                                    <li><?php echo $icon_html . ' ' . esc_html($feature["label"]); ?></li>
                                                 <?php endif; ?>
                                             <?php endforeach; ?>
                                         </ul>
