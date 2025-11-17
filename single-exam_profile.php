@@ -111,29 +111,17 @@
 
             <!-- Download Section -->
             <?php
-            $section_title = 'دانلود فایل‌های مرتبط'; // Related Files Download
-            $description_text = 'کتاب تست آزمون تمرین آیلتس 17 (CAMBRIDGE PRACTICE TESTS FOR IELTS 17) جمع آوری شده امتحانات در سال های گذشته می باشد که شامل بخش شنیداری با Listening آیلتس، بخش خواندنی با Reading آیلتس، بخش نوشتاری با Writing آیلتس و بخش مکالمه با Speaking آیلتس می باشد. این کتاب منبعی ایده آل برای داوطلبان آزمون آیلتس در ماژول های آکادمیک Academic و جنرال General می باشد و از منابع خودخوان آیلتس هم به شمار می رود.';
+            $single_page_settings = get_field('single_page_settings');
 
-            // --- Download Boxes Array ---
+            $section_title = 'دانلود فایل‌های مرتبط';
+            $description_text = $single_page_settings['description_text'];
+
             $download_modules = [
-                // 1. General Module
-                [
-                    'title' => 'دانلود جنرال کتاب 17',
-                    'subtitle' => 'CAMBRIDGE PRACTICE TESTS FOR IELTS General',
-                    'pdf_link' => '#general-pdf-link', // Replace with actual URL
-                    'audio_link' => '#general-audio-link', // Replace with actual URL
-                    'id' => 'general'
-                ],
-                // 2. Academic Module
-                [
-                    'title' => 'دانلود آکادمیک کتاب 17',
-                    'subtitle' => 'CAMBRIDGE PRACTICE TESTS FOR IELTS Academic',
-                    'pdf_link' => '#academic-pdf-link', // Replace with actual URL
-                    'audio_link' => '#academic-audio-link', // Replace with actual URL
-                    'id' => 'academic'
-                ],
+                $single_page_settings['d_1'],
+                $single_page_settings['d_2'],
             ];
             ?>
+
             <div class="container">
                 <div class="row justify-content-center my-5">
                     <div class="col-12 col-lg-10">
@@ -145,38 +133,40 @@
                             <?php
                             $i = 0;
                             foreach ($download_modules as $module) :
-                                // Add the separator class only to the second item (index 1)
                                 $separator_class = ($i === 1) ? 'download-box-separator' : '';
                             ?>
                                 <div class="col-md-6">
                                     <div
                                         class="px-4 pb-4 h-100 d-flex flex-column align-items-center justify-content-center <?= $separator_class ?>">
-                                        <h3 class="box-title mb-2"><?php echo esc_html($module['title']); ?></h3>
-                                        <p class="box-subtitle text-muted mb-4"><?php echo esc_html($module['subtitle']); ?></p>
+                                        <h3 class="box-title mb-2"><?php echo esc_html($module['label']); ?></h3>
+                                        <p class="box-subtitle text-muted mb-4"><?php echo esc_html($module['description']); ?></p>
 
                                         <div class="d-flex justify-content-center gap-3">
+                                            <?php if (!empty($module['button_1']['file'])) : ?>
+                                                <a href="<?php echo esc_url($module['button_1']['file']); ?>"
+                                                    class="btn btn-primary btn-lg download-btn d-flex align-items-center justify-content-center"
+                                                    download>
+                                                    <span class="ms-2"><?php echo esc_html($module['button_1']['label']); ?></span>
+                                                    <i class="bi bi-file-earmark-pdf-fill"></i>
+                                                </a>
+                                            <?php endif; ?>
 
-                                            <a href="<?php echo esc_url($module['pdf_link']); ?>"
-                                                class="btn btn-primary btn-lg download-btn d-flex align-items-center justify-content-center"
-                                                download>
-                                                <span class="ms-2">دانلود کتاب (PDF)</span>
-                                                <i class="bi bi-file-earmark-pdf-fill"></i>
-                                            </a>
-
-                                            <a href="<?php echo esc_url($module['audio_link']); ?>"
-                                                class="btn btn-secondary btn-lg download-btn d-flex align-items-center justify-content-center"
-                                                download>
-                                                <span class="ms-2">دانلود فایل صوتی</span>
-                                                <i class="bi bi-download"></i>
-                                                <i class="bi bi-headset"></i>
-                                            </a>
+                                            <?php if (!empty($module['button_2']['file'])) : ?>
+                                                <a href="<?php echo esc_url($module['button_2']['file']); ?>"
+                                                    class="btn btn-secondary btn-lg download-btn d-flex align-items-center justify-content-center"
+                                                    download>
+                                                    <span class="ms-2"><?php echo esc_html($module['button_2']['label']); ?></span>
+                                                    <i class="bi bi-download"></i>
+                                                    <i class="bi bi-headset"></i>
+                                                </a>
+                                            <?php endif; ?>
                                         </div>
                                     </div>
                                 </div>
                             <?php
                                 $i++;
-                            endforeach; ?>
-
+                            endforeach;
+                            ?>
                         </div>
                     </div>
                 </div>
