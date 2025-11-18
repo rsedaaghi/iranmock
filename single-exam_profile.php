@@ -128,8 +128,6 @@
                     break;
                 }
             }
-
-            var_dump($module['button_1']['file']);
             ?>
 
             <?php if ($has_downloads) : ?>
