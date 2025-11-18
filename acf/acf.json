@@ -1241,6 +1241,63 @@
                 "append": ""
             },
             {
+                "key": "field_691c36592084f",
+                "label": "Button",
+                "name": "button_label_copy",
+                "aria-label": "",
+                "type": "group",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "block",
+                "sub_fields": [
+                    {
+                        "key": "field_691c36299d80d",
+                        "label": "Label",
+                        "name": "label",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "50",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "allow_in_bindings": 0,
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_691c361b9d80c",
+                        "label": "Link",
+                        "name": "link",
+                        "aria-label": "",
+                        "type": "url",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "50",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "allow_in_bindings": 0,
+                        "placeholder": ""
+                    }
+                ]
+            },
+            {
                 "key": "field_691964e43ea9a",
                 "label": "Exam Categories",
                 "name": "exam_categories",
@@ -1267,6 +1324,32 @@
                 ],
                 "multiple": 0,
                 "allow_null": 0
+            },
+            {
+                "key": "field_6919830ecbd8c",
+                "label": "Icon",
+                "name": "icon",
+                "aria-label": "",
+                "type": "image",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "url",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": "",
+                "allow_in_bindings": 0,
+                "preview_size": "thumbnail"
             },
             {
                 "key": "field_69199ac71c906",
@@ -2077,32 +2160,6 @@
                         ]
                     }
                 ]
-            },
-            {
-                "key": "field_6919830ecbd8c",
-                "label": "Icon",
-                "name": "icon",
-                "aria-label": "",
-                "type": "image",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "50",
-                    "class": "",
-                    "id": ""
-                },
-                "return_format": "url",
-                "library": "all",
-                "min_width": "",
-                "min_height": "",
-                "min_size": "",
-                "max_width": "",
-                "max_height": "",
-                "max_size": "",
-                "mime_types": "",
-                "allow_in_bindings": 0,
-                "preview_size": "medium"
             }
         ],
         "location": [

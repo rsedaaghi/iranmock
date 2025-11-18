@@ -66,6 +66,7 @@
                                     $label = $plan_fields['label'] ?? [];
                                     $features = $plan_fields['features'] ?? [];
                                     $icon = $plan_fields['icon'] ?? [];
+                                    $button = $plan_fields['button'] ?? [];
                                 ?>
                                     <div class="member-card <?php echo $highlight ? 'highlighted' : ''; ?>">
                                         <?php if (!empty($icon)) : ?>
@@ -104,7 +105,13 @@
                                             }
                                             ?>
                                         </p>
-                                        <button class="buy-button">خرید</button>
+                                        <?php
+                                        if (!empty($button['label']) && !empty($button['link'])) :
+                                        ?>
+                                            <a href="<?php echo esc_url($button['link']); ?>" class="buy-button">
+                                                <?php echo esc_html($button['label']); ?>
+                                            </a>
+                                        <?php endif; ?>
                                     </div>
                                 <?php endforeach; ?>
                             </div>
