@@ -556,8 +556,8 @@
                                             "class": "",
                                             "id": ""
                                         },
-                                        "return_format": "",
-                                        "library": "",
+                                        "return_format": "url",
+                                        "library": "all",
                                         "min_size": "",
                                         "max_size": "",
                                         "mime_types": "",
@@ -616,8 +616,8 @@
                                             "class": "",
                                             "id": ""
                                         },
-                                        "return_format": "",
-                                        "library": "",
+                                        "return_format": "url",
+                                        "library": "all",
                                         "min_size": "",
                                         "max_size": "",
                                         "mime_types": "",
@@ -762,8 +762,8 @@
                                             "class": "",
                                             "id": ""
                                         },
-                                        "return_format": "",
-                                        "library": "",
+                                        "return_format": "url",
+                                        "library": "all",
                                         "min_size": "",
                                         "max_size": "",
                                         "mime_types": "",
@@ -822,8 +822,8 @@
                                             "class": "",
                                             "id": ""
                                         },
-                                        "return_format": "",
-                                        "library": "",
+                                        "return_format": "url",
+                                        "library": "all",
                                         "min_size": "",
                                         "max_size": "",
                                         "mime_types": "",
