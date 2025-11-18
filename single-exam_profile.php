@@ -108,7 +108,7 @@
                                         <?php
                                         if (!empty($button['label']) && !empty($button['link'])) :
                                         ?>
-                                            <a href="<?php echo esc_url($button['link']); ?>" class="buy-button">
+                                            <a href="<?php echo esc_url($button['link']); ?>" class="buy-button text-center">
                                                 <?php echo esc_html($button['label']); ?>
                                             </a>
                                         <?php endif; ?>
