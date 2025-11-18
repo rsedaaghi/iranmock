@@ -984,6 +984,7 @@ footer .nav {
 	text-align: center;
 	transition: background-color 0.3s ease;
 	margin: 0 auto;
+	width: 75%
 }
 
 .buy-button:hover {
