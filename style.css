@@ -877,10 +877,14 @@ footer .nav {
 	color: #0000006e;
 }
 
+.member-plans-section {
+	margin-top: 4rem;
+}
+
 .member-card {
-	background-color: #E8F6F3;
 	width: 350px;
-	aspect-ratio: 350 / 508;
+	flex: 0 0 auto;
+	background-color: #E8F6F3;
 	border-radius: 20px;
 	border: 2px solid #136E61;
 	padding: 4rem 2rem;
@@ -892,11 +896,14 @@ footer .nav {
 }
 
 .member-plans-wrapper .custom-gutter {
-	--bs-gutter-x: 3rem;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 2.5rem;
 }
 
 .member-card.highlighted {
-	transform: scale(1.05);
+	transform: scale(1.065);
 	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 	z-index: 2;
 }
@@ -922,13 +929,40 @@ footer .nav {
 	margin-bottom: 1rem;
 	font-size: 16px;
 	line-height: 1.8;
+	height: 21.5rem;
+	overflow: hidden;
+	width: 100%;
 }
 
 .member-price {
 	font-weight: 700;
 	font-size: 24px;
-	letter-spacing: -4%;
 	margin-bottom: 1rem;
+	height: 3rem;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.price-label {
+	color: black;
+	/* Set the color for "هزینه ثبت‌نام" to black */
+}
+
+.price-value,
+.toman-unit {
+	color: #136E61;
+}
+
+.divider {
+	color: black;
+	margin: 0 8px;
+	font-size: 20px;
+}
+
+.toman-unit {
+	font-size: 14px;
 }
 
 .buy-button {
@@ -941,11 +975,6 @@ footer .nav {
 	cursor: pointer;
 	display: block;
 	margin: 0 auto;
-}
-
-.member-plans-section {
-	margin-top: 4rem;
-	max-width: 60rem;
 }
 
 .section-title {

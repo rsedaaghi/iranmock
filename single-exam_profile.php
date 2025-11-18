@@ -67,41 +67,44 @@
                                     $features = $plan_fields['features'] ?? [];
                                     $icon = $plan_fields['icon'] ?? [];
                                 ?>
-                                    <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
-                                        <div class="member-card <?php echo $highlight ? 'highlighted' : ''; ?>">
-                                            <?php if (!empty($icon)) : ?>
-                                                <img src="<?php echo esc_url($icon); ?>" alt="عضویت" class="membership-icon">
-                                            <?php endif; ?>
-                                            <h3 class="member-title"><?php echo esc_html($label); ?></h3>
-                                            <ul class="member-features">
-                                                <?php foreach ($features as $feature) :
-                                                    $status = $feature['icon'] ?? null;
-                                                    $icon_html = '';
-                                                    switch ($status) {
-                                                        case 'check':
-                                                            $icon_html = '<span class="dashicons dashicons-yes" style="color:green;"></span>';
-                                                            break;
-                                                        case 'cross':
-                                                            $icon_html = '<span class="dashicons dashicons-no-alt" style="color:red;"></span>';
-                                                            break;
-                                                        default:
-                                                            $icon_html = '<span class="dashicons dashicons-yes" style="visibility:hidden;"></span>';
-                                                            break;
-                                                    }
+                                    <div class="member-card <?php echo $highlight ? 'highlighted' : ''; ?>">
+                                        <?php if (!empty($icon)) : ?>
+                                            <img src="<?php echo esc_url($icon); ?>" alt="عضویت" class="membership-icon">
+                                        <?php endif; ?>
+                                        <h3 class="member-title"><?php echo esc_html($label); ?></h3>
+                                        <ul class="member-features">
+                                            <?php foreach ($features as $feature) :
+                                                $status = $feature['icon'] ?? null;
+                                                $icon_html = '';
+                                                switch ($status) {
+                                                    case 'check':
+                                                        $icon_html = '<span class="dashicons dashicons-yes" style="color:green;"></span>';
+                                                        break;
+                                                    case 'cross':
+                                                        $icon_html = '<span class="dashicons dashicons-no-alt" style="color:red;"></span>';
+                                                        break;
+                                                    default:
+                                                        $icon_html = '<span class="dashicons dashicons-yes" style="visibility:hidden;"></span>';
+                                                        break;
+                                                }
 
-                                                    if (!empty($feature["label"])) :
-                                                        // Replace **text** with <strong>text</strong>
-                                                        $label_html = preg_replace('/\*\*(.*?)\*\*/', '<strong>$1</strong>', esc_html($feature["label"]));
-                                                ?>
-                                                        <li><?php echo $icon_html . ' ' . $label_html; ?></li>
-                                                <?php endif;
-                                                endforeach; ?>
-                                            </ul>
-                                            <?php if (!empty($price)) : ?>
-                                                <p class="member-price"><?php echo esc_html($price) . ' تومان'; ?></p>
-                                            <?php endif; ?>
-                                            <button class="buy-button">خرید</button>
-                                        </div>
+                                                if (!empty($feature["label"])) :
+                                                    // Replace **text** with <strong>text</strong>
+                                                    $label_html = preg_replace('/\*\*(.*?)\*\*/', '<strong>$1</strong>', esc_html($feature["label"]));
+                                            ?>
+                                                    <li><?php echo $icon_html . ' ' . $label_html; ?></li>
+                                            <?php endif;
+                                            endforeach; ?>
+                                        </ul>
+                                        <p class="member-price">
+                                            <?php
+                                            if (!empty($price)) {
+                                                $price_thousands = floor($price / 1000);
+                                                echo '<span class="price-label">هزینه ثبت‌نام </span><span class="divider">|</span> <span class="price-value">' . esc_html($price_thousands) . '</span>&nbsp;<span class="toman-unit">هزار تومان</span>';
+                                            }
+                                            ?>
+                                        </p>
+                                        <button class="buy-button">خرید</button>
                                     </div>
                                 <?php endforeach; ?>
                             </div>
