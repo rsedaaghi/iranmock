@@ -1274,7 +1274,7 @@
                 "name": "features",
                 "aria-label": "",
                 "type": "group",
-                "instructions": "",
+                "instructions": "This way you can make words BOLD.\r\n** <the word> **",
                 "required": 0,
                 "conditional_logic": 0,
                 "wrapper": {

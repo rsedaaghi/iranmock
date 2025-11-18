@@ -40,73 +40,74 @@
                         <div class="description-text"><?php echo wpautop($single_page_settings['description_text']); ?></div>
                     <?php endif; ?>
                 </div>
-                <br>
-                <div class="col-12 col-lg-10 mx-auto text-justify member-plans-section">
-                    <div class="container member-plans-wrapper px-4">
-                        <div class="row custom-gutter">
-                            <?php
-                            $exam_category_id = null;
-                            $terms = get_the_terms(get_the_ID(), 'exam_category');
-                            if ($terms && !is_wp_error($terms)) {
-                                $exam_category_id = $terms[0]->term_id;
-                            }
+                <?php
+                $exam_category_id = null;
+                $terms = get_the_terms(get_the_ID(), 'exam_category');
+                if ($terms && !is_wp_error($terms)) {
+                    $exam_category_id = $terms[0]->term_id;
+                }
 
-                            $member_plans = [];
-                            if ($exam_category_id) {
-                                $member_plans = get_field('member_plans', 'exam_category_' . $exam_category_id);
-                            }
+                $member_plans = [];
+                if ($exam_category_id) {
+                    $member_plans = get_field('member_plans', 'exam_category_' . $exam_category_id);
+                }
 
-                            foreach ($member_plans as $member_plan) :
-                                $plan_id = $member_plan->ID;
-                                $plan_fields = get_fields($plan_id);
-                                $is_active = $plan_fields['is_active'] ?? [];
-                                $highlight = $plan_fields['highlight'] ?? [];
-                                $price = $plan_fields['price_tomans'] ?? '';
-                                $label = $plan_fields['label'] ?? [];
-                                $image = get_the_post_thumbnail_url($plan_id, 'medium');
-                                $features = $plan_fields['features'] ?? [];
-                                $icon = $plan_fields['icon'] ?? [];
-                            ?>
-                                <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
-                                    <div class="member-card <?php echo $highlight ? 'highlighted' : ''; ?>">
-                                        <?php if (!empty($icon)) : ?>
-                                            <img src="<?php echo esc_url($icon); ?>" alt="عضویت" class="membership-icon">
-                                        <?php endif; ?>
-                                        <h3 class="member-title"><?php echo $label; ?></h3>
-                                        <ul class="member-features">
-                                            <?php foreach ($features as $feature) :
-                                                $status = $feature['icon'] ?? null;
-                                                $icon_html = '';
+                if (!empty($member_plans) && is_array($member_plans)) :
+                ?>
+                    <br>
+                    <div class="col-12 col-lg-10 mx-auto text-justify member-plans-section">
+                        <div class="container member-plans-wrapper px-4">
+                            <div class="row custom-gutter">
+                                <?php foreach ($member_plans as $member_plan) :
+                                    $plan_id = $member_plan->ID;
+                                    $plan_fields = get_fields($plan_id);
+                                    $highlight = $plan_fields['highlight'] ?? [];
+                                    $price = $plan_fields['price_tomans'] ?? '';
+                                    $label = $plan_fields['label'] ?? [];
+                                    $features = $plan_fields['features'] ?? [];
+                                    $icon = $plan_fields['icon'] ?? [];
+                                ?>
+                                    <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
+                                        <div class="member-card <?php echo $highlight ? 'highlighted' : ''; ?>">
+                                            <?php if (!empty($icon)) : ?>
+                                                <img src="<?php echo esc_url($icon); ?>" alt="عضویت" class="membership-icon">
+                                            <?php endif; ?>
+                                            <h3 class="member-title"><?php echo esc_html($label); ?></h3>
+                                            <ul class="member-features">
+                                                <?php foreach ($features as $feature) :
+                                                    $status = $feature['icon'] ?? null;
+                                                    $icon_html = '';
+                                                    switch ($status) {
+                                                        case 'check':
+                                                            $icon_html = '<span class="dashicons dashicons-yes" style="color:green;"></span>';
+                                                            break;
+                                                        case 'cross':
+                                                            $icon_html = '<span class="dashicons dashicons-no-alt" style="color:red;"></span>';
+                                                            break;
+                                                        default:
+                                                            $icon_html = '<span class="dashicons dashicons-yes" style="visibility:hidden;"></span>';
+                                                            break;
+                                                    }
 
-                                                switch ($status) {
-                                                    case 'check':
-                                                        $icon_html = '<span class="dashicons dashicons-yes" style="color:green;"></span>';
-                                                        break;
-                                                    case 'cross':
-                                                        $icon_html = '<span class="dashicons dashicons-no-alt" style="color:red;"></span>';
-                                                        break;
-                                                    default:
-                                                        $icon_html = '<span class="dashicons dashicons-yes" style="visibility:hidden;"></span>';
-                                                        break;
-                                                }
-                                            ?>
-                                                <?php if (!empty($feature["label"])) : ?>
-                                                    <li><?php echo $icon_html . ' ' . esc_html($feature["label"]); ?></li>
-                                                <?php endif; ?>
-                                            <?php endforeach; ?>
-                                        </ul>
-                                        <?php if (!empty($price)) : ?>
-                                            <p class="member-price"><?php echo $price . ' ' . 'تومان'; ?></p>
-                                        <?php endif; ?>
-
-                                        <button class="buy-button">خرید</button>
+                                                    if (!empty($feature["label"])) :
+                                                        // Replace **text** with <strong>text</strong>
+                                                        $label_html = preg_replace('/\*\*(.*?)\*\*/', '<strong>$1</strong>', esc_html($feature["label"]));
+                                                ?>
+                                                        <li><?php echo $icon_html . ' ' . $label_html; ?></li>
+                                                <?php endif;
+                                                endforeach; ?>
+                                            </ul>
+                                            <?php if (!empty($price)) : ?>
+                                                <p class="member-price"><?php echo esc_html($price) . ' تومان'; ?></p>
+                                            <?php endif; ?>
+                                            <button class="buy-button">خرید</button>
+                                        </div>
                                     </div>
-                                </div>
-                            <?php endforeach; ?>
+                                <?php endforeach; ?>
+                            </div>
                         </div>
                     </div>
-
-                </div>
+                <?php endif; ?>
             </div>
 
             <?php
