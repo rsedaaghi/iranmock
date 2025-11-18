@@ -9,7 +9,7 @@ $news_query = new WP_Query([
 ]);
 ?>
 
-<div id="news" class="large-container bg-white mt-3 mb-5 py-3">
+<div id="news" class="large-container bg-white mt-3 mb-3 py-3">
     <h2 class="text-center mt-2 mb-4 news-section-label">
         <?= esc_html(iranmock_translate('related_news')); ?>
     </h2>

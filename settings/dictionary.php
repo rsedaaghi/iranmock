@@ -25,7 +25,7 @@ return [
         'see_all' => 'مشاهده همه',
         'news' => 'خبر‌ها',
         'about_us' => 'درباره ما',
-        'related_news' => "اخبار مرتبط",
+        'related_news' => "خبر‌های مرتبط",
         'send' => "ارسال",
         'view' => "مشاهده",
         'register' => "ثبت‌نام",
