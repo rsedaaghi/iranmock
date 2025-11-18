@@ -931,6 +931,10 @@ footer .nav {
 	line-height: 1.8;
 	height: 18.5rem;
 	overflow: hidden;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .member-price {
