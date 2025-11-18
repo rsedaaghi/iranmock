@@ -9,6 +9,7 @@ get_header();
 $category = get_queried_object();
 $image = get_field('image', $category);
 $excerptMaxLength = 100;
+$is_news_category = ($category->slug === 'news');
 
 $category_query = new WP_Query([
     'post_type'      => 'post',
@@ -39,8 +40,8 @@ $display_label = !empty($category_label) ? $category_label : iranmock_translate(
                 <hr class="suggested-exams-hr">
             </h2>
         </div>
-
     </div>
+
     <?php
     $category_description = category_description();
     if (!empty($category_description)) :
@@ -62,7 +63,11 @@ $display_label = !empty($category_label) ? $category_label : iranmock_translate(
                             <div class="card-body">
                                 <p class="news-label mb-2 make-block"><?= esc_html(get_the_title()) ?></p>
                                 <p class="news-description mt-1 mb-3">
-                                    <?= esc_html(get_the_excerpt()) ?>
+                                    <?php
+                                    $news_lead = get_field('news_lead');
+                                    $excerpt = $is_news_category && !empty($news_lead) ? $news_lead : get_the_excerpt();
+                                    echo esc_html($excerpt);
+                                    ?>
                                 </p>
                                 <a href="<?= esc_url(get_permalink()) ?>" class="btn btn-success mb-3">
                                     <?= esc_html(iranmock_translate('view')) ?>
@@ -90,7 +95,8 @@ $display_label = !empty($category_label) ? $category_label : iranmock_translate(
                             <div class="card-body">
                                 <p class="news-label mb-2"><?= esc_html(get_the_title()) ?></p>
                                 <?php
-                                $excerpt = get_the_excerpt();
+                                $news_lead = get_field('news_lead');
+                                $excerpt = $is_news_category && !empty($news_lead) ? $news_lead : get_the_excerpt();
                                 $mobileExcerptMaxLength = 60;
                                 $trimmedExcerptMobile = mb_strlen($excerpt) > $mobileExcerptMaxLength
                                     ? mb_substr($excerpt, 0, $mobileExcerptMaxLength) . '...'
