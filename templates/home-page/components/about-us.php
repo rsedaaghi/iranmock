@@ -5,7 +5,7 @@ $svg_path = get_template_directory_uri() . '/assets/svg/quotation.svg';
 ?>
 
 <?php if (!empty($about_us_content)): ?>
-    <div id="about-us" class="container my-5">
+    <div id="about-us" class="container my-5 pt-5">
         <div class="d-flex align-items-center justify-content-between mb-4">
             <div class="d-flex gap-3 about-us-wrapper">
                 <img src="<?= esc_url($svg_path); ?>" alt="Quote" class="about-us-img">
