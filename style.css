@@ -937,6 +937,12 @@ footer .nav {
 	justify-content: center;
 }
 
+.member-features li {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
 .member-price {
 	font-weight: 700;
 	font-size: 18px;
