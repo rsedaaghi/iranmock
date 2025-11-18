@@ -97,14 +97,14 @@
                                             <?php endif;
                                             endforeach; ?>
                                         </ul>
-                                        <p class="member-price">
+                                        <div class="member-price">
                                             <?php
                                             if (!empty($price)) {
                                                 $price_thousands = floor($price / 1000);
                                                 echo '<span class="price-label">هزینه ثبت‌نام </span><span class="divider">|</span> <span class="price-value">' . esc_html($price_thousands) . '</span>&nbsp;<span class="toman-unit">هزار تومان</span>';
                                             }
                                             ?>
-                                        </p>
+                                        </div>
                                         <?php
                                         if (!empty($button['label']) && !empty($button['link'])) :
                                         ?>
