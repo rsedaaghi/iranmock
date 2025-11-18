@@ -974,15 +974,21 @@ footer .nav {
 }
 
 .buy-button {
+	display: inline-block;
+	padding: 0.5rem 1.25rem;
 	background-color: #136E61;
 	color: #fff;
-	border: none;
-	padding: 0.75rem 2.5rem;
-	border-radius: 8px;
+	text-decoration: none;
+	border-radius: 5px;
 	font-weight: bold;
-	cursor: pointer;
-	display: block;
+	text-align: center;
+	transition: background-color 0.3s ease;
 	margin: 0 auto;
+}
+
+.buy-button:hover {
+	background-color: #0f5c50;
+	text-decoration: none;
 }
 
 .section-title {

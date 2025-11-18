@@ -1243,7 +1243,7 @@
             {
                 "key": "field_691c36592084f",
                 "label": "Button",
-                "name": "button_label_copy",
+                "name": "button",
                 "aria-label": "",
                 "type": "group",
                 "instructions": "",
