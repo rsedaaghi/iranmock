@@ -882,12 +882,12 @@ footer .nav {
 }
 
 .member-card {
-	width: 18rem;
+	width: 19rem;
 	flex: 0 0 auto;
 	background-color: #E8F6F3;
 	border-radius: 20px;
 	border: 2px solid #136E61;
-	padding: 2rem;
+	padding: 1.5rem;
 	opacity: 1;
 	transform: rotate(0deg);
 	position: relative;
