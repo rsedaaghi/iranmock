@@ -109,7 +109,6 @@
                 </div>
             </div>
 
-            <!-- Download Section -->
             <?php
             $single_page_settings = get_field('single_page_settings');
 
@@ -120,57 +119,68 @@
                 $single_page_settings['d_1'],
                 $single_page_settings['d_2'],
             ];
+
+            // Check if at least one file exists
+            $has_downloads = false;
+            foreach ($download_modules as $module) {
+                if (!empty($module['button_1']['file']) || !empty($module['button_2']['file'])) {
+                    $has_downloads = true;
+                    break;
+                }
+            }
             ?>
 
-            <div class="container">
-                <div class="row justify-content-center my-5">
-                    <div class="col-12 col-lg-10">
+            <?php if ($has_downloads) : ?>
+                <div class="container">
+                    <div class="row justify-content-center my-5">
+                        <div class="col-12 col-lg-10">
 
-                        <h2 class="section-title text-center mb-4"><?php echo esc_html($section_title); ?></h2>
-                        <p class="section-description"><?php echo esc_html($description_text); ?></p>
+                            <h2 class="section-title text-center mb-4"><?php echo esc_html($section_title); ?></h2>
+                            <p class="section-description"><?php echo esc_html($description_text); ?></p>
 
-                        <div class="row g-4 justify-content-center download-box p-4">
-                            <?php
-                            $i = 0;
-                            foreach ($download_modules as $module) :
-                                $separator_class = ($i === 1) ? 'download-box-separator' : '';
-                            ?>
-                                <div class="col-md-6">
-                                    <div
-                                        class="px-4 pb-4 h-100 d-flex flex-column align-items-center justify-content-center <?= $separator_class ?>">
-                                        <h3 class="box-title mb-2"><?php echo esc_html($module['label']); ?></h3>
-                                        <p class="box-subtitle text-muted mb-4"><?php echo esc_html($module['description']); ?></p>
+                            <div class="row g-4 justify-content-center download-box p-4">
+                                <?php
+                                $i = 0;
+                                foreach ($download_modules as $module) :
+                                    $separator_class = ($i === 1) ? 'download-box-separator' : '';
+                                ?>
+                                    <div class="col-md-6">
+                                        <div
+                                            class="px-4 pb-4 h-100 d-flex flex-column align-items-center justify-content-center <?= $separator_class ?>">
+                                            <h3 class="box-title mb-2"><?php echo esc_html($module['label']); ?></h3>
+                                            <p class="box-subtitle text-muted mb-4"><?php echo esc_html($module['description']); ?></p>
 
-                                        <div class="d-flex justify-content-center gap-3">
-                                            <?php if (!empty($module['button_1']['file'])) : ?>
-                                                <a href="<?php echo esc_url($module['button_1']['file']); ?>"
-                                                    class="btn btn-primary btn-lg download-btn d-flex align-items-center justify-content-center"
-                                                    download>
-                                                    <span class="ms-2"><?php echo esc_html($module['button_1']['label']); ?></span>
-                                                    <i class="bi bi-file-earmark-pdf-fill"></i>
-                                                </a>
-                                            <?php endif; ?>
+                                            <div class="d-flex justify-content-center gap-3">
+                                                <?php if (!empty($module['button_1']['file'])) : ?>
+                                                    <a href="<?php echo esc_url($module['button_1']['file']); ?>"
+                                                        class="btn btn-primary btn-lg download-btn d-flex align-items-center justify-content-center"
+                                                        download>
+                                                        <span class="ms-2"><?php echo esc_html($module['button_1']['label']); ?></span>
+                                                        <i class="bi bi-file-earmark-pdf-fill"></i>
+                                                    </a>
+                                                <?php endif; ?>
 
-                                            <?php if (!empty($module['button_2']['file'])) : ?>
-                                                <a href="<?php echo esc_url($module['button_2']['file']); ?>"
-                                                    class="btn btn-secondary btn-lg download-btn d-flex align-items-center justify-content-center"
-                                                    download>
-                                                    <span class="ms-2"><?php echo esc_html($module['button_2']['label']); ?></span>
-                                                    <i class="bi bi-download"></i>
-                                                    <i class="bi bi-headset"></i>
-                                                </a>
-                                            <?php endif; ?>
+                                                <?php if (!empty($module['button_2']['file'])) : ?>
+                                                    <a href="<?php echo esc_url($module['button_2']['file']); ?>"
+                                                        class="btn btn-secondary btn-lg download-btn d-flex align-items-center justify-content-center"
+                                                        download>
+                                                        <span class="ms-2"><?php echo esc_html($module['button_2']['label']); ?></span>
+                                                        <i class="bi bi-download"></i>
+                                                        <i class="bi bi-headset"></i>
+                                                    </a>
+                                                <?php endif; ?>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            <?php
-                                $i++;
-                            endforeach;
-                            ?>
+                                <?php
+                                    $i++;
+                                endforeach;
+                                ?>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            <?php endif; ?>
 
             <?php
             $suggested_section_title = 'سایر آزمون های پیشنهادی';
