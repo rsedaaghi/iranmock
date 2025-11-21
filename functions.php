@@ -570,8 +570,6 @@ function iranmock_bootstrap_scripts_loader()
 
 	// 1. Styles.
 	wp_enqueue_style('bootstrap-5.3.8', get_theme_file_uri('assets/bootstrap/css/bootstrap.min.css'), array(), $theme_version, 'all');
-	wp_enqueue_style('glide-core', get_theme_file_uri('assets/glide/glide.core.min.css'), array(), $theme_version, 'all');
-	wp_enqueue_style('glide-theme', get_theme_file_uri('assets/glide/glide.theme.min.css'), array(), $theme_version, 'all');
 	wp_enqueue_style('style', get_theme_file_uri('style.css'), array(), $theme_version, 'all');
 
 	// wp_enqueue_style('main', get_theme_file_uri('build/main.css'), array(), $theme_version, 'all'); // main.scss: Compiled Framework source + custom styles.
@@ -582,7 +580,6 @@ function iranmock_bootstrap_scripts_loader()
 
 	// 2. Scripts.
 	wp_enqueue_script('bootstrap-5.3.8', get_theme_file_uri('assets/bootstrap/js/bootstrap.min.js'), array(), $theme_version, true);
-	wp_enqueue_script('glide-js', get_theme_file_uri('assets/glide/glide.min.js'), array(), $theme_version, true);
 	wp_enqueue_script('mainjs', get_theme_file_uri('assets/js/main.js'), array(), $theme_version, true);
 
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
