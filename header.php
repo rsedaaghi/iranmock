@@ -2,7 +2,7 @@
 <!-- <html <?php
 			// language_attributes();
 			?>> -->
-<html dir='rtl'>
+<html dir='rtl' lang="fa-IR">
 
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>">
