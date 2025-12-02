@@ -9,8 +9,8 @@ services:
       MYSQL_USER: wpuser
       MYSQL_PASSWORD: wppass123
     volumes:
-      - ./mysql_data:/var/lib/mysql
+      - ./.docker_mysql_data:/var/lib/mysql
       - /etc/localtime:/etc/localtime:ro
 
 volumes:
-  mysql_data:
+  .docker_mysql_data:
