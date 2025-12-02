@@ -8,7 +8,8 @@ services:
       - "8080:80"
     restart: always
     environment:
-      WORDPRESS_DB_HOST: mysql:3306
+      WORDPRESS_DB_HOST: host.docker.internal:3306
+#     WORDPRESS_DB_HOST: mysql:3306
       WORDPRESS_DB_NAME: wpdb
       WORDPRESS_DB_USER: wpuser
       WORDPRESS_DB_PASSWORD: wppass123
