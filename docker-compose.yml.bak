@@ -1,6 +1,6 @@
 services:
   wordpress:
-    image: wordpress:6.8.3
+    image: wordpress:6.9
     container_name: wp-site
     depends_on:
       - mysql

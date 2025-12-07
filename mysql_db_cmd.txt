@@ -1,0 +1,16 @@
+-- Create the database for the iranmock site
+CREATE DATABASE IF NOT EXISTS iranmockdb;
+
+-- Create the database for the tamasgr.ir site
+CREATE DATABASE IF NOT EXISTS tamasgrdb;
+
+-- Grant all privileges on the new databases to your WordPress user
+-- Replace 'YOUR_WP_PASSWORD' with the actual password used in the compose file!
+GRANT ALL PRIVILEGES ON iranmockdb.* TO 'wpuser'@'%' IDENTIFIED BY 'YOUR_WP_PASSWORD';
+GRANT ALL PRIVILEGES ON tamasgrdb.* TO 'wpuser'@'%' IDENTIFIED BY 'YOUR_WP_PASSWORD';
+
+-- Apply the changes
+FLUSH PRIVILEGES;
+
+-- Exit the MySQL prompt
+EXIT;

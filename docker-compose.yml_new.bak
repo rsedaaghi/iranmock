@@ -1,0 +1,76 @@
+version: '3.8'
+
+services:
+  # --- 1. Shared MySQL Database ---
+  mysql:
+    image: mysql:latest
+    container_name: wp-mysql
+    restart: always
+    ports:
+      # Optional: Only needed if you want to access MySQL directly from your host machine
+      - "3306:3306"
+    environment:
+      # !!! Remember to replace these with secure, unique passwords !!!
+      MYSQL_ROOT_PASSWORD: YOUR_MYSQL_ROOT_PASSWORD
+      # We'll set the primary WP user and password here
+      MYSQL_USER: wpuser
+      MYSQL_PASSWORD: YOUR_WP_PASSWORD
+      # You don't need to define all databases here; WordPress will create them
+    volumes:
+      # Persistent storage for your MySQL data, relative to /var/www
+      - ./.docker_mysql_data:/var/lib/mysql
+      - /etc/localtime:/etc/localtime:ro
+    command: --default-authentication-plugin=mysql_native_password # Recommended for modern MySQL
+
+  # --- 2. WordPress Site 1: iranmock ---
+  iranmock_wp:
+    image: wordpress:6.9
+    container_name: iranmock-site
+    ports:
+      - "8080:80"
+    restart: always
+    environment:
+      # CRITICAL FIX: Use the service name 'mysql' for connection
+      WORDPRESS_DB_HOST: mysql:3306
+      # Dedicated database for this site
+      WORDPRESS_DB_NAME: iranmockdb
+      WORDPRESS_DB_USER: wpuser
+      WORDPRESS_DB_PASSWORD: YOUR_WP_PASSWORD # Should match MYSQL_PASSWORD above
+      WP_HOME: http://localhost:8080
+      WP_SITEURL: http://localhost:8080
+    volumes:
+      # Map the WordPress content volume from its dedicated folder
+      - ./iranmock/.docker_wp_data:/var/www/html
+      # Map the specific theme folder (adjust path if needed)
+      - ./iranmock:/var/www/html/wp-content/themes/iranmock-bootstrap
+      # Map PHP configuration for uploads
+      - ./iranmock/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+      - /etc/localtime:/etc/localtime:ro
+    # Ensure this container waits for the MySQL container to be ready
+    depends_on:
+      - mysql
+
+  # --- 3. WordPress Site 2: tamasgr.ir ---
+  tamasgr_wp:
+    image: wordpress:6.8.3
+    container_name: tamasgr-site
+    ports:
+      - "8081:80"
+    restart: always
+    environment:
+      # CRITICAL FIX: Use the service name 'mysql' for connection
+      WORDPRESS_DB_HOST: mysql:3306
+      # Dedicated database for this site
+      WORDPRESS_DB_NAME: tamasgrdb
+      WORDPRESS_DB_USER: wpuser
+      WORDPRESS_DB_PASSWORD: YOUR_WP_PASSWORD # Should match MYSQL_PASSWORD above
+      WP_HOME: http://localhost:8081
+      WP_SITEURL: http://localhost:8081
+    volumes:
+      # Map the WordPress content volume from its dedicated folder
+      - ./tamasgr.ir/.docker_wp_data:/var/www/html
+      # Map PHP configuration for uploads
+      - ./tamasgr.ir/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+      - /etc/localtime:/etc/localtime:ro
+    depends_on:
+      - mysql
