@@ -17,6 +17,6 @@ services:
       - ./.docker_wp_data:/var/www/html
       - .:/var/www/html/wp-content/themes/iranmock-bootstrap
       - /etc/localtime:/etc/localtime:ro
-      - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+      - ./php-conf:/usr/local/etc/php/conf.d
     extra_hosts:
       - "host.docker.internal:host-gateway"

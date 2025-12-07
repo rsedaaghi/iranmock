@@ -44,7 +44,7 @@ services:
       # Map the specific theme folder (adjust path if needed)
       - ./iranmock:/var/www/html/wp-content/themes/iranmock-bootstrap
       # Map PHP configuration for uploads
-      - ./iranmock/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+      - ./iranmock/php-conf:/usr/local/etc/php/conf.d
       - /etc/localtime:/etc/localtime:ro
     # Ensure this container waits for the MySQL container to be ready
     depends_on:
@@ -70,7 +70,7 @@ services:
       # Map the WordPress content volume from its dedicated folder
       - ./tamasgr.ir/.docker_wp_data:/var/www/html
       # Map PHP configuration for uploads
-      - ./tamasgr.ir/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+      - ./tamasgr.ir/php-conf:/usr/local/etc/php/conf.d
       - /etc/localtime:/etc/localtime:ro
     depends_on:
       - mysql
